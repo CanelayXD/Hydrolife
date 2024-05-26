@@ -1,0 +1,45 @@
+{
+    "orders": [
+      {
+        "numero_de_orden": 1001,
+        "fecha": "2024-05-01",
+        "estado": "completado"
+      },
+      {
+        "numero_de_orden": 1002,
+        "fecha": "2024-05-02",
+        "estado": "pendiente"
+      },
+      {
+        "numero_de_orden": 1003,
+        "fecha": "2024-05-03",
+        "estado": "cancelado"
+      },
+      {
+        "numero_de_orden": 1004,
+        "fecha": "2024-05-04",
+        "estado": "en proceso"
+      },
+      {
+        "numero_de_orden": 1005,
+        "fecha": "2024-05-05",
+        "estado": "completado"
+      },
+      {
+        "numero_de_orden": 1006,
+        "fecha": "2024-05-06",
+        "estado": "pendiente"
+      },
+      {
+        "numero_de_orden": 1007,
+        "fecha": "2024-05-07",
+        "estado": "cancelado"
+      },
+      {
+        "numero_de_orden": 1008,
+        "fecha": "2024-05-08",
+        "estado": "en proceso"
+      }
+    ]
+  }
+  
