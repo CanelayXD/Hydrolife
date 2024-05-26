@@ -1,0 +1,152 @@
+.navbar {
+  width: 100%;
+  height: auto;
+  background-color: rgba(244, 231, 231, 0.8) !important;
+  /* Fondo azul celeste con opacidad */
+  border-radius: 5px;
+  /* Bordes redondeados */
+  box-shadow: 0px 5px 10px rgba(46, 175, 210, 1);
+  /* Sombra */
+  font-family: 'minecraft-4', sans-serif;
+  /* Utilizando la fuente Minecraftia */
+}
+.navbar-brand img {
+  width: 100px;
+  /* Ajusta el tamaño de tu logotipo según sea necesario */
+}
+
+.navbar-nav .custom-item .nav-link {
+  font-family: 'Minecraft', sans-serif;
+  transition: color 0.3s;
+  margin-right: 20px;
+  font-size: 18px;
+  background: linear-gradient(to right, #5cb9db, #60d3b3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar-nav .custom-item .nav-link:hover {
+  background: linear-gradient(to right, #add8e6, #d974f2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar-nav .custom-item .nav-link:active {
+  color: #ff0000;
+}
+.tarjeta-producto {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Asegura que los botones se posicionen en la parte inferior */
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  text-align: center;
+  width: 300px;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
+  box-shadow: 0px 12px 20px rgba(46, 175, 210, 1.5);
+}
+
+.tarjeta-producto img {
+  width: 50%;
+  height: auto;
+  max-width: 100%;
+  margin: 40px auto 0; /* Centrar y añadir margen superior */
+  display: block;
+}
+
+.contenido {
+  padding: 20px;
+  text-align: center !important;
+}
+
+.Subtitle {
+  margin-top: 10px;
+  font-size: 60px;
+  text-align: center;
+  background: linear-gradient(to right, #98fbfc, #1ca1e9);
+  /* Cambia los colores según tu preferencia */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contenido h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.contenido p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.boton {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-image: linear-gradient(to right, #9885f4, #b4eafa);
+}
+
+.boton-container {
+  margin-top: auto;
+  text-align: center;
+  position: relative;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+}
+
+.boton:hover {
+  background-color: #344f6d;
+}
+
+.contenedor-tarjetas {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-add-product {
+  font-family: 'Minecraft', sans-serif;
+  background: linear-gradient(45deg, #ff6b6b, #f8e36b);
+  border: none;
+  color: white;
+}
+
+.btn-add-product:hover {
+  background: linear-gradient(45deg, #f8e36b, #ff6b6b);
+}
+.titulo {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente bonita */
+font-size: 3em; /* Tamaño de fuente */
+color: #333; /* Color del texto */
+text-align: center; /* Centrar el texto */
+margin-top: 50vh; /* Margen superior para centrar verticalmente */
+opacity: 0; /* Ocultar el título inicialmente */
+animation: fadeInUp 1s ease forwards; /* Animación de desplazamiento suave */
+}
+
+@keyframes fadeInUp {
+from {
+  transform: translateY(-50px); /* Desplazamiento hacia arriba */
+  opacity: 0;
+}
+to {
+  transform: translateY(0); /* Sin desplazamiento */
+  opacity: 1;
+}
+}

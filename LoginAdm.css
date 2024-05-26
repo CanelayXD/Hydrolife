@@ -1,0 +1,134 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-image: url('imagenes/logadm.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  h2 {
+    font-family: 'Arial', sans-serif;
+    font-size: 30px;
+    background: linear-gradient(to right, #000000, #fff0f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: slide 2s linear infinite alternate;
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(50%);
+    }
+  }
+
+  .expand {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, #ffffff, #f77dee, #c51c79);
+    animation: expand 4s forwards;
+    z-index: 0;
+  }
+
+  @keyframes expand {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+  .login-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Sombras */
+    overflow: hidden;
+    max-width: 350px;
+    width: 90%;
+    position: relative;
+    z-index: 1;
+    animation: animate__animated animate__fadeInDown 1s;
+  }
+
+  .login-header {
+    background: linear-gradient(to right, #fffbfd, #cf38c3);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .login-header h2 {
+    margin: 0;
+  }
+
+  .login-body {
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .login-body input[type="text"],
+  .login-body input[type="password"] {
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background-color: transparent;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-bottom-color 0.3s;
+  }
+
+  .login-body input[type="text"]:focus,
+  .login-body input[type="password"]:focus {
+    border-bottom-color: #66ccff;
+  }
+
+  .login-body input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background: linear-gradient(to right, #ffa8dd, #e14e50);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .login-body input[type="submit"]:hover {
+    background: linear-gradient(to right, #000000, #a91be6);
+  }
+
+  /* Efecto de desenfoque gradual */
+  .expand {
+    animation: expand 4s forwards, blurImage 4s forwards;
+  }
+
+  @keyframes blurImage {
+    0% {
+      backdrop-filter: blur(0);
+    }
+    100% {
+      backdrop-filter: blur(5px);
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .login-container {
+      width: 80%;
+    }
+  }

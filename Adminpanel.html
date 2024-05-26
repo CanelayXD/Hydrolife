@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="Panel.css">
+    <style>
+      
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="Princi.html"><img src="https://i.ibb.co/5x56BZV/logo.png" alt="Mi Logo" title="MiLog"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav custom-nav">
+                <li class="nav-item custom-item">
+                    <a class="nav-link custom-link" href="PanelAdminU.html">Usuarios</a>
+                </li>
+                <li class="nav-item custom-item">
+                    <a class="nav-link custom-link" href="panelAdminp.html">Pedidos</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="header">
+            <h2 class="mb-4">Panel de Administración</h2>
+        </div>
+        <div class="row">
+            <!-- Columna de productos -->
+            <div class="col-md-12 product-column" id="product-container">
+                <h3>Productos</h3>
+                <button id="addProductBtn" class="btn btn-add-product mb-4">Añadir Producto</button>
+                <div class="row" id="product-list">
+                    <!-- Los productos se cargarán aquí -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de edición -->
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Editar Producto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="editForm">
+                        <div class="form-group">
+                            <label for="editTitle">Título</label>
+                            <input type="text" class="form-control" id="editTitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editDescription">Descripción</label>
+                            <textarea class="form-control" id="editDescription" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="editThumbnail">URL de la Imagen</label>
+                            <input type="url" class="form-control" id="editThumbnail" required>
+                        </div>
+                        <input type="hidden" id="editProductId">
+                        <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de añadir -->
+    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addModalLabel">Añadir Producto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="addForm">
+                        <div class="form-group">
+                            <label for="addTitle">Título</label>
+                            <input type="text" class="form-control" id="addTitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="addDescription">Descripción</label>
+                            <textarea class="form-control" id="addDescription" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="addThumbnail">URL de la Imagen</label>
+                            <input type="url" class="form-control" id="addThumbnail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="addPrice">Precio</label>
+                            <input type="number" class="form-control" id="addPrice" required>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Añadir Producto</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS y dependencias -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const productContainer = document.getElementById("product-list");
+            let currentEditCard;
+
+            // Función para mostrar los productos
+            function showProducts(products) {
+                products.forEach((product, index) => {
+                    createProductCard(product, index);
+                });
+            }
+
+            // Función para crear una tarjeta de producto
+           function createProductCard(product, index) {
+    const card = document.createElement("div");
+    card.classList.add("col-md-4", "mb-4", "d-flex", "justify-content-center");
+
+    const productCard = document.createElement("div");
+    productCard.classList.add("card", "tarjeta-producto");
+    productCard.dataset.productId = index;
+
+    const thumbnail = document.createElement("img");
+    thumbnail.classList.add("card-img-top", "thumbnail");
+    thumbnail.src = product.imagen;
+    thumbnail.alt = product.nombre;
+    productCard.appendChild(thumbnail);
+
+    const cardBody = document.createElement("div");
+    cardBody.classList.add("card-body");
+
+    const cardTitle = document.createElement("h5");
+    cardTitle.classList.add("card-title");
+    cardTitle.textContent = product.nombre;
+    cardBody.appendChild(cardTitle);
+
+    const cardText = document.createElement("p");
+    cardText.classList.add("card-text");
+    cardText.textContent = product.descripcion;
+    cardBody.appendChild(cardText);
+    const cardPrice = document.createElement("p");
+cardPrice.classList.add("card-text");
+cardPrice.textContent = "Precio: $" + product.precio.toString(); // Convierte el precio a cadena de texto
+cardBody.appendChild(cardPrice);
+
+
+    productCard.appendChild(cardBody);
+
+    const cardFooter = document.createElement("div");
+    cardFooter.classList.add("card-footer");
+
+    const editButton = document.createElement("button");
+    editButton.classList.add("btn", "btn-primary", "btn-edit");
+    editButton.innerHTML = '<i class="fas fa-edit"></i> Editar';
+    editButton.addEventListener("click", function () {
+        currentEditCard = productCard;
+        document.getElementById("editTitle").value = product.nombre;
+        document.getElementById("editDescription").value = product.descripcion;
+        document.getElementById("editThumbnail").value = product.imagen;
+        document.getElementById("editProductId").value = index;
+        $('#editModal').modal('show');
+    });
+    cardFooter.appendChild(editButton);
+
+    const deleteButton = document.createElement("button");
+    deleteButton.classList.add("btn", "btn-danger", "btn-delete");
+    deleteButton.innerHTML = '<i class="fas fa-trash-alt"></i> Eliminar';
+    deleteButton.addEventListener("click", function () {
+        productCard.remove();
+    });
+    cardFooter.appendChild(deleteButton);
+
+    productCard.appendChild(cardFooter);
+
+    card.appendChild(productCard);
+    productContainer.appendChild(card);
+}
+
+
+            // Mostrar productos
+            fetch('data/productos.json')
+                .then(response => response.json())
+                .then(data => {
+                    showProducts(data);
+                })
+                .catch(error => console.error('Error al obtener los productos:', error));
+
+            // Event listener para mostrar el modal de añadir producto
+            document.getElementById("addProductBtn").addEventListener("click", function () {
+                $('#addModal').modal('show');
+            });
+
+            // Event listener para añadir el producto desde el formulario
+            document.getElementById("addForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    // Obtener los valores del formulario
+    const nombre = document.getElementById("addTitle").value;
+    const descripcion = document.getElementById("addDescription").value;
+    const imagen = document.getElementById("addThumbnail").value;
+    const precio = document.getElementById("addPrice").value;
+
+    // Crear el nuevo producto con los datos del formulario
+    const newProduct = {
+        nombre: nombre,
+        descripcion: descripcion,
+        imagen: imagen,
+        precio: precio || "$0 Mx"  // Si no se ingresó un precio, usar el predeterminado
+    };
+
+                
+                const newProductIndex = document.querySelectorAll('.product-column .card').length;
+                createProductCard(newProduct, newProductIndex);
+                $('#addModal').modal('hide');
+            });
+
+            // Event listener para editar el producto desde el formulario
+            document.getElementById("editForm").addEventListener("submit", function (event) {
+                event.preventDefault();
+                const productId = document.getElementById("editProductId").value;
+                const updatedTitle = document.getElementById("editTitle").value;
+                const updatedDescription = document.getElementById("editDescription").value;
+                const updatedThumbnail = document.getElementById("editThumbnail").value;
+
+                currentEditCard.querySelector(".card-title").textContent = updatedTitle;
+                currentEditCard.querySelector(".card-text").textContent = updatedDescription;
+                currentEditCard.querySelector(".card-img-top").src = updatedThumbnail;
+
+                $('#editModal').modal('hide');
+            });
+        });
+    </script>
+</body>
+
+</html>

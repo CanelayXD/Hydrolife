@@ -1,0 +1,352 @@
+/* Estilos personalizados */
+body {
+  background-size: cover;
+  font-family: 'Roboto', sans-serif; /* Utilizando la fuente Minecraftia */
+}
+comment-input {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+}
+
+.comment-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.comment-input button {
+  padding: 10px 15px;
+  background-color: #4992E0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.comment-input button:hover {
+  background-color: #4992E0;
+}
+.carousel-container {
+  width: 101.2%;
+  height: auto;
+  background-image: url("imagenes/Back.jpeg");
+  /* Espacio entre el carrusel y la barra de navegación */
+  margin-bottom: 30px;
+  /* Espacio entre el carrusel y la parte inferior de la página */
+  border: 2px solid #ccc;
+  /* Añadir un contorno alrededor del carrusel */
+  border-radius: 5px;
+  /* Añadir bordes redondeados */
+  padding: 5px;
+  /* Añadir espacio interno alrededor del carrusel */
+  box-shadow: 0px 15px 10px rgba(46, 175, 210, 1.5);
+}
+
+/* Estilos para el navbar */
+.navbar {
+  width: 100%;
+  height: auto;
+  background-color: white !important;
+  /* Fondo azul celeste con opacidad */
+  border-radius: 5px;
+  /* Bordes redondeados */
+  box-shadow: white;
+  /* Sombra */
+  font-family: 'minecraft-4', sans-serif;
+  /* Utilizando la fuente Minecraftia */
+}
+
+.container_hed {
+  display: flex;
+  background-color: white;
+  flex-direction: row; /* Asegura que los elementos se alineen horizontalmente */
+  gap: 10px; /* Espacio entre los elementos */
+  width: 100%;
+  height: auto;
+  align-items: center;
+}
+
+owl-carousel .owl-item img {
+  border-radius: 10px;
+  /* Bordes redondeados */
+  border: 2px rgb(92, 248, 240) !important;
+  max-width: 100%;
+  /* Ajuste del ancho máximo de las imágenes */
+  max-height: auto;
+  /* Ajuste de la altura máxima de las imágenes */
+  width: auto;
+  /* Ajuste del ancho automático */
+  height: auto;
+  /* Ajuste de la altura automática */
+  object-fit: cover;
+  /* Para que la imagen se ajuste dentro del contenedor sin perder su relación de aspecto */
+}
+
+.navbar-brand img {
+  width: 120px;
+  /* Ajusta el tamaño de tu logotipo según sea necesario */
+}
+
+.search-input {
+  width: 50% !important; 
+  height: 40px;
+  margin-left: 20%;
+  font-style: normal;
+}
+
+.icon_car {
+ /*margin-left: 100%;*/
+}
+
+.navbar-nav .custom-item .nav-link {
+  font-family: 'Minecraft', sans-serif;
+  transition: color 0.3s;
+  margin-right: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  background: #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar-nav .custom-item .nav-link:hover {
+  background: linear-gradient(to right, #add8e6, #d974f2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar-nav .custom-item .nav-link:active {
+  color: #ff0000;
+}
+
+/* Estilos para el carrusel */
+.owl-carousel {
+  width: 100%;
+  background-image: "/imagenes/Back.jpeg" !important;
+  margin-top: 10px;
+}
+
+.owl-prev,
+.owl-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: #1bb125;
+}
+
+.owl-prev {
+  left: -30px;
+}
+
+.owl-next {
+  right: -30px;
+}
+
+.tarjeta-producto {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Asegura que los botones se posicionen en la parte inferior */
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  text-align: center;
+  width: 300px;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
+  box-shadow: 0px 12px 20px rgba(46, 175, 210, 1.5);
+}
+
+
+.tarjeta-producto img {
+  width: 100%;
+  height: 200px; /* Altura fija para la imagen */
+  object-fit: contain; /* Asegura que la imagen se ajuste al contenedor */
+  margin: 0;
+  display: block;
+}
+
+
+.contenido {
+  padding: 20px;
+  text-align: center !important;
+}
+
+
+.Subtitle {
+  margin-top: 10px;
+  font-size: 60px;
+  text-align: center;
+  background: linear-gradient(to right, #98fbfc, #1ca1e9);
+  /* Cambia los colores según tu preferencia */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contenido h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.contenido p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.boton {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-image: linear-gradient(to right, #9885f4, #b4eafa);
+}
+
+.boton-container {
+  margin-top: auto;
+  text-align: center;
+  position: relative;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+}
+
+
+.boton:hover {
+  background-color: #344f6d;
+}
+
+.contenedor-tarjetas {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+.precio {
+  font-size: 16px;
+  /* Tamaño de fuente del precio */
+  color: #333;
+  /* Color del precio */
+}
+
+.footer {
+  margin-top: 100px;
+  background-color: #4992e0;
+  background-size: cover;
+  padding: 30px 0;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(46, 175, 210, 1);
+}
+
+.footer .container {
+  display: flex;
+  justify-content: center;
+}
+
+.footer .container .row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.footer .container .row .col-md-3 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.footer h4 {
+  font-size: 18px;
+  color: #333;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin-bottom: 10px;
+}
+
+.footer ul li a {
+  color: #555;
+  text-decoration: none;
+}
+
+.footer ul li a:hover {
+  color: #007bff;
+}
+
+@media only screen and (max-width: 768px) {
+  .contenedor-tarjetas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tarjeta-producto {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .search-input {
+    width: auto !important; 
+    height: 40px;
+    margin-left: 10px;
+    font-style: normal;
+  }
+}
+ /* -------- AQUI SE MODIFICA EL ESTILO DE LA TARJETA DE CUANDO SE AGREGA AL ADMIN -------- */
+ .product-card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 8px; /* Reducir el padding */
+  margin-bottom: 10px; /* Reducir el margin-bottom */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.3s ease;
+  max-width: 200px; /* Ancho máximo para limitar el tamaño de la tarjeta */
+}
+
+.product-card:hover {
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1); /* Ajustar la sombra en hover */
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 5px; /* Reducir el margin-bottom */
+}
+
+.product-details {
+  text-align: center;
+}
+
+.product-details h3 {
+  margin-bottom: 8px; /* Reducir el margin-bottom */
+  font-size: 16px; /* Reducir el font-size */
+}
+
+.product-details p {
+  font-size: 14px; /* Reducir el font-size */
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+

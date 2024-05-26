@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil de Usuario</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(207, 59, 223, 1.0);
+      text-align: center;
+    }
+
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    .editable-field {
+      display: inline-block;
+      position: relative;
+      border: 1px dashed transparent;
+      padding: 2px 5px;
+      transition: all 0.3s ease;
+    }
+
+    .editable-field:focus {
+      border: 1px dashed #007bff;
+      background-color: #e9f7ff;
+      outline: none;
+    }
+
+    .editable-field:hover {
+      background-color: #f1f1f1;
+    }
+
+    .edit-icon,
+    .save-icon {
+      position: absolute;
+      top: 0;
+      right: -20px;
+      cursor: pointer;
+      display: none;
+    }
+
+    .editable-field:hover .edit-icon {
+      display: inline-block;
+    }
+
+    .editable-field.edit-mode .save-icon {
+      display: inline-block;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      margin: 10px 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+
+    .btn-secondary {
+      background-color: #6c757d;
+      color: #fff;
+    }
+
+    .btn-secondary:hover {
+      background-color: #5a6268;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        margin: 10px;
+        padding: 15px;
+      }
+
+      .btn {
+        font-size: 14px;
+        padding: 8px 15px;
+      }
+    }
+
+    h1 {
+  font-size: 5em;
+  background: linear-gradient(20deg, #00ff4c, #5e5be0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientAnimation 3s ease infinite;
+  background-size: 400% 400%; /* Aumentar el tamaño del fondo */
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+  </style>
+
+<meta name="description" content="Tu Solución de Limpieza Profesional">
+<!-- Estilos CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<!-- Carrusel -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<!-- Enlace a la fuente Minecraftia -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="Princi.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div class="container_hed">
+    <a class="navbar-brand" href="#"><img src="https://i.ibb.co/5x56BZV/logo.png" alt="Mi Logo" title="MiLog"></a>
+    <div class="container mt-3">
+      <form id="searchForm" class="form-inline my-2 my-lg-0 justify-content-center">
+        <input class="form-control mr-sm-2 search-input" type="search" placeholder="Buscar producto" aria-label="Search" id="searchInput">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="searchButton" style=" background-color: rgb(207, 207, 207); border-color: rgb(207, 207, 207);"><i class="fas fa-search" style="color: grey;"></i></button>
+        <a class="nav-link" href="carrito.html"><i class="fas fa-shopping-cart fa-2x icon_car" style="color: black;"></i></a>
+      </form>
+      </div>
+   </div> 
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mt-3" style="background-color: rgb(11, 158, 243);">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav" style="background-color: rgb(11, 158, 243);">
+      <ul class="navbar-nav w-100 justify-content-around">
+        <li class="nav-item custom-item">
+          <a class="nav-link custom-link text-center" href="Princi.html">Inicio</a>
+        </li>
+        <li class="nav-item custom-item">
+          <a class="nav-link custom-link text-center" href="Princi.html">Productos</a>
+        </li>
+        <li class="nav-item custom-item">
+          <a class="nav-link custom-link text-center" href="Login.html">Inicio Sesion</a>
+        </li>
+        <li class="nav-item custom-item">
+          <a class="nav-link custom-link text-center" href="Princi.html">Contacto</a>
+        </li>
+        <li class="nav-item custom-item">
+          <a class="nav-link custom-link text-center" href="LoginAdm.html">Administrador</a>
+        </li>
+        <li class="nav-item custom-item">
+          <a class="nav-link custom-link text-center" href="perfil.html">Mi cuenta</a>
+        </li>
+        <li class="nav-item custom-item">
+          <a class="nav-link custom-link text-center" href="favoritos.html">Lista de favoritos</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Contenedor Principal -->
+  <div class="container">
+    <h1>Perfil de Usuario</h1>
+    <img src="https://via.placeholder.com/150" alt="Foto de Perfil" class="profile-pic" id="profilePic">
+    <div id="user-info"></div>
+    <button id="editarBtn" class="btn btn-primary" onclick="editarCampos()">Editar</button>
+    <button class="btn btn-secondary" onclick="cerrarSesion()">Cerrar Sesión</button>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Obtener el ID del usuario del localStorage
+      const userId = localStorage.getItem('usuarioId');
+
+      // Obtener los datos del usuario del localStorage
+      const userData = JSON.parse(localStorage.getItem('usuarios'));
+
+      if (userData) {
+        // Buscar el usuario por su ID
+        const user = userData.customer.find(user => user.id === parseInt(userId));
+
+        if (user) {
+          // Mostrar la información del usuario en el HTML
+          const userInfoDiv = document.getElementById('user-info');
+          userInfoDiv.innerHTML = `
+            <p><strong>Nombre:</strong> <span id="nombre" class="editable-field" contentEditable="false">${user.nombre}</span></p>
+            <p><strong>Usuario:</strong> <span id="usuario" class="editable-field" contentEditable="true">${user.usuario}</span></p>
+            <p><strong>Correo Electrónico:</strong> <span id="correo" class="editable-field" contentEditable="true">${user.correo_electronico}</span></p>
+            <p><strong>Dirección</strong></p>
+            <p><strong>Calle:</strong> <span id="calle" class="editable-field" contentEditable="true">${user.calle}</span></p>
+            <p><strong>Fraccionamiento:</strong> <span id="fraccionamiento" class="editable-field" contentEditable="true">${user.fraccionamiento}</span></p>
+            <p><strong>Código Postal:</strong> <span id="codigoPostal" class="editable-field" contentEditable="true">${user.codigo_postal}</span></p>
+            <p><strong>Método de Pago:</strong> <span id="metodoPago" class="editable-field" contentEditable="true">${user.metodo_pago}</span></p>
+          `;
+        } else {
+          // Si no se encuentra el usuario, mostrar un mensaje de error
+          const userInfoDiv = document.getElementById('user-info');
+          userInfoDiv.innerHTML = '<p>Error: Usuario no encontrado</p>';
+        }
+      } else {
+        // Si no se encuentran datos de usuarios en el localStorage, mostrar un mensaje de error
+        const userInfoDiv = document.getElementById('user-info');
+        userInfoDiv.innerHTML = '<p>Error: No se encontraron datos de usuarios</p>';
+      }
+    });
+
+    // Función para editar los campos
+    function editarCampos() {
+      const camposEditables = document.querySelectorAll('.editable-field');
+      camposEditables.forEach(campo => {
+        campo.contentEditable = true;
+        campo.parentNode.classList.add('edit-mode');
+      });
+
+      // Cambiar el texto del botón a "Guardar Cambios"
+      const editarBtn = document.getElementById('editarBtn');
+      editarBtn.innerText = 'Guardar Cambios';
+      editarBtn.onclick = guardarCambios;
+    }
+
+    // Función para guardar los cambios
+    function guardarCambios() {
+      const camposEditables = document.querySelectorAll('.editable-field');
+      camposEditables.forEach(campo => {
+        campo.contentEditable = false;
+        campo.parentNode.classList.remove('edit-mode');
+      });
+
+      // Cambiar el texto del botón a "Editar"
+      const editarBtn = document.getElementById('editarBtn');
+      editarBtn.innerText = 'Editar';
+      editarBtn.onclick = editarCampos;
+
+      // Actualizar los valores en el LocalStorage
+      const userId = localStorage.getItem('usuarioId');
+      const userData = JSON.parse(localStorage.getItem('usuarios'));
+      const userIndex = userData.customer.findIndex(user => user.id === parseInt(userId));
+      if (userIndex !== -1) {
+        camposEditables.forEach(campo => {
+          const fieldName = campo.id;
+          const newValue = campo.textContent.trim();
+          userData.customer[userIndex][fieldName] = newValue;
+        });
+        localStorage.setItem('usuarios', JSON.stringify(userData));
+      }
+    }
+
+    // Función para cerrar la sesión
+    function cerrarSesion() {
+      // Eliminar el valor del ID de usuario del localStorage
+      localStorage.removeItem('usuarioId');
+      // Redirigir al usuario a la página de inicio de sesión
+      window.location.href = 'Princi.html';
+    }
+    document.getElementById('profilePicInput').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const profilePic = document.getElementById('profilePic');
+            profilePic.src = e.target.result;
+        }
+        reader.readAsDataURL(file);
+    }
+});
+
+  </script>
+</body>
+
+</html>

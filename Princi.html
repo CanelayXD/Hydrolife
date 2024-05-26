@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4WMSS4Y8K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-V4WMSS4Y8K');
+  </script>
+  <title>Limpieza Plus</title>
+  <meta name="description" content="Tu Solución de Limpieza Profesional">
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Carrusel -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  <!-- Enlace a la fuente Minecraftia -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="Princi.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body onload="inicializarUsuarios(); mostrarAlerta()">
+  <!-- Navbar -->
+  <div class="container_hed">
+    <a class="navbar-brand" href="#"><img src="https://i.ibb.co/5x56BZV/logo.png" alt="Mi Logo" title="MiLog"></a>
+    <div class="container mt-3">
+      <form id="searchForm" class="form-inline my-2 my-lg-0 justify-content-center">
+        <input class="form-control mr-sm-2 search-input" type="search" placeholder="Buscar producto" aria-label="Search" id="searchInput">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="searchButton" style=" background-color: rgb(207, 207, 207); border-color: rgb(207, 207, 207);"><i class="fas fa-search" style="color: grey;"></i></button>
+        <a class="nav-link" href="carrito.html"><i class="fas fa-shopping-cart fa-2x icon_car" style="color: black;"></i></a>
+      </form>
+      </div>
+   </div> 
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mt-3" style="background-color: rgb(11, 158, 243);">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav" style="background-color: rgb(11, 158, 243);">
+      <ul class="navbar-nav w-100 justify-content-around">
+        <li class="nav-item custom-item">
+          <a class="nav-link custom-link text-center" href="Princi.html">Inicio</a>
+        </li>
+        <li class="nav-item custom-item">
+          <a class="nav-link custom-link text-center" href="#producte">Productos</a>
+        </li>
+        <li class="nav-item custom-item">
+          <a class="nav-link custom-link text-center" href="Login.html">Inicio Sesion</a>
+        </li>
+        <li class="nav-item custom-item">
+          <a class="nav-link custom-link text-center" href="#Foot">Contacto</a>
+        </li>
+        <li class="nav-item custom-item">
+          <a class="nav-link custom-link text-center" href="LoginAdm.html">Administrador</a>
+        </li>
+        <li class="nav-item custom-item">
+          <a class="nav-link custom-link text-center" href="perfil.html">Mi cuenta</a>
+        </li>
+        <li class="nav-item custom-item">
+          <a class="nav-link custom-link text-center" href="favoritos.html">Lista de favoritos</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+ 
+  <!-- Carrusel de imágenes -->
+  <div class="row justify-content-center carousel-container" style="margin-top: 0;">
+    <div class="col-md-12"> <!-- Cambiado de col-md-8 a col-md-12 para ocupar todo el ancho -->
+      <!-- Carrusel de imágenes -->
+      <div class="owl-carousel owl-theme">
+        <div class="item"><a href="detalleFabuloso.html"><img src="imagenes/Fabuloso.png" alt="Descripción de la imagen 1"
+              title="DP1"></a></div>
+        <div class="item"><a href="detalleLysol.html"><img src="imagenes/Lysol.png" alt="Descripción de la imagen 2"
+              title="DP2"></a></div>
+        <div class="item"><a href="detalleFoca.html"><img src="imagenes/foca.png" alt="Descripción de la imagen 3"
+              title="DP3"></a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenido -->
+  <h2 id="producte" class="Subtitle">---------------Productos---------------</h2>
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col">
+        <!-- Fin de la barra de busqueda -->
+        <button id="sortAZButton" class="btn btn-primary mb-4">Ordenar por Nombre (A-Z)</button>
+        <button id="sortZAButton" class="btn btn-primary mb-4">Ordenar por Nombre (Z-A)</button>
+        <button id="sortPrecioButton" class="btn btn-primary mb-4">Ordenar por Precio (Mayor a Menor)</button>
+        <button id="sortPrecioMenorButton" class="btn btn-primary mb-4">Ordenar por Precio (Menor a Mayor)</button>
+      </div>
+    </div>
+    <!-- Compoenete para agregar desde el admin -->
+
+    <div id="productList">
+      <!-- Las tarjetas se agregarán dinámicamente con JavaScript -->
+    </div>
+
+    <div class="contenedor-tarjetas row" id ="productContainer">
+      <!-- Las tarjetas de productos se renderizarán aquí -->
+    </div>
+
+
+    <!-- ---------------- -->
+
+    <!-- Componente para mandar mensaje -->
+    <div class="comment-input">
+      <input type="text" id="comment-box" placeholder="Mandanos mensaje">
+      <button id="submit-button">Enviar</button>
+    </div>
+    <script>
+      const commentBox = document.getElementById('comment-box');
+      const submitButton = document.getElementById('submit-button');
+
+      submitButton.addEventListener('click', () => {
+        const comment = commentBox.value.trim();
+
+        if (comment) {
+          console.log('Comment submitted:', comment);
+          commentBox.value = '';
+        }
+      });
+    </script>
+  </div>
+
+  <!-- Panel de administrador -->
+  <div id="adminPanel">
+    <!-- Formulario de administrador -->
+  </div>
+
+
+  <!-- Footer -->
+  <footer id="Foot" class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h4>Información</h4>
+          <ul>
+            <li><a href="#">Sobre nosotros</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="Terminos_Condi.html">Términos y condiciones</a></li>
+            <li><a href="Politica.html">Política de privacidad</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h4>Clientes</h4>
+          <ul>
+            <li><a href="#">Mi cuenta</a></li>
+            <li><a href="#">Historial de pedidos</a></li>
+            <li><a href="#">Wishlist</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h4>Soporte</h4>
+          <ul>
+            <li><a href="#">Preguntas frecuentes</a></li>
+            <li><a href="#">Política de reembolso</a></li>
+            <li><a href="#">Métodos de pago</a></li>
+            <li><a href="#">Soporte técnico</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h4>Redes sociales</h4>
+          <ul>
+            <li><a href="https://www.facebook.com/profile.php?id=61558889497777&mibextid=LQQJ4d">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="https://www.instagram.com/limpieza_pluss?igsh=ZWVueGcyMWhsMmFw">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript y JQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Carrusel -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="Principal.js"></script>
+  <script src="Productos.js"></script>
+  <script>
+    function mostrarAlerta() {
+      alert('Recuerda leer nuestros términos y condiciones');
+    }
+
+    function inicializarUsuarios() {
+      fetch('data/usuarios.json')
+        .then(response => response.json())
+        .then(data => {
+          const usuarios = [...data.admin, ...data.customer]; // Combina los dos arrays en uno solo
+          localStorage.setItem('usuarios', JSON.stringify(usuarios));
+          console.log('Usuarios cargados en localStorage:', usuarios);
+        })
+        .catch(error => console.error('Error al cargar usuarios:', error));
+    }
+
+  </script>
+
+  <script>
+    // Función para cargar y renderizar los productos
+    function loadProducts() {
+      loadProductsFromLocalStorage(); // Cargar productos desde el almacenamiento local
+      const productList = document.getElementById("productList");
+      productList.innerHTML = ""; // Limpiar el contenido previo
+  
+      // Verificar si hay productos disponibles
+      if (typeof products === 'undefined' || products.length === 0) {
+        console.log('No hay productos disponibles.');
+        return;
+      }
+  
+      // Iterar sobre cada producto y renderizarlo en la página
+      products.forEach(product => {
+        const productCard = document.createElement("div");
+        productCard.classList.add("product-card");
+  
+        const productImage = document.createElement("img");
+        productImage.src = product.image;
+        productImage.alt = product.name;
+  
+        const productDetails = document.createElement("div");
+        productDetails.classList.add("product-details");
+  
+        const productName = document.createElement("h3");
+        productName.textContent = product.name;
+  
+        const productPrice = document.createElement("p");
+        productPrice.textContent = `Precio: $${product.price}`;
+  
+        // Añadir los elementos creados a las tarjetas y luego al contenedor
+        productDetails.appendChild(productName);
+        productDetails.appendChild(productPrice);
+        productCard.appendChild(productImage);
+        productCard.appendChild(productDetails);
+        productList.appendChild(productCard);
+  
+        // Muestra el producto en la consola
+        console.log('Producto:', {
+          nombre: product.name,
+          precio: product.price,
+          imagen: product.image
+        });
+      });
+    }
+  
+    // Ejemplo de cómo podría ser la función loadProductsFromLocalStorage
+    function loadProductsFromLocalStorage() {
+      // Simulación de carga de productos desde localStorage
+      const storedProducts = localStorage.getItem('products');
+      if (storedProducts) {
+        products = JSON.parse(storedProducts);
+      } else {
+        products = []; // Si no hay productos en localStorage, inicializa un array vacío.
+      }
+    }
+  
+    // Llamar a la función para cargar y mostrar los productos
+    loadProducts();
+    localStorage.removeItem('products'); // Elimina los productos del almacenamiento local después de cargarlos
+  </script>
+  
+
+</body>
+
+</html>
