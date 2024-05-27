@@ -115,7 +115,7 @@ owl-carousel .owl-item img {
 }
 
 .navbar-nav .custom-item .nav-link:hover {
-  background: linear-gradient(to right, #add8e6, #d974f2);
+  background: red;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -214,7 +214,7 @@ owl-carousel .owl-item img {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  background-image: linear-gradient(to right, #9885f4, #b4eafa);
+  background-image: gray;
 }
 
 .boton-container {
