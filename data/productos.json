@@ -1,33 +1,30 @@
 [
     {
       "id": 1,
-      "nombre": "Taza Signo Zodiacal",
-      "descripcion": "Taza con temática de uno de los 12 signos del zodiaco.",
-      "precio": "$100 Mx",
+      "nombre": "Prana",
+      "precio": "$0 Mx",
       "imagen": "imagenes/1.jpeg",
       "url": "detalle.html"
     },
     {
       "id": 2,
-      "nombre": "Taza Tim Burton",
-      "descripcion": "Taza blanca con dibujos.",
-      "precio": "$90 Mx",
+      "nombre": "Dharma",
+      "precio": "$0 Mx",
       "imagen": "imagenes/2.jpeg",
       "url": "detalle2.html"
+
     },
     {
       "id": 3,
-      "nombre": "Taza Chocolate Caliente",
-      "descripcion": "Taza de cerámica estilo peltre.",
-      "precio": "$120 Mx",
+      "nombre": "Anubis",
+      "precio": "$0 Mx",
       "imagen": "imagenes/3.jpeg",
       "url": "detalle3.html"
     },
     {
       "id": 4,
       "nombre": "Taza Recuerdo de Mazamitla",
-      "descripcion": "Taza con letras blancas.",
-      "precio": "$80 Mx",
+      "precio": "$0 Mx",
       "imagen": "imagenes/4.jpeg",
       "url": "detalle4.html"
     },
