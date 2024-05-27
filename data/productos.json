@@ -1,81 +1,81 @@
 [
     {
       "id": 1,
-      "nombre": "Ariel de 5L",
-      "descripcion": "Contiene una fórmula que te permite usar menos producto por carga de lavado.",
+      "nombre": "Taza Signo Zodiacal",
+      "descripcion": "Taza con temática de uno de los 12 signos del zodiaco.",
       "precio": "$100 Mx",
       "imagen": "imagenes/1.jpeg",
       "url": "detalle.html"
     },
     {
       "id": 2,
-      "nombre": "Lysol",
-      "descripcion": "Este producto cuenta con envase recargable para contribuir al medio ambiente.",
+      "nombre": "Taza Tim Burton",
+      "descripcion": "Taza blanca con dibujos.",
       "precio": "$90 Mx",
       "imagen": "imagenes/2.jpeg",
       "url": "detalle2.html"
     },
     {
       "id": 3,
-      "nombre": "Windex",
-      "descripcion": "¡Con Windex añade brillo a tu vida! Es nuestra mejor solución para iluminar y dar brillo a su hogar.",
+      "nombre": "Taza Chocolate Caliente",
+      "descripcion": "Taza de cerámica estilo peltre.",
       "precio": "$120 Mx",
       "imagen": "imagenes/3.jpeg",
       "url": "detalle3.html"
     },
     {
       "id": 4,
-      "nombre": "Lysol Pro|",
-      "descripcion": "Contiene una solución que se disuelve con agua, ofreciendo una solución más compacta y fácil de almacenar.",
+      "nombre": "Taza Recuerdo de Mazamitla",
+      "descripcion": "Taza con letras blancas.",
       "precio": "$80 Mx",
       "imagen": "imagenes/4.jpeg",
       "url": "detalle4.html"
     },
     {
       "id": 5,
-      "nombre": "Harpic Power Ultra",
-      "descripcion": "Su fórmula biodegradable permite desatascar las tuberías de manera efectiva y sin dañarlas.",
-      "precio": "$70 Mx",
+      "nombre": "Taza Pastillero",
+      "descripcion": "Taza con temática de medicina.",
+      "precio": "$120 Mx",
       "imagen": "imagenes/5.jpeg",
       "url": "detalle5.html"
     },
     {
       "id": 6,
-      "nombre": "Vanish Quitamanchas en Gel Multiusos para Ropa de Color 3.6 L",
-      "descripcion": "Funciona a temperatura más baja ayudando a ahorrar energía y proteger los tejidos delicados.",
+      "nombre": "Taza con accesorios",
+      "descripcion": "Taza con portavasos y cuchara.",
       "precio": "$179 Mx",
       "imagen": "imagenes/6.jpeg",
       "url": "detalle6.html"
     },
     {
       "id": 7,
-      "nombre": "Pinol El Original limpiador multiusos desinfectante pino 3.7 lt",
-      "descripcion": "Fórmula biodegradable que contribuye al impacto ambiental.",
+      "nombre": "Taza Harry Potter",
+      "descripcion": "Taza con detalles desvanecentes.",
       "precio": "$110 Mx",
       "imagen": "imagenes/7.jpeg",
       "url": "detalle7.html"
     },
     {
       "id": 8,
-      "nombre": "Limpiador líquido Fabuloso aroma lavanda 1L",
-      "descripcion": "Su fórmula de dosificación permite a los usuarios mezclar el producto de mejor manera.",
-      "precio": "$25 Mx",
+      "nombre": "Taza Suéter",
+      "descripcion": "Taza navideña.",
+      "precio": "$125 Mx",
       "imagen": "imagenes/8.jpeg",
       "url": "detalle8.html"
     },
     {
       "id": 9,
-      "nombre": "Cloralex Toallas Desinfectantes Húmedas, 48 Piezas",
-      "descripcion": "Su nuevo material biodegradable ayuda a reducir el impacto ambiental.",
-      "precio": "$60 Mx",
+      "nombre": "Taza Mikey y Minnie",
+      "descripcion": "Taza roja con textura.",
+      "precio": "$160 Mx",
       "imagen": "imagenes/9.jpeg",
       "url": "detalle9.html"
     },
     {
       "id": 10,
-      "nombre": "Aromatizante ambiental Glade campos de lavanda en aerosol 270 ml",
-      "descripcion": "Fragancias naturales que ofrecen una opción amigable con el medio ambiente.",
-      "precio": "$45 Mx",
+      "nombre": "Taza Señor Frogs",
+      "descripcion": "Taza roja con dibujos.",
+      "precio": "$175 Mx",
       "imagen": "imagenes/10.jpeg",
       "url": "detalle10.html"
     }
