@@ -21,7 +21,7 @@ comment-input {
 
 .comment-input button {
   padding: 10px 15px;
-  background-color: #4992E0;
+  background-color: #ad673e;
   color: white;
   border: none;
   border-radius: 5px;
@@ -29,7 +29,7 @@ comment-input {
 }
 
 .comment-input button:hover {
-  background-color: #4992E0;
+  background-color: #ad673e;
 }
 .carousel-container {
   width: 101.2%;
@@ -187,7 +187,7 @@ owl-carousel .owl-item img {
   margin-top: 10px;
   font-size: 60px;
   text-align: center;
-  background: linear-gradient(to right, #98fbfc, #1ca1e9);
+  background: linear-gradient(to right, #98fbfc, #ad673e);
   /* Cambia los colores según tu preferencia */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -248,7 +248,7 @@ owl-carousel .owl-item img {
 
 .footer {
   margin-top: 100px;
-  background-color: #4992e0;
+  background-color: #ad673e;
   background-size: cover;
   padding: 30px 0;
   border-radius: 10px;
