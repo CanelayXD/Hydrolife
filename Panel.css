@@ -20,7 +20,7 @@
   transition: color 0.3s;
   margin-right: 20px;
   font-size: 18px;
-  background: linear-gradient(to right, #5cb9db, #60d3b3);
+  background: linear-gradient(to right, #ad673e, #60d3b3);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -70,7 +70,7 @@
   margin-top: 10px;
   font-size: 60px;
   text-align: center;
-  background: linear-gradient(to right, #98fbfc, #1ca1e9);
+  background: linear-gradient(to right, #ad673e, #ad673e);
   /* Cambia los colores según tu preferencia */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
