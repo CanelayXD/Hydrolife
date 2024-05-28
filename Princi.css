@@ -54,6 +54,22 @@ comment-input {
   align-items: center;
 }
 
+owl-carousel .owl-item img {
+  border-radius: 10px;
+  /* Bordes redondeados */
+  border: 2px rgb(92, 248, 240) !important;
+  max-width: 100%;
+  /* Ajuste del ancho máximo de las imágenes */
+  max-height: auto;
+  /* Ajuste de la altura máxima de las imágenes */
+  width: auto;
+  /* Ajuste del ancho automático */
+  height: auto;
+  /* Ajuste de la altura automática */
+  object-fit: cover;
+  /* Para que la imagen se ajuste dentro del contenedor sin perder su relación de aspecto */
+}
+
 .navbar-brand img {
   width: 120px;
   /* Ajusta el tamaño de tu logotipo según sea necesario */
