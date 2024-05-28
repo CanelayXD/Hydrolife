@@ -99,32 +99,9 @@ function ordenarZA() {
   alert('Productos ordenados de Z a A');
 }
 
-// Función para ordenar los productos por precio de mayor a menor
-function ordenarPrecioMayorMenor() {
-  productos.sort((a, b) => {
-    let precioA = parseFloat(a.precio.replace('$', '').replace(' Mx', ''));
-    let precioB = parseFloat(b.precio.replace('$', '').replace(' Mx', ''));
-    return precioB - precioA;
-  });
-  renderizarProductos(productos);
-  alert('Productos ordenados por precio de mayor a menor');
-}
-
-// Función para ordenar los productos por precio de menor a mayor
-function ordenarPrecioMenorMayor() {
-  productos.sort((a, b) => {
-    let precioA = parseFloat(a.precio.replace('$', '').replace(' Mx', ''));
-    let precioB = parseFloat(b.precio.replace('$', '').replace(' Mx', ''));
-    return precioA - precioB;
-  });
-  renderizarProductos(productos);
-  alert('Productos ordenados por precio de menor a mayor');
-}
 document.addEventListener("DOMContentLoaded", function() {
   document.getElementById('sortAZButton').addEventListener('click', ordenarAZ);
   document.getElementById('sortZAButton').addEventListener('click', ordenarZA);
-  document.getElementById('sortPrecioButton').addEventListener('click', ordenarPrecioMayorMenor);
-  document.getElementById('sortPrecioMenorButton').addEventListener('click', ordenarPrecioMenorMayor);
 });
 // Función para manejar la búsqueda de productos
 function buscarProducto() {
@@ -242,12 +219,6 @@ document.getElementById('sortAZButton').addEventListener('click', ordenarAZ);
 
 // Función para manejar el evento de ordenar de Z a A
 document.getElementById('sortZAButton').addEventListener('click', ordenarZA);
-
-// Función para manejar el evento de ordenar por precio de mayor a menor
-document.getElementById('sortPrecioButton').addEventListener('click', ordenarPrecioMayorMenor);
-
-// Función para manejar el evento de ordenar por precio de menor a mayor
-document.getElementById('sortPrecioMenorButton').addEventListener('click', ordenarPrecioMenorMayor);
 
     // Evento de búsqueda
     document.getElementById('searchButton').addEventListener('click', buscarProducto);

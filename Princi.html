@@ -65,22 +65,6 @@
       </ul>
     </div>
   </nav>
-  
- 
-  <!-- Carrusel de imágenes -->
-  <div class="row justify-content-center carousel-container" style="margin-top: 0;">
-    <div class="col-md-12"> <!-- Cambiado de col-md-8 a col-md-12 para ocupar todo el ancho -->
-      <!-- Carrusel de imágenes -->
-      <div class="owl-carousel owl-theme">
-        <div class="item"><a href="detalle.html"><img src="imagenes/Reel1.png" alt="Descripción de la imagen 1"
-              title="DP1"></a></div>
-        <div class="item"><a href="detalle7.html"><img src="imagenes/Reel2.png" alt="Descripción de la imagen 2"
-              title="DP2"></a></div>
-        <div class="item"><a href="detalle5.html"><img src="imagenes/Reel3.png" alt="Descripción de la imagen 3"
-              title="DP3"></a></div>
-      </div>
-    </div>
-  </div>
 
   <!-- Contenido -->
   <h2 id="producte" class="Subtitle">---------------Productos---------------</h2>
@@ -90,8 +74,6 @@
         <!-- Fin de la barra de busqueda -->
         <button id="sortAZButton" class="btn btn-primary mb-4">Ordenar por Nombre (A-Z)</button>
         <button id="sortZAButton" class="btn btn-primary mb-4">Ordenar por Nombre (Z-A)</button>
-        <button id="sortPrecioButton" class="btn btn-primary mb-4">Ordenar por Precio (Mayor a Menor)</button>
-        <button id="sortPrecioMenorButton" class="btn btn-primary mb-4">Ordenar por Precio (Menor a Mayor)</button>
       </div>
     </div>
     <!-- Compoenete para agregar desde el admin -->
@@ -184,10 +166,6 @@
   <script src="Principal.js"></script>
   <script src="Productos.js"></script>
   <script>
-    function mostrarAlerta() {
-      alert('Recuerda leer nuestros términos y condiciones');
-    }
-
     function inicializarUsuarios() {
       fetch('data/usuarios.json')
         .then(response => response.json())
