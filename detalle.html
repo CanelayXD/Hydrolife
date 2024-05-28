@@ -32,47 +32,77 @@
   <style>
     /* Estilos para la tarjeta de detalle */
     .tarjeta-detalle {
+      width: 90%;
+      text-align: center;
+      margin: 20px auto;
       display: flex;
-      align-items: flex-start;
-      margin: 20px;
       box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
       border-radius: 10px;
       overflow: hidden;
-      background-color: #fff;
+      flex-direction: row;
+      align-items: center;
     }
 
     .tarjeta-detalle img {
-      width: 150px;
-      height: 150px;
+      width: 40%;
+      height: auto; 
       object-fit: cover;
-      margin: 10px;
+      margin: 20px;
     }
 
     .contenido {
-      flex-grow: 1;
-      padding: 10px 20px;
+      width: 60%;
+      padding: 25px;
+      background-color: #babbbc;
+      text-align: left;
     }
 
     .contenido h2 {
-      font-size: 24px;
-      margin-bottom: 10px;
       text-align: center;
+      font-size: 35px;
+      background: linear-gradient(to right, #63abe1, #178b8d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
     }
 
     .contenido p {
-      font-size: 16px;
-      line-height: 1.4;
+      font-size: 20px;
+      line-height: 1.6;
+      margin-bottom: 20px;
     }
 
-    .fotos-adicionales {
-      margin-top: 20px;
+    .imagenes-adicionales {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
     }
 
-    .fotos-adicionales img {
-      width: 50px;
-      height: 50px;
+    .imagenes-adicionales img {
+      width: 48%;
+      margin-bottom: 10px;
+      height: auto;
       object-fit: cover;
-      margin-right: 5px;
+    }
+
+    @media (max-width: 768px) {
+      .tarjeta-detalle {
+        flex-direction: column;
+      }
+
+      .tarjeta-detalle img {
+        width: 100%;
+      }
+
+      .contenido {
+        width: 100%;
+        text-align: center;
+      }
+
+      .imagenes-adicionales img {
+        width: 100%;
+      }
     }
   </style>
   <title>Detalles del Producto</title>
@@ -123,20 +153,51 @@
   </nav>
 
   <div class="tarjeta-detalle">
-    <img src="imagenes/1.jpeg" alt="Producto">
+    <img src="imagenes/1.jpeg" alt="Producto Grande">
     <div class="contenido">
       <h2>PRANA</h2>
       <p>Taza de cerámica color rosa con la constelación de Acuario.</p>
-      <div class="fotos-adicionales">
-        <img src="imagenes/2.jpeg" alt="Foto adicional 1">
-        <img src="imagenes/3.jpeg" alt="Foto adicional 2">
-        <img src="imagenes/4.jpeg" alt="Foto adicional 3">
+      <!-- Div para PayPal -->
+      <div class="d-flex justify-content-center my-4"> 
+        <div id="paypal-button"></div>
       </div>
+      <p id="result-message"></p>
+      <!-- Fin del div -->
     </div>
+  </div>
+
+  <div class="imagenes-adicionales">
+    <img src="imagenes/2.jpeg" alt="Producto Extra 1">
+    <img src="imagenes/3.jpeg" alt="Producto Extra 2">
+    <img src="imagenes/4.jpeg" alt="Producto Extra 3">
+    <img src="imagenes/5.jpeg" alt="Producto Extra 4">
   </div>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Aquí inicia la lógica de PayPal y de su botón: -->
+  <script>
+    paypal.Buttons({
+      createOrder: function(data, actions) {
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              currency_code: 'MXN', // Cambiar a pesos mexicanos
+              value: '100' // Monto del pago
+            }
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+          document.getElementById('result-message').innerText = '¡Transacción completada por ' + details.payer.name.given_name + '!';
+        });
+      },
+      onError: function(err) {
+        document.getElementById('result-message').innerText = 'Ocurrió un error durante la transacción. Por favor, inténtalo de nuevo.';
+      }
+    }).render('#paypal-button');
+  </script>
 </body>
 </html>
