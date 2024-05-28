@@ -249,7 +249,7 @@ owl-carousel .owl-item img {
   background-size: cover;
   padding: 30px 0;
   border-radius: 10px;
-  box-shadow: 0px 5px 10px rgba(46, 175, 210, 1);
+  box-shadow: 0px 5px 10px #333;
 }
 
 .footer .container {
