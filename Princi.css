@@ -29,7 +29,7 @@ comment-input {
 }
 
 .comment-input button:hover {
-  background-color: #ad673e;
+  background-color: rgb(118, 69, 225);
 }
 .carousel-container {
   width: 101.2%;
