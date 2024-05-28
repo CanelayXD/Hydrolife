@@ -42,7 +42,6 @@ function renderizarProductos(productos) {
 
     var cartButton = document.createElement('button');
     cartButton.classList.add('boton', 'boton-carrito');
-    cartButton.textContent = "Agregar al carrito";
 
     // Agregar evento click al botón "Agregar al carrito"
     cartButton.addEventListener('click', function() {
@@ -51,7 +50,6 @@ function renderizarProductos(productos) {
 
     var favoritesButton = document.createElement('button');
     favoritesButton.classList.add('boton', 'boton-favoritos');
-    favoritesButton.textContent = "Agregar a favoritos";
 
     // Agregar evento click al botón "Agregar a favoritos"
     favoritesButton.addEventListener('click', function() {
