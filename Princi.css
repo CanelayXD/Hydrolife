@@ -178,8 +178,9 @@ owl-carousel .owl-item img {
 
 
 .Subtitle {
-  margin-top: 10px;
+  margin-top: 15px;
   font-size: 60px;
+  margin-bottom: 10;
   text-align: center;
   background: rgb(118, 69, 225);
   /* Cambia los colores según tu preferencia */
