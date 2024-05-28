@@ -20,43 +20,43 @@
     },
     {
       "id": 4,
-      "nombre": "Taza Recuerdo de Mazamitla",
+      "nombre": "Creta",
       "imagen": "imagenes/4.jpeg",
       "url": "detalle4.html"
     },
     {
       "id": 5,
-      "nombre": "Taza Pastillero",
+      "nombre": "Roma",
       "imagen": "imagenes/5.jpeg",
       "url": "detalle5.html"
     },
     {
       "id": 6,
-      "nombre": "Taza con accesorios",
+      "nombre": "Vaticano",
       "imagen": "imagenes/6.jpeg",
       "url": "detalle6.html"
     },
     {
       "id": 7,
-      "nombre": "Taza Harry Potter",
+      "nombre": "Dinamarca",
       "imagen": "imagenes/7.jpeg",
       "url": "detalle7.html"
     },
     {
       "id": 8,
-      "nombre": "Taza Suéter",
+      "nombre": "Gales",
       "imagen": "imagenes/8.jpeg",
       "url": "detalle8.html"
     },
     {
       "id": 9,
-      "nombre": "Taza Mikey y Minnie",
+      "nombre": "Grecia",
       "imagen": "imagenes/9.jpeg",
       "url": "detalle9.html"
     },
     {
       "id": 10,
-      "nombre": "Taza Señor Frogs",
+      "nombre": "Francia",
       "imagen": "imagenes/10.jpeg",
       "url": "detalle10.html"
     }
