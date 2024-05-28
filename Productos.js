@@ -40,15 +40,49 @@ function renderizarProductos(productos) {
     button.classList.add('boton');
     button.textContent = "Ver detalles";
 
+    var cartButton = document.createElement('button');
+    cartButton.classList.add('boton', 'boton-carrito');
+    cartButton.textContent = "Agregar al carrito";
+
+    // Agregar evento click al botón "Agregar al carrito"
+    cartButton.addEventListener('click', function() {
+      agregarAlCarrito(producto);
+    });
+
+    var favoritesButton = document.createElement('button');
+    favoritesButton.classList.add('boton', 'boton-favoritos');
+    favoritesButton.textContent = "Agregar a favoritos";
+
+    // Agregar evento click al botón "Agregar a favoritos"
+    favoritesButton.addEventListener('click', function() {
+      agregarAFavoritos(producto);
+    });
+
     link.appendChild(button);
     content.appendChild(name);
     content.appendChild(description);
     content.appendChild(price);
     content.appendChild(link);
+    content.appendChild(cartButton); // Agregar el botón "Agregar al carrito"
+    content.appendChild(favoritesButton); // Agregar el botón "Agregar a favoritos"
     card.appendChild(img);
     card.appendChild(content);
     productContainer.appendChild(card);
   });
+}
+// Función para agregar un producto al carrito
+function agregarAlCarrito(producto) {
+  var productosEnCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
+  productosEnCarrito.push(producto);
+  localStorage.setItem('carrito', JSON.stringify(productosEnCarrito));
+  alert("Producto agregado al carrito");
+}
+
+function agregarAFavoritos(producto) {
+  var productosEnFavoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+  productosEnFavoritos.push(producto);
+  localStorage.setItem('favoritos', JSON.stringify(productosEnFavoritos));
+  alert("Producto agregado a favoritos");
 }
 
 // Función para ordenar los productos de A a Z
@@ -65,9 +99,32 @@ function ordenarZA() {
   alert('Productos ordenados de Z a A');
 }
 
+// Función para ordenar los productos por precio de mayor a menor
+function ordenarPrecioMayorMenor() {
+  productos.sort((a, b) => {
+    let precioA = parseFloat(a.precio.replace('$', '').replace(' Mx', ''));
+    let precioB = parseFloat(b.precio.replace('$', '').replace(' Mx', ''));
+    return precioB - precioA;
+  });
+  renderizarProductos(productos);
+  alert('Productos ordenados por precio de mayor a menor');
+}
+
+// Función para ordenar los productos por precio de menor a mayor
+function ordenarPrecioMenorMayor() {
+  productos.sort((a, b) => {
+    let precioA = parseFloat(a.precio.replace('$', '').replace(' Mx', ''));
+    let precioB = parseFloat(b.precio.replace('$', '').replace(' Mx', ''));
+    return precioA - precioB;
+  });
+  renderizarProductos(productos);
+  alert('Productos ordenados por precio de menor a mayor');
+}
 document.addEventListener("DOMContentLoaded", function() {
   document.getElementById('sortAZButton').addEventListener('click', ordenarAZ);
   document.getElementById('sortZAButton').addEventListener('click', ordenarZA);
+  document.getElementById('sortPrecioButton').addEventListener('click', ordenarPrecioMayorMenor);
+  document.getElementById('sortPrecioMenorButton').addEventListener('click', ordenarPrecioMenorMayor);
 });
 // Función para manejar la búsqueda de productos
 function buscarProducto() {
@@ -113,12 +170,31 @@ function buscarProducto() {
       var button = document.createElement('button');
       button.classList.add('boton');
       button.textContent = "Ver detalles";
+      var cartButton = document.createElement('button');
+      cartButton.classList.add('boton', 'boton-carrito');
+      cartButton.textContent = "Agregar al carrito";
+  
+      // Agregar evento click al botón "Agregar al carrito"
+      cartButton.addEventListener('click', function() {
+        agregarAlCarrito(producto);
+      });
+  
+      var favoritesButton = document.createElement('button');
+      favoritesButton.classList.add('boton', 'boton-favoritos');
+      favoritesButton.textContent = "Agregar a favoritos";
+  
+      // Agregar evento click al botón "Agregar a favoritos"
+      favoritesButton.addEventListener('click', function() {
+        agregarAFavoritos(producto);
+      });
   
       link.appendChild(button);
       content.appendChild(name);
       content.appendChild(description);
       content.appendChild(price);
       content.appendChild(link);
+      content.appendChild(cartButton); // Agregar el botón "Agregar al carrito"
+      content.appendChild(favoritesButton); // Agregar el botón "Agregar a favoritos"
       card.appendChild(img);
       card.appendChild(content);
       productContainer.appendChild(card);    });
@@ -166,6 +242,12 @@ document.getElementById('sortAZButton').addEventListener('click', ordenarAZ);
 
 // Función para manejar el evento de ordenar de Z a A
 document.getElementById('sortZAButton').addEventListener('click', ordenarZA);
+
+// Función para manejar el evento de ordenar por precio de mayor a menor
+document.getElementById('sortPrecioButton').addEventListener('click', ordenarPrecioMayorMenor);
+
+// Función para manejar el evento de ordenar por precio de menor a mayor
+document.getElementById('sortPrecioMenorButton').addEventListener('click', ordenarPrecioMenorMayor);
 
     // Evento de búsqueda
     document.getElementById('searchButton').addEventListener('click', buscarProducto);
