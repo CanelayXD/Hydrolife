@@ -31,21 +31,6 @@ comment-input {
 .comment-input button:hover {
   background-color: #ad673e;
 }
-.carousel-container {
-  width: 101.2%;
-  height: auto;
-  background-image: url("imagenes/Back.jpeg");
-  /* Espacio entre el carrusel y la barra de navegación */
-  margin-bottom: 30px;
-  /* Espacio entre el carrusel y la parte inferior de la página */
-  border: 2px solid #ccc;
-  /* Añadir un contorno alrededor del carrusel */
-  border-radius: 5px;
-  /* Añadir bordes redondeados */
-  padding: 5px;
-  /* Añadir espacio interno alrededor del carrusel */
-  box-shadow: 0px 15px 10px rgba(46, 175, 210, 1.5);
-}
 
 /* Estilos para el navbar */
 .navbar {
@@ -67,22 +52,6 @@ comment-input {
   width: 100%;
   height: auto;
   align-items: center;
-}
-
-owl-carousel .owl-item img {
-  border-radius: 10px;
-  /* Bordes redondeados */
-  border: 2px rgb(92, 248, 240) !important;
-  max-width: 100%;
-  /* Ajuste del ancho máximo de las imágenes */
-  max-height: auto;
-  /* Ajuste de la altura máxima de las imágenes */
-  width: auto;
-  /* Ajuste del ancho automático */
-  height: auto;
-  /* Ajuste de la altura automática */
-  object-fit: cover;
-  /* Para que la imagen se ajuste dentro del contenedor sin perder su relación de aspecto */
 }
 
 .navbar-brand img {
