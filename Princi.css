@@ -72,7 +72,7 @@ comment-input {
 owl-carousel .owl-item img {
   border-radius: 10px;
   /* Bordes redondeados */
-  border: 2px rgb(92, 248, 240) !important;
+  border: 2px;
   max-width: 100%;
   /* Ajuste del ancho máximo de las imágenes */
   max-height: auto;
