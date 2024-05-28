@@ -61,8 +61,6 @@ function renderizarProductos(productos) {
     content.appendChild(description);
     content.appendChild(price);
     content.appendChild(link);
-    content.appendChild(cartButton); // Agregar el botón "Agregar al carrito"
-    content.appendChild(favoritesButton); // Agregar el botón "Agregar a favoritos"
     card.appendChild(img);
     card.appendChild(content);
     productContainer.appendChild(card);
