@@ -45,26 +45,10 @@ function renderizarProductos(productos) {
     content.appendChild(description);
     content.appendChild(price);
     content.appendChild(link);
-    content.appendChild(cartButton); // Agregar el botón "Agregar al carrito"
-    content.appendChild(favoritesButton); // Agregar el botón "Agregar a favoritos"
     card.appendChild(img);
     card.appendChild(content);
     productContainer.appendChild(card);
   });
-}
-// Función para agregar un producto al carrito
-function agregarAlCarrito(producto) {
-  var productosEnCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
-  productosEnCarrito.push(producto);
-  localStorage.setItem('carrito', JSON.stringify(productosEnCarrito));
-  alert("Producto agregado al carrito");
-}
-
-function agregarAFavoritos(producto) {
-  var productosEnFavoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
-  productosEnFavoritos.push(producto);
-  localStorage.setItem('favoritos', JSON.stringify(productosEnFavoritos));
-  alert("Producto agregado a favoritos");
 }
 
 // Función para ordenar los productos de A a Z
@@ -135,8 +119,6 @@ function buscarProducto() {
       content.appendChild(description);
       content.appendChild(price);
       content.appendChild(link);
-      content.appendChild(cartButton); // Agregar el botón "Agregar al carrito"
-      content.appendChild(favoritesButton); // Agregar el botón "Agregar a favoritos"
       card.appendChild(img);
       card.appendChild(content);
       productContainer.appendChild(card);    });
