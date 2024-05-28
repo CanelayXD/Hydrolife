@@ -23,12 +23,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="Princi.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <!-- Aqui iniciamos el boton de paypal NO MODIFICABLE -->
-  <script
-  src="https://www.paypal.com/sdk/js?client-id=Ae8pHIHLtv4Hx_c-cVO3-8Tli7GpTyP4JEbl_o4S-gPD6S2biQ4eKUA_FO1blHrzV_7pQJTa4y_3pxrR&buyer-country=MX&currency=MXN&components=buttons&enable-funding=venmo"
-  data-sdk-integration-source="developer-studio"
-></script>
-  <!-- Aquí termina el inicio del botón -->
   <style>
     /* Estilos para la tarjeta de detalle */
     .tarjeta-detalle {
@@ -157,11 +151,7 @@
     <div class="contenido">
       <h2>PRANA</h2>
       <p>Taza de cerámica color rosa con la constelación de Acuario.</p>
-      <!-- Div para PayPal -->
-      <div class="d-flex justify-content-center my-4"> 
-        <div id="paypal-button"></div>
       </div>
-      <p id="result-message"></p>
       <!-- Fin del div -->
     </div>
   </div>
@@ -176,28 +166,5 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <!-- Aquí inicia la lógica de PayPal y de su botón: -->
-  <script>
-    paypal.Buttons({
-      createOrder: function(data, actions) {
-        return actions.order.create({
-          purchase_units: [{
-            amount: {
-              currency_code: 'MXN', // Cambiar a pesos mexicanos
-              value: '100' // Monto del pago
-            }
-          }]
-        });
-      },
-      onApprove: function(data, actions) {
-        return actions.order.capture().then(function(details) {
-          document.getElementById('result-message').innerText = '¡Transacción completada por ' + details.payer.name.given_name + '!';
-        });
-      },
-      onError: function(err) {
-        document.getElementById('result-message').innerText = 'Ocurrió un error durante la transacción. Por favor, inténtalo de nuevo.';
-      }
-    }).render('#paypal-button');
-  </script>
 </body>
 </html>
