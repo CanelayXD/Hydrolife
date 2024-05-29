@@ -32,19 +32,6 @@ comment-input {
 .comment-input button:hover {
   background-color: rgb(118, 69, 225);
 }
-.carousel-container {
-  width: 101.2%;
-  height: auto;
-  background-image: url("imagenes/Back.jpeg");
-  /* Espacio entre el carrusel y la barra de navegación */
-  margin-bottom: 30px;
-  /* Espacio entre el carrusel y la parte inferior de la página */
-  border: 2px solid #ccc;
-  /* Añadir un contorno alrededor del carrusel */
-  border-radius: 5px;
-  /* Añadir bordes redondeados */
-  padding: 5px;
-}
 
 /* Estilos para el navbar */
 .navbar {
