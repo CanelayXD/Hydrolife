@@ -43,8 +43,6 @@ comment-input {
   border-radius: 5px;
   /* Añadir bordes redondeados */
   padding: 5px;
-  /* Añadir espacio interno alrededor del carrusel */
-  box-shadow: 0px 15px 10px rgba(46, 175, 210, 1.5);
 }
 
 /* Estilos para el navbar */
