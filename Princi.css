@@ -49,7 +49,7 @@ comment-input {
   display: flex;
   background-color: white;
   flex-direction: row; /* Asegura que los elementos se alineen horizontalmente */
-  gap: 10px; /* Espacio entre los elementos */
+  gap: 20px; /* Espacio entre los elementos */
   width: 100%;
   height: auto;
   align-items: center;
