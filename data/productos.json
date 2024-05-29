@@ -59,6 +59,11 @@
       "nombre": "Francia",
       "imagen": "imagenes/10.jpeg",
       "url": "detalle10.html"
+    },
+    {
+      "id": 11,
+      "nombre": "Maya",
+      "imagen": "imagenes/Logo.png"
     }
   ]
   
