@@ -24,7 +24,7 @@ comment-input {
   padding: 10px 15px;
   background-color: #2fe748;
   color: white;
-  border: none;
+  border: 14px;
   border-radius: 5px;
   cursor: pointer;
 }
