@@ -36,7 +36,7 @@
 
     .tarjeta-detalle img {
       width: 40%;
-      height: auto; 
+      height: auto;
       object-fit: cover;
       margin: 20px;
     }
@@ -58,11 +58,10 @@
     }
 
     .contenido h3 {
-    font-size: 25px;
-    margin-bottom: 5px;
-    text-align: center;
+      font-size: 25px;
+      margin-bottom: 5px;
+      text-align: center;
     }
-    
 
     .contenido p {
       font-size: 20px;
@@ -102,6 +101,30 @@
         width: 100%;
       }
     }
+
+    /* Estilos para las tarjetas adicionales */
+    .container-tarjetas {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 20px auto;
+      max-width: 90%;
+    }
+
+    .tarjeta-adicional {
+      flex: 1 1 calc(50% - 16px);
+      border: 1px solid #ddd;
+      padding: 16px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      margin: 8px 0;
+      border-radius: 10px;
+    }
+
+    .tarjeta-adicional h2 {
+      color: #f74780; /* Color del título */
+      margin-bottom: 8px;
+    }
   </style>
   <title>Detalles del Producto</title>
   <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
@@ -116,8 +139,8 @@
         <input class="form-control mr-sm-2 search-input" type="search" placeholder="Nombre del producto" aria-label="Search" id="searchInput">
         <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="searchButton" style=" background-color: rgb(207, 207, 207); border-color: rgb(207, 207, 207);"><i class="fas fa-search" style="color: grey;"></i></button>
       </form>
-      </div>
-   </div> 
+    </div>
+  </div> 
   <nav class="navbar navbar-expand-lg navbar-light bg-light mt-3" style="background-color: #2fe748;">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -148,12 +171,10 @@
       <p class="caract">Bomba 1.5 HP A 110V.</p>
       <p class="caract">Volumen de 600 litros.</p>
       <p class="caract">Dimensiones <br>
-        •  Largo: 2.04 mts<br>
-        •  Ancho: 2.04 mts<br>
-        •  Alto: 75 cm
+        • Largo: 2.04 mts<br>
+        • Ancho: 2.04 mts<br>
+        • Alto: 75 cm
       </p>
-      </div>
-      <!-- Fin del div -->
     </div>
   </div>
 
@@ -162,6 +183,50 @@
     <img src="imagenes/kiara-sen.jpg" alt="Producto Extra 2">
     <img src="imagenes/kiara-m-n-c.jpg" alt="Producto Extra 3">
     <img src="imagenes/kiara-agua.jpg" alt="Producto Extra 4">
+  </div>
+
+  <!-- Tarjetas adicionales -->
+  <div class="container-tarjetas">
+    <div class="tarjeta-adicional">
+      <h2>Instrucciones de seguridad</h2>
+      <!-- Contenido adicional -->
+    </div>
+    <div class="tarjeta-adicional">
+      <h2>Características</h2>
+      <!-- Contenido adicional -->
+    </div>
+    <div class="tarjeta-adicional">
+      <h2>Componentes incluidos</h2>
+      <!-- Contenido adicional -->
+    </div>
+    <div class="tarjeta-adicional">
+      <h2>Equipo de funcionamiento</h2>
+      <!-- Contenido adicional -->
+    </div>
+    <div class="tarjeta-adicional">
+      <h2>Sistema de llenado</h2>
+      <!-- Contenido adicional -->
+    </div>
+    <div class="tarjeta-adicional">
+      <h2>Mantenimiento</h2>
+      <!-- Contenido adicional -->
+    </div>
+    <div class="tarjeta-adicional">
+      <h2>Servicio</h2>
+      <!-- Contenido adicional -->
+    </div>
+    <div class="tarjeta-adicional">
+      <h2>Instalación de la bañera</h2>
+      <!-- Contenido adicional -->
+    </div>
+    <div class="tarjeta-adicional">
+      <h2>Sistema de iluminación</h2>
+      <!-- Contenido adicional -->
+    </div>
+    <div class="tarjeta-adicional">
+      <h2>Reparaciones</h2>
+      <!-- Contenido adicional -->
+    </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
