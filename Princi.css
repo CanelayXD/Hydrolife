@@ -144,6 +144,8 @@ owl-carousel .owl-item img {
   margin-right: 20px;
   margin-left: 20px;
   margin-top: 20px;
+  border: #000000;
+  border-radius: 5px;
 }
 
 
