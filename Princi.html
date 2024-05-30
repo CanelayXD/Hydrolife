@@ -60,7 +60,7 @@
         </center>
       </div>
     </div>
-    <!-- Compoenete para agregar desde el admin -->
+    <!-- Componente para agregar desde el admin -->
 
     <div id="productList">
       <!-- Las tarjetas se agregarán dinámicamente con JavaScript -->
@@ -72,25 +72,6 @@
 
 
     <!-- ---------------- -->
-
-    <!-- Componente para mandar mensaje -->
-    <div class="comment-input">
-      <input type="text" id="comment-box" placeholder="Comentarios">
-      <button id="submit-button">Enviar</button>
-    </div>
-    <script>
-      const commentBox = document.getElementById('comment-box');
-      const submitButton = document.getElementById('submit-button');
-
-      submitButton.addEventListener('click', () => {
-        const comment = commentBox.value.trim();
-
-        if (comment) {
-          console.log('Comment submitted:', comment);
-          commentBox.value = '';
-        }
-      });
-    </script>
   </div>
 
   <!-- Panel de administrador -->
