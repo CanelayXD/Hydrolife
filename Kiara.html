@@ -112,18 +112,19 @@
     }
 
     .tarjeta-adicional {
-      flex: 1 1 calc(50% - 16px);
-      border: 1px solid #ddd;
-      padding: 16px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      background-color: #fff;
-      margin: 8px 0;
+      width: 48%; /* Dos tarjetas por fila */
+      background-color: #f9f9f9;
+      padding: 20px;
+      margin-bottom: 20px; /* Espacio entre tarjetas verticalmente */
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
+      text-align: center;
     }
 
     .tarjeta-adicional h2 {
-      color: #f74780; /* Color del título */
-      margin-bottom: 8px;
+      font-size: 22px;
+      color: #f74780; /* Color de los títulos */
+      margin-bottom: 15px;
     }
   </style>
   <title>Detalles del Producto</title>
@@ -178,13 +179,6 @@
     </div>
   </div>
 
-  <div class="imagenes-adicionales">
-    <img src="imagenes/kiara-m-n.jpg" alt="Producto Extra 1">
-    <img src="imagenes/kiara-sen.jpg" alt="Producto Extra 2">
-    <img src="imagenes/kiara-m-n-c.jpg" alt="Producto Extra 3">
-    <img src="imagenes/kiara-agua.jpg" alt="Producto Extra 4">
-  </div>
-
   <!-- Tarjetas adicionales -->
   <div class="container-tarjetas">
     <div class="tarjeta-adicional">
@@ -227,6 +221,13 @@
       <h2>Reparaciones</h2>
       <!-- Contenido adicional -->
     </div>
+  </div>
+
+  <div class="imagenes-adicionales">
+    <img src="imagenes/kiara-m-n.jpg" alt="Producto Extra 1">
+    <img src="imagenes/kiara-sen.jpg" alt="Producto Extra 2">
+    <img src="imagenes/kiara-m-n-c.jpg" alt="Producto Extra 3">
+    <img src="imagenes/kiara-agua.jpg" alt="Producto Extra 4">
   </div>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
