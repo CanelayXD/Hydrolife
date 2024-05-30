@@ -2,8 +2,7 @@
     {
       "id": 1,
       "nombre": "Prana",
-      "imagen": "imagenes/Logo.png",
-      "url": "detalle.html"
+      "imagen": "imagenes/Logo.png"
     },
     {
       "id": 2,
@@ -73,7 +72,8 @@
     {
       "id": 15,
       "nombre": "Kiara",
-      "imagen": "imagenes/Logo.png"
+      "imagen": "imagenes/kiara.png",
+      "url": "detalle.html"
     },
     {
       "id": 16,
