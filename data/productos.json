@@ -101,7 +101,8 @@
       "imagen": "imagenes/Logo.png"
     },
     {
-      "id": "Laserta",
+      "id": 21,
+      "nombre": "Laserta",
       "imagen": "imagenes/Logo.png"
     }
   ]
