@@ -2,62 +2,74 @@
     {
       "id": 1,
       "nombre": "Prana",
-      "imagen": "imagenes/Logo.png"
+      "imagen": "imagenes/Logo.png",
+      "capacidad": 2
     },
     {
       "id": 2,
       "nombre": "Dharma",
-      "imagen": "imagenes/Logo.png"
+      "imagen": "imagenes/Logo.png",
+      "capacidad": 1
     },
     {
       "id": 3,
       "nombre": "Anubis",
-      "imagen": "imagenes/Logo.png"
+      "imagen": "imagenes/Logo.png",
+      "capacidad": 2
     },
     {
       "id": 4,
       "nombre": "Nair",
-      "imagen": "imagenes/Logo.png"
+      "imagen": "imagenes/Logo.png",
+      "capacidad": 2
     },
     {
       "id": 5,
       "nombre": "Onix",
-      "imagen": "imagenes/Logo.png"
+      "imagen": "imagenes/Logo.png",
+      "capacidad": 4
     },
     {
       "id": 6,
       "nombre": "Orion",
-      "imagen": "imagenes/Logo.png"
+      "imagen": "imagenes/Logo.png",
+      "capacidad": 1
     },
     {
       "id": 7,
       "nombre": "Sirius",
-      "imagen": "imagenes/Logo.png"
+      "imagen": "imagenes/Logo.png",
+      "capacidad": 2
     },
     {
       "id": 8,
       "nombre": "Loto",
-      "imagen": "imagenes/Logo.png"
+      "imagen": "imagenes/Logo.png",
+      "capacidad": 1
     },
     {
       "id": 9,
       "nombre": "Osiris",
-      "imagen": "imagenes/Logo.png"
+      "imagen": "imagenes/Logo.png",
+      "capacidad": 1
     },
     {
       "id": 10,
       "nombre": "Ajna",
-      "imagen": "imagenes/Logo.png"
+      "imagen": "imagenes/Logo.png",
+      "capacidad": 1
     },
     {
       "id": 11,
       "nombre": "Maya",
-      "imagen": "imagenes/Logo.png"
+      "imagen": "imagenes/Logo.png",
+      "capacidad": 2
     },
     {
       "id": 12,
       "nombre": "Shanti",
-      "imagen": "imagenes/Logo.png"
+      "imagen": "imagenes/Logo.png",
+      "capacidad": 1
     },
     {
       "id": 13,
@@ -73,37 +85,50 @@
       "id": 15,
       "nombre": "Kiara",
       "imagen": "imagenes/kiara.png",
+      "capacidad": 7,
       "url": "Kiara.html"
     },
     {
       "id": 16,
       "nombre": "Soma",
-      "imagen": "imagenes/Logo.png"
+      "imagen": "imagenes/Logo.png",
+      "capacidad": 2
     },
     {
       "id": 17,
       "nombre": "Eureka",
-      "imagen": "imagenes/Logo.png"
+      "imagen": "imagenes/Logo.png",
+      "capacidad": 10
     },
     {
       "id": 18,
       "nombre": "Aure",
-      "imagen": "imagenes/Logo.png"
+      "imagen": "imagenes/Logo.png",
+      "capacidad": 5
     },
     {
       "id": 19,
       "nombre": "Adara",
-      "imagen": "imagenes/Logo.png"
+      "imagen": "imagenes/Logo.png",
+      "capacidad": 4
     },
     {
       "id": 20,
       "nombre": "Brahama",
-      "imagen": "imagenes/Logo.png"
+      "imagen": "imagenes/Logo.png",
+      "capacidad": 2
     },
     {
       "id": 21,
       "nombre": "Laserta",
-      "imagen": "imagenes/Logo.png"
+      "imagen": "imagenes/Logo.png",
+      "capacidad": 2
+    },
+    {
+      "id": 22,
+      "nombre": "Latika",
+      "imagen": "imagenes/Logo.png",
+      "capacidad": 16
     }
   ]
   
