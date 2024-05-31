@@ -234,9 +234,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById('sortPrecioMenorButton').addEventListener('click', ordenarPrecioMenorMayor);
 
     // Asignar eventos para búsqueda por capacidad
-    document.getElementById('capacidad1').addEventListener('click', function() {
+    document.getElementById('capacidad1').addEventListener('click', buscarPorCapacidad); {
       buscarPorCapacidad(1);
-    });
+    };
     document.getElementById('capacidad2').addEventListener('click', function() {
       buscarPorCapacidad(2);
     });
