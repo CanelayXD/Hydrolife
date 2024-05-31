@@ -15,7 +15,6 @@ async function cargarDatos() {
     return { productos: [] }; // Si hay un error, retorna productos vacíos y log vacío
   }
 }
-
 function renderizarProductos(productos) {
   var productContainer = document.getElementById('productContainer');
   productContainer.innerHTML = '';
@@ -41,7 +40,21 @@ function renderizarProductos(productos) {
     button.classList.add('boton');
     button.textContent = "Ver detalles";
 
+    var cartButton = document.createElement('button');
+    cartButton.classList.add('boton', 'boton-carrito');
 
+    // Agregar evento click al botón "Agregar al carrito"
+    cartButton.addEventListener('click', function() {
+      agregarAlCarrito(producto);
+    });
+
+    var favoritesButton = document.createElement('button');
+    favoritesButton.classList.add('boton', 'boton-favoritos');
+
+    // Agregar evento click al botón "Agregar a favoritos"
+    favoritesButton.addEventListener('click', function() {
+      agregarAFavoritos(producto);
+    });
 
     link.appendChild(button);
     content.appendChild(name);
@@ -89,7 +102,12 @@ function ordenarPrecioMenorMayor() {
   renderizarProductos(productos);
   alert('Productos ordenados por precio de menor a mayor');
 }
-
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById('sortAZButton').addEventListener('click', ordenarAZ);
+  document.getElementById('sortZAButton').addEventListener('click', ordenarZA);
+  document.getElementById('sortPrecioButton').addEventListener('click', ordenarPrecioMayorMenor);
+  document.getElementById('sortPrecioMenorButton').addEventListener('click', ordenarPrecioMenorMayor);
+});
 // Función para manejar la búsqueda de productos
 function buscarProducto() {
   // Obtener el valor ingresado en el campo de búsqueda
@@ -134,35 +152,42 @@ function buscarProducto() {
       var button = document.createElement('button');
       button.classList.add('boton');
       button.textContent = "Ver detalles";
+      var cartButton = document.createElement('button');
+      cartButton.classList.add('boton', 'boton-carrito');
+      cartButton.textContent = "Agregar al carrito";
   
-
+      // Agregar evento click al botón "Agregar al carrito"
+      cartButton.addEventListener('click', function() {
+        agregarAlCarrito(producto);
+      });
+  
+      var favoritesButton = document.createElement('button');
+      favoritesButton.classList.add('boton', 'boton-favoritos');
+      favoritesButton.textContent = "Agregar a favoritos";
+  
+      // Agregar evento click al botón "Agregar a favoritos"
+      favoritesButton.addEventListener('click', function() {
+        agregarAFavoritos(producto);
+      });
+  
       link.appendChild(button);
       content.appendChild(name);
       content.appendChild(description);
       content.appendChild(price);
       content.appendChild(link);
+      content.appendChild(cartButton); // Agregar el botón "Agregar al carrito"
+      content.appendChild(favoritesButton); // Agregar el botón "Agregar a favoritos"
       card.appendChild(img);
       card.appendChild(content);
-      productContainer.appendChild(card);
-    });
+      productContainer.appendChild(card);    });
   } else {
     // Si no se encontraron resultados, mostrar un mensaje en la página
     productContainer.textContent = 'No se encontraron resultados para la búsqueda: ' + searchTerm;
   }
 }
 
-// Función para buscar productos según la capacidad
-function buscarPorCapacidad(capacidad) {
-  var resultados = productos.filter(function(producto) {
-    if (capacidad === 6) {
-      return producto.capacidad >= 6;
-    }
-    return producto.capacidad === capacidad;
-  });
-
-  // Renderizar los productos filtrados
-  renderizarProductos(resultados);
-}
+// Asignar la función buscarProducto al evento click del botón de búsqueda
+document.getElementById('searchButton').addEventListener('click', buscarProducto);
 
 // Función para cargar productos desde localStorage
 function loadProductsFromLocalStorage() {
@@ -174,6 +199,9 @@ function loadProductsFromLocalStorage() {
     productos = []; // Si no hay productos en localStorage, inicializa un array vacío.
   }
 }
+
+// Llamar a la función para cargar y mostrar los productos
+loadProductsFromLocalStorage();
 
 // Evento de carga de la página
 document.addEventListener("DOMContentLoaded", async () => {
@@ -191,28 +219,26 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById('logContainer').textContent = log;
 
     // Asignar funciones a eventos
-    document.getElementById('sortAZButton').addEventListener('click', ordenarAZ);
-    document.getElementById('sortZAButton').addEventListener('click', ordenarZA);
-    document.getElementById('sortPrecioButton').addEventListener('click', ordenarPrecioMayorMenor);
-    document.getElementById('sortPrecioMenorButton').addEventListener('click', ordenarPrecioMenorMayor);
+   // Función para manejar el evento de ordenar de A a Z
+document.getElementById('sortAZButton').addEventListener('click', ordenarAZ);
 
-    // Asignar eventos para búsqueda por capacidad
-    document.getElementById('capacidad1').addEventListener('click', buscarPorCapacidad); {
-      buscarPorCapacidad(1);
-    };
-    document.getElementById('capacidad2').addEventListener('click', function() {
-      buscarPorCapacidad(2);
-    });
-    document.getElementById('capacidad4').addEventListener('click', function() {
-      buscarPorCapacidad(4);
-    });
-    document.getElementById('capacidad5').addEventListener('click', function() {
-      buscarPorCapacidad(5);
-    });
+// Función para manejar el evento de ordenar de Z a A
+document.getElementById('sortZAButton').addEventListener('click', ordenarZA);
+
+// Función para manejar el evento de ordenar por precio de mayor a menor
+document.getElementById('sortPrecioButton').addEventListener('click', ordenarPrecioMayorMenor);
+
+// Función para manejar el evento de ordenar por precio de menor a mayor
+document.getElementById('sortPrecioMenorButton').addEventListener('click', ordenarPrecioMenorMayor);
 
     // Evento de búsqueda
     document.getElementById('searchButton').addEventListener('click', buscarProducto);
+
+    // Resto de los eventos
   } catch (error) {
     console.error(error);
   }
 });
+
+
+
