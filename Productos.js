@@ -41,31 +41,13 @@ function renderizarProductos(productos) {
     button.classList.add('boton');
     button.textContent = "Ver detalles";
 
-    var cartButton = document.createElement('button');
-    cartButton.classList.add('boton', 'boton-carrito');
-    cartButton.textContent = "Agregar al carrito";
 
-    // Agregar evento click al botón "Agregar al carrito"
-    cartButton.addEventListener('click', function() {
-      agregarAlCarrito(producto);
-    });
-
-    var favoritesButton = document.createElement('button');
-    favoritesButton.classList.add('boton', 'boton-favoritos');
-    favoritesButton.textContent = "Agregar a favoritos";
-
-    // Agregar evento click al botón "Agregar a favoritos"
-    favoritesButton.addEventListener('click', function() {
-      agregarAFavoritos(producto);
-    });
 
     link.appendChild(button);
     content.appendChild(name);
     content.appendChild(description);
     content.appendChild(price);
     content.appendChild(link);
-    content.appendChild(cartButton); // Agregar el botón "Agregar al carrito"
-    content.appendChild(favoritesButton); // Agregar el botón "Agregar a favoritos"
     card.appendChild(img);
     card.appendChild(content);
     productContainer.appendChild(card);
@@ -159,8 +141,6 @@ function buscarProducto() {
       content.appendChild(description);
       content.appendChild(price);
       content.appendChild(link);
-      content.appendChild(cartButton); // Agregar el botón "Agregar al carrito"
-      content.appendChild(favoritesButton); // Agregar el botón "Agregar a favoritos"
       card.appendChild(img);
       card.appendChild(content);
       productContainer.appendChild(card);
