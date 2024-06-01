@@ -8,7 +8,7 @@
     {
       "id": 2,
       "nombre": "Dharma",
-      "imagen": "imagenes/Logo.png",
+      "imagen": "imagenes/Dharma.png",
       "capacidad": 1
     },
     {
@@ -44,7 +44,7 @@
     {
       "id": 8,
       "nombre": "Loto",
-      "imagen": "imagenes/Logo.png",
+      "imagen": "imagenes/Loto.png",
       "capacidad": 1
     },
     {
