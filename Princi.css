@@ -246,6 +246,8 @@ owl-carousel .owl-item img {
 .footer .container {
   display: flex;
   justify-content: center;
+  font-size: 10px;
+  text-align: right;
 }
 
 .footer .container .row {
