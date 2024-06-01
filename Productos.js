@@ -108,6 +108,12 @@ document.addEventListener("DOMContentLoaded", function() {
   document.getElementById('sortPrecioButton').addEventListener('click', ordenarPrecioMayorMenor);
   document.getElementById('sortPrecioMenorButton').addEventListener('click', ordenarPrecioMenorMayor);
 });
+
+function ordenarPorCapacidad() {
+  productos.sort((a, b) => a.capacidad - b.capacidad);
+  renderizarProductos(productos);
+  alert('Productos ordenados por capacidad');
+}
 // Función para manejar la búsqueda de productos
 function buscarProducto() {
   // Obtener el valor ingresado en el campo de búsqueda
@@ -145,6 +151,10 @@ function buscarProducto() {
       var price = document.createElement('p');
       price.classList.add('precio');
       price.textContent = producto.precio;
+
+      var capacity = document.createElement('p');
+      capacity.classList.add('capacidad');
+      capacity.textContent = `Capacidad: ${producto.capacidad}`;
 
       var link = document.createElement('a');
       link.href = producto.url;
@@ -230,6 +240,8 @@ document.getElementById('sortPrecioButton').addEventListener('click', ordenarPre
 
 // Función para manejar el evento de ordenar por precio de menor a mayor
 document.getElementById('sortPrecioMenorButton').addEventListener('click', ordenarPrecioMenorMayor);
+
+document.getElementById('sortCapacidadButton').addEventListener('click', ordenarPorCapacidad);
 
     // Evento de búsqueda
     document.getElementById('searchButton').addEventListener('click', buscarProducto);
