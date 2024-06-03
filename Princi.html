@@ -27,6 +27,52 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="Princi.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    .container-tarjetas {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 20px auto;
+      max-width: 90%;
+    }
+
+    .tarjeta-adicional {
+      width: 48%; /* Dos tarjetas por fila */
+      background-color: #f9f9f9;
+      padding: 20px;
+      margin-bottom: 20px; /* Espacio entre tarjetas verticalmente */
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .tarjeta-adicional h2 {
+      font-size: 28px;
+      color: #f74780; /* Color de los títulos */
+      margin-bottom: 15px;
+    }
+
+    .tarjeta-adicional h3 {
+      font-size: 24px;
+      color: #835fde;
+      margin-bottom: 5px;
+      text-align: center;
+    }
+
+    .tarjeta-adicional p {
+      font-size: 20px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+      text-align: justify;
+    }
+
+    .tarjeta-adicional img {
+      width: 25%;
+      margin-bottom: 10px;
+      height: auto;
+      object-fit: cover;
+    }
+  </style>
 </head>
 
 <body onload="inicializarUsuarios(); mostrarAlerta()">
@@ -64,7 +110,7 @@
   </nav>
 
   <!-- Contenido -->
-  <h2 id="producte" class="Subtitle">-------------- Tinas --------------</h2>
+  <h2 id="producte" class="Subtitle">TINAS</h2>
   <div class="container">
     <div class="row mb-4">
       <div class="col">
@@ -96,9 +142,40 @@
         </video>
       </div>
     </div>
+    <div class="container-tarjetas">
+      <div class="tarjeta-adicional">
+        <h2>¿Qué es la Aromaterapia?</h2>
+        <p>
+          Una tina con aromaterapia es una tina de hidromasaje que incorpora 
+          la capacidad de dispersar aceites esenciales o fragancias durante el 
+          uso del spa. La aromaterapia es una práctica terapéutica que utiliza 
+          aceites esenciales derivados de plantas para mejorar el bienestar 
+          físico y emocional. En el contexto de una tina de hidromasaje, la 
+          aromaterapia se puede integrar mediante diferentes métodos.<br>
+          El objetivo de la aromaterapia en una tina de hidromasaje es 
+          proporcionar una experiencia de baño más relajante y terapéutica, 
+          aprovechando los beneficios de los aceites esenciales para 
+          reducir el estrés, mejorar el estado de ánimo, aliviar dolores 
+          musculares, y promover un mejor sueño.
+        </p>
+      </div>
+      <div class="tarjeta-adicional">
+        <h2>¿Qué es la Cromoterapia?</h2>
+        <p>
+          Una tina con cromoterapia es una tina de hidromasaje que incorpora 
+          el uso de luces de diferentes colores para proporcionar beneficios 
+          terapéuticos y mejorar el bienestar del usuario. La cromoterapia, 
+          también conocida como terapia de color, es una práctica que utiliza 
+          los colores para influir en el estado de ánimo y la salud física y emocional.<br>
+          La cromoterapia en una tina de hidromasaje se utiliza para crear 
+          un ambiente relajante y personalizar la experiencia del baño, 
+          ayudando a los usuarios a sentirse más tranquilos, revitalizados 
+          o equilibrados, según sus necesidades y preferencias.
+        </p>
+      </div>
   </div>
 
-  <h2 id="articles" class="Subtitle">------------ Accesorios ------------</h2>
+  <h2 id="articles" class="Subtitle">ACCESORIOS</h2>
   <div class="container">
     <div class="row mb-4">
       <div class="col">
