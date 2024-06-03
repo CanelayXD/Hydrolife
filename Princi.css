@@ -236,7 +236,7 @@ owl-carousel .owl-item img {
   margin: 0;
   padding: 10px; /* Agrega un padding para separar el contenido del borde */
   background-color: #45DE62;
-  color: white; /* Cambia el color del texto para que sea visible en el fondo verde */
+  color: #45BADE; /* Cambia el color del texto para que sea visible en el fondo verde */
   width: 100%;
 }
 
