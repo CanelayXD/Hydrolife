@@ -242,8 +242,6 @@ owl-carousel .owl-item img {
   left: 0;
   right: 0;
   width: 100%;
-  padding-left: 0; /* Elimina padding lateral en la clase container */
-  padding-right: 0; /* Elimina padding lateral en la clase container */
 }
 
 
