@@ -3,83 +3,97 @@
       "id": 1,
       "nombre": "Prana",
       "imagen": "imagenes/Prana.png",
-      "capacidad": 2
+      "capacidad": 2,
+      "url": "Prana.html"
     },
     {
       "id": 2,
       "nombre": "Dharma",
       "imagen": "imagenes/Dharma.png",
-      "capacidad": 1
+      "capacidad": 1,
+      "url": "Dharma.html"
     },
     {
       "id": 3,
       "nombre": "Anubis",
       "imagen": "imagenes/Anubis.png",
-      "capacidad": 2
+      "capacidad": 2,
+      "url": "Anubis.html"
     },
     {
       "id": 4,
       "nombre": "Nair",
       "imagen": "imagenes/Nair.png",
-      "capacidad": 2
+      "capacidad": 2,
+      "url": "Nair.html"
     },
     {
       "id": 5,
       "nombre": "Onix",
       "imagen": "imagenes/Onix.png",
-      "capacidad": 4
+      "capacidad": 4,
+      "url": "Onix.html"
     },
     {
       "id": 6,
       "nombre": "Orion",
       "imagen": "imagenes/Orion.png",
-      "capacidad": 1
+      "capacidad": 1,
+      "url": "Orion.html"
     },
     {
       "id": 7,
       "nombre": "Sirius",
       "imagen": "imagenes/Sirius.png",
-      "capacidad": 2
+      "capacidad": 2,
+      "url": "Sirius.html"
     },
     {
       "id": 8,
       "nombre": "Loto",
       "imagen": "imagenes/Loto.png",
-      "capacidad": 1
+      "capacidad": 1,
+      "url": "Loto.html"
     },
     {
       "id": 9,
       "nombre": "Osiris",
       "imagen": "imagenes/Osiris.png",
-      "capacidad": 1
+      "capacidad": 1,
+      "url": "Osiris.html"
     },
     {
       "id": 10,
       "nombre": "Ajna",
       "imagen": "imagenes/Ajna.png",
-      "capacidad": 1
+      "capacidad": 1,
+      "url": "Ajna.html"
     },
     {
       "id": 11,
       "nombre": "Maya",
       "imagen": "imagenes/Maya.png",
-      "capacidad": 2
+      "capacidad": 2,
+      "url": "Maya.html"
     },
     {
       "id": 12,
       "nombre": "Shanti",
       "imagen": "imagenes/Shanti.png",
-      "capacidad": 1
+      "capacidad": 1,
+      "url": "Shanti.html"
     },
     {
       "id": 13,
       "nombre": "Indra",
-      "imagen": "imagenes/Indra.png"
+      "imagen": "imagenes/Indra.png",
+      "url": "Indra.html"
     },
     {
       "id": 14,
       "nombre": "Mantra",
-      "imagen": "imagenes/Mantra.png"
+      "imagen": "imagenes/Mantra.png",
+      "url": "Mantra.html"
     },
     {
       "id": 15,
@@ -92,43 +106,50 @@
       "id": 16,
       "nombre": "Soma",
       "imagen": "imagenes/Soma.png",
-      "capacidad": 2
+      "capacidad": 2,
+      "url": "Soma.html"
     },
     {
       "id": 17,
       "nombre": "Eureka",
       "imagen": "imagenes/Eureka.png",
-      "capacidad": 10
+      "capacidad": 10,
+      "url": "Eureka.html"
     },
     {
       "id": 18,
       "nombre": "Aure",
       "imagen": "imagenes/Aure.png",
-      "capacidad": 5
+      "capacidad": 5,
+      "url": "Aure.html"
     },
     {
       "id": 19,
       "nombre": "Adara",
       "imagen": "imagenes/Adara.png",
-      "capacidad": 4
+      "capacidad": 4,
+      "url": "Adara.html"
     },
     {
       "id": 20,
       "nombre": "Brahama",
       "imagen": "imagenes/Brahama.png",
-      "capacidad": 2
+      "capacidad": 2,
+      "url": "Brahama.html"
     },
     {
       "id": 21,
       "nombre": "Laserta",
       "imagen": "imagenes/Laserta.png",
-      "capacidad": 2
+      "capacidad": 2,
+      "url": "Laserta.html"
     },
     {
       "id": 22,
       "nombre": "Latika",
       "imagen": "imagenes/Latika.png",
-      "capacidad": 16
+      "capacidad": 16,
+      "url": "Latika.html"
     }
   ]
   
