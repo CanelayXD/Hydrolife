@@ -233,13 +233,17 @@ owl-carousel .owl-item img {
 
 .footer {
   display: flex;
-  margin-top: 100px;
+  margin: 0; /* Elimina cualquier margen predeterminado */
+  padding: 0; /* Elimina cualquier padding predeterminado */
   background-color: #45DE62;
   background-size: cover;
   width: 100%;
   position: relative;
   left: 0;
   right: 0;
+  width: 100%;
+  padding-left: 0; /* Elimina padding lateral en la clase container */
+  padding-right: 0; /* Elimina padding lateral en la clase container */
 }
 
 
