@@ -235,12 +235,6 @@ document.getElementById('sortAZButton').addEventListener('click', ordenarAZ);
 // Función para manejar el evento de ordenar de Z a A
 document.getElementById('sortZAButton').addEventListener('click', ordenarZA);
 
-// Función para manejar el evento de ordenar por precio de mayor a menor
-document.getElementById('sortPrecioButton').addEventListener('click', ordenarPrecioMayorMenor);
-
-// Función para manejar el evento de ordenar por precio de menor a mayor
-document.getElementById('sortPrecioMenorButton').addEventListener('click', ordenarPrecioMenorMayor);
-
 document.getElementById('sortCapacidadButton').addEventListener('click', ordenarPorCapacidad);
 
     // Evento de búsqueda
