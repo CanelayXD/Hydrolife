@@ -37,11 +37,7 @@ comment-input {
 .navbar {
   width: 100%;
   height: auto;
-  background-color: #2fe748 !important;
-  /* Fondo azul celeste con opacidad */
-  border-radius: 5px;
-  /* Bordes redondeados */
-  box-shadow: white;
+  background-color: #45DE62 !important;
   /* Sombra */
 }
 
@@ -163,30 +159,13 @@ owl-carousel .owl-item img {
   text-align: center !important;
 }
 
-.container_body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* Asegura que los botones se posicionen en la parte inferior */
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 20px;
-  text-align: center;
-  width: 300px;
-  height: auto;
-  overflow: hidden;
-  margin-right: 20px;
-  margin-left: 20px;
-  margin-top: 20px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
-      border-radius: 10px;
-}
-
 
 .Subtitle {
   margin-top: 15px;
   font-size: 60px;
   margin-bottom: 10;
   text-align: center;
-  background: rgb(118, 69, 225);
+  background: black;
   /* Cambia los colores según tu preferencia */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -210,13 +189,13 @@ owl-carousel .owl-item img {
 }
 
 .boton {
-  background-color: #2fe748;
+  background-color: #45DE96;
   font-family: 'Courier New', Courier, monospace;
   font-size: 20px;
   display: block;
   width: 100%;
   padding: 10px;
-  color: rgb(118, 69, 225);
+  color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -254,11 +233,9 @@ owl-carousel .owl-item img {
 
 .footer {
   margin-top: 100px;
-  background-color: #2fe748;
+  background-color: #45DE62;
   background-size: cover;
   padding: 30px 0;
-  border-radius: 10px;
-  box-shadow: 0px 5px 10px #333;
 }
 
 .footer .container {
