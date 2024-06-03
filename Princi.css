@@ -236,6 +236,10 @@ owl-carousel .owl-item img {
   background-color: #45DE62;
   background-size: cover;
   padding: 30px 0;
+  width: 100%;
+  position: relative;
+  left: 0;
+  right: 0;
 }
 
 .footer .container {
@@ -243,6 +247,7 @@ owl-carousel .owl-item img {
   justify-content: center;
   width: 100%;
 }
+
 
 
 @media only screen and (max-width: 768px) {
