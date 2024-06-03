@@ -233,16 +233,18 @@ owl-carousel .owl-item img {
 
 .footer {
   display: flex;
-  margin: 0; /* Elimina cualquier margen predeterminado */
-  padding: 0; /* Elimina cualquier padding predeterminado */
+  margin: 0;
+  padding: 10px; /* Agrega un padding para separar el contenido del borde */
   background-color: #45DE62;
-  background-size: cover;
-  width: 100%;
-  position: relative;
-  left: 0;
-  right: 0;
+  color: white; /* Cambia el color del texto para que sea visible en el fondo verde */
   width: 100%;
 }
+
+/* Estilos para el contenido del footer */
+.footer p {
+  margin: 0; /* Elimina cualquier margen del párrafo */
+}
+
 
 
 
