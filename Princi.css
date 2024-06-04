@@ -231,11 +231,14 @@ owl-carousel .owl-item img {
   /* Color del precio */
 }
 
-/* Estilos para el footer */
+
 container_body {
   width: 100%;
   height: auto;
   background-color: #45DE62 !important;
+  display: flex;
+  flex-direction: row; /* Asegura que los elementos se alineen horizontalmente */
+  align-items: center;
 }
 
 
