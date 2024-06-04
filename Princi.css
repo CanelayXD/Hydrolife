@@ -231,6 +231,19 @@ owl-carousel .owl-item img {
   /* Color del precio */
 }
 
+/* Estilos para el footer */
+footer {
+  background-color: #343a40; /* Color del navbar */
+  color: #ffffff; /* Color del texto */
+  padding: 20px 0; /* Espaciado interno */
+  text-align: center; /* Alineación del texto */
+  position: fixed; /* Fijar el footer en la parte inferior */
+  width: 100%; /* Ancho completo */
+  bottom: 0; /* Posicionar en la parte inferior */
+  z-index: 999; /* Capa z para que esté sobre los demás elementos */
+}
+
+
 @media only screen and (max-width: 768px) {
   .contenedor-tarjetas {
     flex-direction: column;
