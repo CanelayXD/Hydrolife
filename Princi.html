@@ -174,7 +174,6 @@
         </p>
       </div>
   </div>
-</div>
 
   <h2 id="articles" class="Subtitle">ACCESORIOS</h2>
 <div class="container">
@@ -182,8 +181,8 @@
     <div class="col">
       <!-- Fin de la barra de busqueda -->
       <center>
-        <button id="sortAZButton" class="btn btn-primary mb-4" style="background-color: #458BDE; border: 2px #458BDE;">Ordenar por Nombre (A-Z)</button>
-        <button id="sortZAButton" class="btn btn-primary mb-4" style="background-color: #458BDE; border: 2px #458BDE;">Ordenar por Nombre (Z-A)</button>
+        <button id="sortAZButton" class="btn btn-primary mb-4" style="background-color: #2fe748; border: 2px #2fe748;">Ordenar por Nombre (A-Z)</button>
+        <button id="sortZAButton" class="btn btn-primary mb-4" style="background-color: #2fe748; border: 2px #2fe748;">Ordenar por Nombre (Z-A)</button>
       </center>
     </div>
   </div>
@@ -193,7 +192,7 @@
   </div>
   <div class="contenedor-tarjetas row" id="productContainerAccesorios">
     <!-- Las tarjetas de productos se renderizarán aquí -->
-  </div>  
+  </div>
 </div>
 
 
@@ -220,67 +219,63 @@
   </script>
 
   <script>
-    let accessories = []; // Asegúrate de que esta variable esté definida y asignada correctamente
-
-// Función para cargar y renderizar los accesorios
-function loadAccessories() {
-  loadAccessoriesFromLocalStorage(); // Cargar accesorios desde el almacenamiento local
+    // Función para cargar y renderizar los accesorios
+function loadAccesorios() {
+  loadAccesoriosFromLocalStorage(); // Cargar accesorios desde el almacenamiento local
   const productListAccesorios = document.getElementById("productListAccesorios");
-  const productContainerAccesorios = document.getElementById("productContainerAccesorios");
+  productListAccesorios.innerHTML = ""; // Limpiar el contenido previo
 
   // Verificar si hay accesorios disponibles
-  if (typeof accessories === 'undefined' || accessories.length === 0) {
+  if (typeof productos === 'undefined' || productos.length === 0) {
     console.log('No hay accesorios disponibles.');
     return;
   }
 
-  // Limpiar los contenedores antes de agregar los accesorios
-  productListAccesorios.innerHTML = "";
-  productContainerAccesorios.innerHTML = "";
-
   // Iterar sobre cada accesorio y renderizarlo en la página
-  accessories.forEach(accessory => {
-    const accessoryCard = document.createElement("div");
-    accessoryCard.classList.add("accessory-card");
+  productos.forEach(accesorio => {
+    const productCard = document.createElement("div");
+    productCard.classList.add("product-card");
 
-    const accessoryImage = document.createElement("img");
-    accessoryImage.src = accessory.image;
-    accessoryImage.alt = accessory.name;
+    const productImage = document.createElement("img");
+    productImage.src = accesorio.imagen;
+    productImage.alt = accesorio.nombre;
 
-    const accessoryDetails = document.createElement("div");
-    accessoryDetails.classList.add("accessory-details");
+    const productDetails = document.createElement("div");
+    productDetails.classList.add("product-details");
 
-    const accessoryName = document.createElement("h3");
-    accessoryName.textContent = accessory.name;
+    const productName = document.createElement("h3");
+    productName.textContent = accesorio.nombre;
 
-    // Añadir los elementos creados a las tarjetas y luego al contenedor de accesorios
-    accessoryDetails.appendChild(accessoryName);
-    accessoryCard.appendChild(accessoryImage);
-    accessoryCard.appendChild(accessoryDetails);
-    productContainerAccesorios.appendChild(accessoryCard);
+    // Añadir los elementos creados a las tarjetas y luego al contenedor
+    productDetails.appendChild(productName);
+    productCard.appendChild(productImage);
+    productCard.appendChild(productDetails);
+    productListAccesorios.appendChild(productCard);
 
     // Muestra el accesorio en la consola
     console.log('Accesorio:', {
-      nombre: accessory.name,
-      imagen: accessory.image
+      nombre: accesorio.nombre,
+      imagen: accesorio.imagen
     });
   });
 }
 
-// Ejemplo de cómo podría ser la función loadAccessoriesFromLocalStorage
-function loadAccessoriesFromLocalStorage() {
+// Ejemplo de cómo podría ser la función loadAccesoriosFromLocalStorage
+function loadAccesoriosFromLocalStorage() {
   // Simulación de carga de accesorios desde localStorage
-  const storedAccessories = localStorage.getItem('accessories');
-  if (storedAccessories) {
-    accessories = JSON.parse(storedAccessories);
+  const storedAccesorios = localStorage.getItem('accesorios');
+  if (storedAccesorios) {
+    productos = JSON.parse(storedAccesorios);
   } else {
-    accessories = []; // Si no hay accesorios en localStorage, inicializa un array vacío.
+    productos = []; // Si no hay accesorios en localStorage, inicializa un array vacío.
   }
 }
 
 // Llamar a la función para cargar y mostrar los accesorios
-loadAccessories();
-localStorage.removeItem('accessories'); // Elimina los accesorios del almacenamiento local después de cargarlos</script>
+loadAccesorios();
+localStorage.removeItem('accesorios'); // Elimina los accesorios del almacenamiento local después de cargarlos
+
+  </script>
 
 
   <script>
