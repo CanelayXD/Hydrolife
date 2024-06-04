@@ -220,20 +220,23 @@
   </script>
 
   <script>
-    // Variable global para almacenar los accesorios
-let accessories = [];
+    let accessories = []; // Asegúrate de que esta variable esté definida y asignada correctamente
 
 // Función para cargar y renderizar los accesorios
 function loadAccessories() {
   loadAccessoriesFromLocalStorage(); // Cargar accesorios desde el almacenamiento local
   const productListAccesorios = document.getElementById("productListAccesorios");
-  productListAccesorios.innerHTML = ""; // Limpiar el contenido previo
+  const productContainerAccesorios = document.getElementById("productContainerAccesorios");
 
   // Verificar si hay accesorios disponibles
   if (typeof accessories === 'undefined' || accessories.length === 0) {
     console.log('No hay accesorios disponibles.');
     return;
   }
+
+  // Limpiar los contenedores antes de agregar los accesorios
+  productListAccesorios.innerHTML = "";
+  productContainerAccesorios.innerHTML = "";
 
   // Iterar sobre cada accesorio y renderizarlo en la página
   accessories.forEach(accessory => {
@@ -250,11 +253,11 @@ function loadAccessories() {
     const accessoryName = document.createElement("h3");
     accessoryName.textContent = accessory.name;
 
-    // Añadir los elementos creados a las tarjetas y luego al contenedor
+    // Añadir los elementos creados a las tarjetas y luego al contenedor de accesorios
     accessoryDetails.appendChild(accessoryName);
     accessoryCard.appendChild(accessoryImage);
     accessoryCard.appendChild(accessoryDetails);
-    productListAccesorios.appendChild(accessoryCard);
+    productContainerAccesorios.appendChild(accessoryCard);
 
     // Muestra el accesorio en la consola
     console.log('Accesorio:', {
@@ -277,8 +280,7 @@ function loadAccessoriesFromLocalStorage() {
 
 // Llamar a la función para cargar y mostrar los accesorios
 loadAccessories();
-localStorage.removeItem('accessories'); // Elimina los accesorios del almacenamiento local después de cargarlos
-</script>
+localStorage.removeItem('accessories'); // Elimina los accesorios del almacenamiento local después de cargarlos</script>
 
 
   <script>
