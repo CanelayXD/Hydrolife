@@ -2,7 +2,8 @@
     {
       "id": 1,
       "nombre": "Manerales",
-      "imagen": "imagenes/Logo.png"
+      "imagen": "imagenes/Logo.png",
+      "url": "Manerales.html"
     }
   ]
   
