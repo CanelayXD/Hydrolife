@@ -232,14 +232,26 @@ owl-carousel .owl-item img {
 }
 
 
-container_body {
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+.container_body {
   width: 100%;
   height: auto;
   background-color: #45DE62 !important;
   display: flex;
-  flex-direction: row; /* Asegura que los elementos se alineen horizontalmente */
+  justify-content: center; /* Centra el contenido horizontalmente */
   align-items: center;
 }
+
+.container_content {
+  max-width: 1200px; /* Ancho máximo del contenido */
+  width: 100%;
+  padding: 20px; /* Espaciado interno */
+}
+
 
 
 @media only screen and (max-width: 768px) {
