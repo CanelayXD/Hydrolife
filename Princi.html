@@ -174,6 +174,7 @@
         </p>
       </div>
   </div>
+</div>
 
   <h2 id="articles" class="Subtitle">ACCESORIOS</h2>
 <div class="container">
@@ -219,110 +220,65 @@
   </script>
 
   <script>
-    let productosAccesorios = []; // Variable global para almacenar los productos de accesorios
+    // Variable global para almacenar los accesorios
+let accessories = [];
 
-// FUNCION PARA CARGAR LOS ACCESORIOS DESDE EL JSON
-async function cargarDatosAccesorios() {
-  try {
-    const responseAccesorios = await fetch('data/accesorios.json'); // Ruta al JSON de accesorios
-    if (!responseAccesorios.ok) {
-      throw new Error('No se pudieron cargar los datos');
-    }
-    const accesoriosJSON = await responseAccesorios.json();
-    productosAccesorios = accesoriosJSON; // Asignar los productos cargados a la variable global
-    return { accesorios: accesoriosJSON };
-  } catch (error) {
-    console.error(error);
-    return { accesorios: [] }; // Si hay un error, retorna accesorios vacíos
+// Función para cargar y renderizar los accesorios
+function loadAccessories() {
+  loadAccessoriesFromLocalStorage(); // Cargar accesorios desde el almacenamiento local
+  const productListAccesorios = document.getElementById("productListAccesorios");
+  productListAccesorios.innerHTML = ""; // Limpiar el contenido previo
+
+  // Verificar si hay accesorios disponibles
+  if (typeof accessories === 'undefined' || accessories.length === 0) {
+    console.log('No hay accesorios disponibles.');
+    return;
   }
-}
 
-function renderizarAccesorios(productos) {
-  var productContainerAccesorios = document.getElementById('productContainerAccesorios');
-  productContainerAccesorios.innerHTML = '';
-  productos.forEach(producto => {
-    var card = document.createElement('div');
-    card.classList.add('tarjeta-producto');
-    var img = document.createElement('img');
-    img.src = producto.imagen;
-    img.alt = producto.nombre;
-    img.title = producto.nombre;
-    var content = document.createElement('div');
-    content.classList.add('contenido');
-    var name = document.createElement('h2');
-    name.textContent = producto.nombre;
-    content.appendChild(name);
-    card.appendChild(img);
-    card.appendChild(content);
-    productContainerAccesorios.appendChild(card);
-  });
-}
+  // Iterar sobre cada accesorio y renderizarlo en la página
+  accessories.forEach(accessory => {
+    const accessoryCard = document.createElement("div");
+    accessoryCard.classList.add("accessory-card");
 
-// Evento de carga de la página
-document.addEventListener("DOMContentLoaded", async () => {
-  try {
-    // Cargar datos de accesorios
-    const { accesorios } = await cargarDatosAccesorios();
+    const accessoryImage = document.createElement("img");
+    accessoryImage.src = accessory.image;
+    accessoryImage.alt = accessory.name;
 
-    // Imprimir los productos cargados
-    console.log('Accesorios cargados:', accesorios);
+    const accessoryDetails = document.createElement("div");
+    accessoryDetails.classList.add("accessory-details");
 
-    // Renderizar accesorios
-    renderizarAccesorios(accesorios);
+    const accessoryName = document.createElement("h3");
+    accessoryName.textContent = accessory.name;
 
-    // Asignar funciones a eventos
-    document.getElementById('sortAZButton').addEventListener('click', ordenarAZ);
-    document.getElementById('sortZAButton').addEventListener('click', ordenarZA);
-    document.getElementById('searchButton').addEventListener('click', buscarAccesorio);
+    // Añadir los elementos creados a las tarjetas y luego al contenedor
+    accessoryDetails.appendChild(accessoryName);
+    accessoryCard.appendChild(accessoryImage);
+    accessoryCard.appendChild(accessoryDetails);
+    productListAccesorios.appendChild(accessoryCard);
 
-  } catch (error) {
-    console.error(error);
-  }
-});
-
-// Función para manejar la búsqueda de accesorios
-function buscarAccesorio() {
-  // Obtener el valor ingresado en el campo de búsqueda
-  var searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
-
-  // Filtrar la lista de productos para encontrar coincidencias con el término de búsqueda
-  var resultados = productosAccesorios.filter(function(producto) {
-    return producto.nombre.toLowerCase().includes(searchTerm);
-  });
-
-  // Mostrar los resultados de la búsqueda en la página HTML
-  var productContainerAccesorios = document.getElementById('productContainerAccesorios');
-  productContainerAccesorios.innerHTML = '';
-
-  if (resultados.length > 0) {
-    // Si se encontraron resultados, renderizar los productos coincidentes
-    resultados.forEach(function(producto) {
-      var card = document.createElement('div');
-      card.classList.add('tarjeta-producto');
-
-      var img = document.createElement('img');
-      img.src = producto.imagen;
-      img.alt = producto.nombre;
-      img.title = producto.nombre;
-
-      var content = document.createElement('div');
-      content.classList.add('contenido');
-
-      var name = document.createElement('h2');
-      name.textContent = producto.nombre;
-
-      content.appendChild(name);
-      card.appendChild(img);
-      card.appendChild(content);
-      productContainerAccesorios.appendChild(card);
+    // Muestra el accesorio en la consola
+    console.log('Accesorio:', {
+      nombre: accessory.name,
+      imagen: accessory.image
     });
+  });
+}
+
+// Ejemplo de cómo podría ser la función loadAccessoriesFromLocalStorage
+function loadAccessoriesFromLocalStorage() {
+  // Simulación de carga de accesorios desde localStorage
+  const storedAccessories = localStorage.getItem('accessories');
+  if (storedAccessories) {
+    accessories = JSON.parse(storedAccessories);
   } else {
-    // Si no se encontraron resultados, mostrar un mensaje en la página
-    productContainerAccesorios.textContent = 'No se encontraron resultados para la búsqueda: ' + searchTerm;
+    accessories = []; // Si no hay accesorios en localStorage, inicializa un array vacío.
   }
 }
 
-  </script>
+// Llamar a la función para cargar y mostrar los accesorios
+loadAccessories();
+localStorage.removeItem('accessories'); // Elimina los accesorios del almacenamiento local después de cargarlos
+</script>
 
 
   <script>
