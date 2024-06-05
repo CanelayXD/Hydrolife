@@ -187,10 +187,10 @@
     </div>
   </div>
   <!-- Componente para agregar desde el admin -->
-  <div id="productListAccesorios">
+  <div id="accesoriosList">
     <!-- Las tarjetas se agregarán dinámicamente con JavaScript -->
   </div>
-  <div class="contenedor-tarjetas row" id="productContainerAccesorios">
+  <div class="contenedor-tarjetas row" id="accesoriosContainer">
     <!-- Las tarjetas de productos se renderizarán aquí -->
   </div>  
   </div>
@@ -219,127 +219,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script src="Principal.js"></script>
   <script src="Productos.js"></script>
-  <script>
-    function inicializarUsuarios() {
-      fetch('data/usuarios.json')
-        .then(response => response.json())
-        .then(data => {
-          const usuarios = [...data.admin, ...data.customer]; // Combina los dos arrays en uno solo
-          localStorage.setItem('usuarios', JSON.stringify(usuarios));
-          console.log('Usuarios cargados en localStorage:', usuarios);
-        })
-        .catch(error => console.error('Error al cargar usuarios:', error));
-    }
+  <script src="Accesorios.js"></script>
 
-  </script>
-
-  <script>
-    let productosAccesorios = []; // Variable global para almacenar los productos de accesorios
-
-// FUNCION PARA CARGAR LOS ACCESORIOS DESDE EL JSON
-async function cargarDatosAccesorios() {
-  try {
-    const responseAccesorios = await fetch('data/accesorios.json'); // Ruta al JSON de accesorios
-    if (!responseAccesorios.ok) {
-      throw new Error('No se pudieron cargar los datos');
-    }
-    const accesoriosJSON = await responseAccesorios.json();
-    productosAccesorios = accesoriosJSON; // Asignar los productos cargados a la variable global
-    return { accesorios: accesoriosJSON };
-  } catch (error) {
-    console.error(error);
-    return { accesorios: [] }; // Si hay un error, retorna accesorios vacíos
-  }
-}
-
-function renderizarAccesorios(productos) {
-  var productContainerAccesorios = document.getElementById('productContainerAccesorios');
-  productContainerAccesorios.innerHTML = '';
-  productos.forEach(producto => {
-    var card = document.createElement('div');
-    card.classList.add('tarjeta-producto');
-    var img = document.createElement('img');
-    img.src = producto.imagen;
-    img.alt = producto.nombre;
-    img.title = producto.nombre;
-    var content = document.createElement('div');
-    content.classList.add('contenido');
-    var name = document.createElement('h2');
-    name.textContent = producto.nombre;
-    content.appendChild(name);
-    card.appendChild(img);
-    card.appendChild(content);
-    productContainerAccesorios.appendChild(card);
-  });
-}
-
-// Evento de carga de la página
-document.addEventListener("DOMContentLoaded", async () => {
-  try {
-    // Cargar datos de accesorios
-    const { accesorios } = await cargarDatosAccesorios();
-
-    // Imprimir los productos cargados
-    console.log('Accesorios cargados:', accesorios);
-
-    // Renderizar accesorios
-    renderizarAccesorios(accesorios);
-
-    // Asignar funciones a eventos
-    document.getElementById('sortAZButton').addEventListener('click', ordenarAZ);
-    document.getElementById('sortZAButton').addEventListener('click', ordenarZA);
-    document.getElementById('searchButton').addEventListener('click', buscarAccesorio);
-
-  } catch (error) {
-    console.error(error);
-  }
-});
-
-// Función para manejar la búsqueda de accesorios
-function buscarAccesorio() {
-  // Obtener el valor ingresado en el campo de búsqueda
-  var searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
-
-  // Filtrar la lista de productos para encontrar coincidencias con el término de búsqueda
-  var resultados = productosAccesorios.filter(function(producto) {
-    return producto.nombre.toLowerCase().includes(searchTerm);
-  });
-
-  // Mostrar los resultados de la búsqueda en la página HTML
-  var productContainerAccesorios = document.getElementById('productContainerAccesorios');
-  productContainerAccesorios.innerHTML = '';
-
-  if (resultados.length > 0) {
-    // Si se encontraron resultados, renderizar los productos coincidentes
-    resultados.forEach(function(producto) {
-      var card = document.createElement('div');
-      card.classList.add('tarjeta-producto');
-
-      var img = document.createElement('img');
-      img.src = producto.imagen;
-      img.alt = producto.nombre;
-      img.title = producto.nombre;
-
-      var content = document.createElement('div');
-      content.classList.add('contenido');
-
-      var name = document.createElement('h2');
-      name.textContent = producto.nombre;
-
-      content.appendChild(name);
-      card.appendChild(img);
-      card.appendChild(content);
-      productContainerAccesorios.appendChild(card);
-    });
-  } else {
-    // Si no se encontraron resultados, mostrar un mensaje en la página
-    productContainerAccesorios.textContent = 'No se encontraron resultados para la búsqueda: ' + searchTerm;
-  }
-}
-
-  </script>
-
-
+ 
   <script>
     // Función para cargar y renderizar los productos
     function loadProducts() {
@@ -402,6 +284,72 @@ function buscarAccesorio() {
     loadProducts();
     localStorage.removeItem('products'); // Elimina los productos del almacenamiento local después de cargarlos
   </script>
+
+
+
+
+  <script>
+  // Función para cargar y renderizar los productos
+  function loadAccesorios() {
+    loadAccesoriosFromLocalStorage(); // Cargar productos desde el almacenamiento local
+    const accesoriosList = document.getElementById("accesoriosList");
+    accesoriosList.innerHTML = ""; // Limpiar el contenido previo
+
+    // Verificar si hay productos disponibles
+    if (typeof accesorios === 'undefined' || accesorios.length === 0) {
+      console.log('No hay accesorios disponibles.');
+      return;
+    }
+
+    // Iterar sobre cada producto y renderizarlo en la página
+    accesorios.forEach(accesorios => {
+      const productCard = document.createElement("div");
+      accesoriosCard.classList.add("accesorios-card");
+
+      const accesoriosImage = document.createElement("img");
+      accesoriosImage.src = accesorios.image;
+      accesoriosImage.alt = accesoriosCard.name;
+
+      const accesoriosDetails = document.createElement("div");
+      accesoriosDetails.classList.add("accesorios-details");
+
+      const accesoriosName = document.createElement("h3");
+      accesoriosName.textContent = accesorios.name;
+
+      const accesoriosPrice = document.createElement("p");
+      accesoriosPrice.textContent = `Precio: $${accesorios.price}`;
+
+      // Añadir los elementos creados a las tarjetas y luego al contenedor
+      accesoriosDetails.appendChild(accesoriosName);
+      accesoriosDetails.appendChild(accesoriosPrice);
+      accesoriosCard.appendChild(accesoriosImage);
+      accesoriosCard.appendChild(accesoriosDetails);
+      accesoriosList.appendChild(accesoriosCard);
+
+      // Muestra el producto en la consola
+      console.log('Accesorio:', {
+        nombre: accesorios.name,
+        precio: accesorios.price,
+        imagen: accesorios.image
+      });
+    });
+  }
+
+  // Ejemplo de cómo podría ser la función loadProductsFromLocalStorage
+  function loadAccesoriosFromLocalStorage() {
+    // Simulación de carga de productos desde localStorage
+    const storedAccesorios = localStorage.getItem('accesorios');
+    if (storedAccesorios) {
+      accesorios = JSON.parse(storedAccesorios);
+    } else {
+      accesorios = []; // Si no hay productos en localStorage, inicializa un array vacío.
+    }
+  }
+
+  // Llamar a la función para cargar y mostrar los productos
+  loadAccesorios();
+  localStorage.removeItem('accesorios'); // Elimina los productos del almacenamiento local después de cargarlos
+</script>
   
 
 </body>

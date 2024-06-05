@@ -16,7 +16,7 @@ async function cargarDatos() {
   }
 }
 function renderizarProductos(productos) {
-  var productContainer = document.getElementById('productContainer');
+  var productContainer = document.getElementById('productContainer'); 
   productContainer.innerHTML = '';
   productos.forEach(producto => {
     var card = document.createElement('div');
