@@ -234,11 +234,10 @@ owl-carousel .owl-item img {
 
 .footer {
   margin-top: 100px;
-  background-color: #4992e0;
+  border-top: 30px;
+  background-color: #45DE62;
   background-size: cover;
   padding: 30px 0;
-  border-radius: 10px;
-  box-shadow: 0px 5px 10px rgba(46, 175, 210, 1);
 }
 
 .footer .container {
