@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -75,9 +75,9 @@
   </style>
 </head>
 
-<body onload="inicializarUsuarios(); mostrarAlerta()">
+<body onload="loadProducts(); loadAccesorios();">
   <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WRKJWCRW"
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WRKJWCRW"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <!-- Navbar -->
@@ -128,7 +128,7 @@
       <!-- Las tarjetas se agregarán dinámicamente con JavaScript -->
     </div>
 
-    <div class="contenedor-tarjetas row" id ="productContainer">
+    <div class="contenedor-tarjetas row" id="productContainer">
       <!-- Las tarjetas de productos se renderizarán aquí -->
     </div>
 
@@ -163,195 +163,166 @@
         <h2>¿Qué es la Cromoterapia?</h2>
         <p>
           Una tina con cromoterapia es una tina de hidromasaje que incorpora 
-          el uso de luces de diferentes colores para proporcionar beneficios 
-          terapéuticos y mejorar el bienestar del usuario. La cromoterapia, 
-          también conocida como terapia de color, es una práctica que utiliza 
-          los colores para influir en el estado de ánimo y la salud física y emocional.<br>
-          La cromoterapia en una tina de hidromasaje se utiliza para crear 
-          un ambiente relajante y personalizar la experiencia del baño, 
-          ayudando a los usuarios a sentirse más tranquilos, revitalizados 
-          o equilibrados, según sus necesidades y preferencias.
+          el uso de luces de diferentes colores para aprovechar los beneficios 
+          terapéuticos de la luz y el color en el bienestar físico y emocional 
+          de las personas. La cromoterapia, también conocida como terapia del 
+          color, es una práctica que utiliza colores específicos para influir 
+          en el estado de ánimo y la salud.<br>
+          El objetivo de la cromoterapia en una tina de hidromasaje es crear 
+          una experiencia de baño más relajante y terapéutica, utilizando los 
+          colores para mejorar el bienestar general y complementar los 
+          beneficios del hidromasaje.
         </p>
       </div>
-  </div>
-
-  <h2 id="accesorios" class="Subtitle">ACCESORIOS</h2>
-<div class="container">
-  <div class="row mb-4">
-    <div class="col">
-      <!-- Fin de la barra de busqueda -->
-      <center>
-        <button id="sortAZButton" class="btn btn-primary mb-4" style="background-color: #2fe748; border: 2px #2fe748;">Ordenar por Nombre (A-Z)</button>
-        <button id="sortZAButton" class="btn btn-primary mb-4" style="background-color: #2fe748; border: 2px #2fe748;">Ordenar por Nombre (Z-A)</button>
-      </center>
-    </div>
-  </div>
-  <!-- Componente para agregar desde el admin -->
-  <div id="accesoriosList">
-    <!-- Las tarjetas se agregarán dinámicamente con JavaScript -->
-  </div>
-  <div class="contenedor-tarjetas row" id="accesoriosContainer">
-    <!-- Las tarjetas de accesorios se renderizarán aquí -->
-  </div>  
-  </div>
-
- <!-- Footer -->
-  <footer id="Foot" class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-          <h4>Hydrolife</h4>
-          <ul>
-            <li>2024</li>
-          </ul>
-        </div>
+      <div class="tarjeta-adicional">
+        <h2>Accesorios adicionales</h2>
+        <p>
+          Además de la aromaterapia y la cromoterapia, nuestras tinas de 
+          hidromasaje pueden venir equipadas con una variedad de accesorios 
+          adicionales para mejorar tu experiencia de baño. Estos pueden 
+          incluir sistemas de masaje avanzados, reposacabezas, altavoces 
+          integrados para disfrutar de tu música favorita mientras te 
+          relajas, y sistemas de calefacción para mantener el agua a la 
+          temperatura perfecta durante más tiempo.<br>
+          También ofrecemos opciones de personalización para que puedas 
+          elegir los accesorios que mejor se adapten a tus necesidades y 
+          preferencias. Nuestro objetivo es proporcionarte una experiencia 
+          de baño completa y placentera que te ayude a relajarte y 
+          revitalizarte en la comodidad de tu hogar.
+        </p>
       </div>
     </div>
-  </footer>
-  
+  </div>
 
+  <h2 id="articles" class="Subtitle">ACCESORIOS</h2>
+  <div class="container">
+    <div id="accesoriosContainer" class="row">
+      <!-- Las tarjetas de accesorios se renderizarán aquí -->
+    </div>
+  </div>
 
-  <!-- JavaScript y JQuery -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <!-- Script de Bootstrap y jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <!-- Carrusel -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <script src="Principal.js"></script>
-  <script src="Productos.js"></script>
-  <script src="Accesorios.js"></script>
+  <script src="Princi.js"></script>
 
- 
   <script>
-    // Función para cargar y renderizar los productos
+    // Función para renderizar tarjetas de productos
+    function renderProduct(product) {
+      var productCard = document.createElement("div");
+      productCard.className = "col-md-4";
+      productCard.innerHTML = `
+        <div class="card mb-4 shadow-sm">
+          <img src="${product.imagen}" class="card-img-top" alt="${product.nombre}">
+          <div class="card-body">
+            <h5 class="card-title">${product.nombre}</h5>
+            <p class="card-text">${product.descripcion}</p>
+            <p class="card-text"><strong>Precio:</strong> $${product.precio}</p>
+            <p class="card-text"><strong>Capacidad:</strong> ${product.capacidad} personas</p>
+          </div>
+        </div>
+      `;
+      return productCard;
+    }
+
+    // Función para renderizar tarjetas de accesorios
+    function renderAccesorio(accesorio) {
+      var accesorioCard = document.createElement("div");
+      accesorioCard.className = "col-md-4";
+      accesorioCard.innerHTML = `
+        <div class="card mb-4 shadow-sm">
+          <img src="${accesorio.imagen}" class="card-img-top" alt="${accesorio.nombre}">
+          <div class="card-body">
+            <h5 class="card-title">${accesorio.nombre}</h5>
+            <p class="card-text">${accesorio.descripcion}</p>
+            <p class="card-text"><strong>Precio:</strong> $${accesorio.precio}</p>
+          </div>
+        </div>
+      `;
+      return accesorioCard;
+    }
+
+    // Función para cargar productos desde localStorage
     function loadProducts() {
-      loadProductsFromLocalStorage(); // Cargar productos desde el almacenamiento local
-      const productList = document.getElementById("productList");
-      productList.innerHTML = ""; // Limpiar el contenido previo
-  
-      // Verificar si hay productos disponibles
-      if (typeof products === 'undefined' || products.length === 0) {
-        console.log('No hay productos disponibles.');
-        return;
-      }
-  
-      // Iterar sobre cada producto y renderizarlo en la página
-      products.forEach(product => {
-        const productCard = document.createElement("div");
-        productCard.classList.add("product-card");
-  
-        const productImage = document.createElement("img");
-        productImage.src = product.image;
-        productImage.alt = product.name;
-  
-        const productDetails = document.createElement("div");
-        productDetails.classList.add("product-details");
-  
-        const productName = document.createElement("h3");
-        productName.textContent = product.name;
-  
-        const productPrice = document.createElement("p");
-        productPrice.textContent = `Precio: $${product.price}`;
-  
-        // Añadir los elementos creados a las tarjetas y luego al contenedor
-        productDetails.appendChild(productName);
-        productDetails.appendChild(productPrice);
-        productCard.appendChild(productImage);
-        productCard.appendChild(productDetails);
-        productList.appendChild(productCard);
-  
-        // Muestra el producto en la consola
-        console.log('Producto:', {
-          nombre: product.name,
-          precio: product.price,
-          imagen: product.image
-        });
-      });
-    }
-  
-    // Ejemplo de cómo podría ser la función loadProductsFromLocalStorage
-    function loadProductsFromLocalStorage() {
-      // Simulación de carga de productos desde localStorage
-      const storedProducts = localStorage.getItem('products');
+      var productList = document.getElementById("productList");
+      var productContainer = document.getElementById("productContainer");
+      productList.innerHTML = ""; // Limpiar contenido previo
+      productContainer.innerHTML = ""; // Limpiar contenido previo
+      var storedProducts = localStorage.getItem("products");
       if (storedProducts) {
-        products = JSON.parse(storedProducts);
-      } else {
-        products = []; // Si no hay productos en localStorage, inicializa un array vacío.
+        var products = JSON.parse(storedProducts);
+        products.forEach(function (product) {
+          var productCard = renderProduct(product);
+          productContainer.appendChild(productCard);
+        });
       }
     }
-  
-    // Llamar a la función para cargar y mostrar los productos
-    loadProducts();
-    localStorage.removeItem('products'); // Elimina los productos del almacenamiento local después de cargarlos
-  </script>
 
-
-
-
-  <script>
-  // Función para cargar y renderizar los productos
-  function loadAccesorios() {
-    loadAccesoriosFromLocalStorage(); // Cargar productos desde el almacenamiento local
-    const accesoriosList = document.getElementById("accesoriosList");
-    accesoriosList.innerHTML = ""; // Limpiar el contenido previo
-
-    // Verificar si hay productos disponibles
-    if (typeof accesorios === 'undefined' || accesorios.length === 0) {
-      console.log('No hay accesorios disponibles.');
-      return;
+    // Función para cargar accesorios desde localStorage
+    function loadAccesorios() {
+      var accesoriosContainer = document.getElementById("accesoriosContainer");
+      accesoriosContainer.innerHTML = ""; // Limpiar contenido previo
+      var storedAccesorios = localStorage.getItem("accesorios");
+      if (storedAccesorios) {
+        var accesorios = JSON.parse(storedAccesorios);
+        accesorios.forEach(function (accesorio) {
+          var accesorioCard = renderAccesorio(accesorio);
+          accesoriosContainer.appendChild(accesorioCard);
+        });
+      }
     }
 
-    // Iterar sobre cada producto y renderizarlo en la página
-    accesorios.forEach(accesorios => {
-      const productCard = document.createElement("div");
-      accesoriosCard.classList.add("accesorios-card");
-
-      const accesoriosImage = document.createElement("img");
-      accesoriosImage.src = accesorios.image;
-      accesoriosImage.alt = accesoriosCard.name;
-
-      const accesoriosDetails = document.createElement("div");
-      accesoriosDetails.classList.add("accesorios-details");
-
-      const accesoriosName = document.createElement("h3");
-      accesoriosName.textContent = accesorios.name;
-
-      const accesoriosPrice = document.createElement("p");
-      accesoriosPrice.textContent = `Precio: $${accesorios.price}`;
-
-      // Añadir los elementos creados a las tarjetas y luego al contenedor
-      accesoriosDetails.appendChild(accesoriosName);
-      accesoriosDetails.appendChild(accesoriosPrice);
-      accesoriosCard.appendChild(accesoriosImage);
-      accesoriosCard.appendChild(accesoriosDetails);
-      accesoriosList.appendChild(accesoriosCard);
-
-      // Muestra el producto en la consola
-      console.log('Accesorio:', {
-        nombre: accesorios.name,
-        precio: accesorios.price,
-        imagen: accesorios.image
-      });
+    // Event listeners para botones de ordenación
+    document.getElementById("sortAZButton").addEventListener("click", function() {
+      sortProducts("az");
     });
-  }
 
-  // Ejemplo de cómo podría ser la función loadProductsFromLocalStorage
-  function loadAccesoriosFromLocalStorage() {
-    // Simulación de carga de productos desde localStorage
-    const storedAccesorios = localStorage.getItem('accesorios');
-    if (storedAccesorios) {
-      accesorios = JSON.parse(storedAccesorios);
-    } else {
-      accesorios = []; // Si no hay productos en localStorage, inicializa un array vacío.
+    document.getElementById("sortZAButton").addEventListener("click", function() {
+      sortProducts("za");
+    });
+
+    document.getElementById("sortCapacidadButton").addEventListener("click", function() {
+      sortProducts("capacidad");
+    });
+
+    // Función para ordenar productos
+    function sortProducts(criteria) {
+      var storedProducts = localStorage.getItem("products");
+      if (storedProducts) {
+        var products = JSON.parse(storedProducts);
+
+        if (criteria === "az") {
+          products.sort((a, b) => a.nombre.localeCompare(b.nombre));
+        } else if (criteria === "za") {
+          products.sort((a, b) => b.nombre.localeCompare(a.nombre));
+        } else if (criteria === "capacidad") {
+          products.sort((a, b) => a.capacidad - b.capacidad);
+        }
+
+        localStorage.setItem("products", JSON.stringify(products));
+        loadProducts();
+      }
     }
-  }
 
-  // Llamar a la función para cargar y mostrar los productos
-  loadAccesorios();
-  localStorage.removeItem('accesorios'); // Elimina los productos del almacenamiento local después de cargarlos
-</script>
-  
-
+    // Función de búsqueda
+    document.getElementById("searchButton").addEventListener("click", function() {
+      var searchTerm = document.getElementById("searchInput").value.toLowerCase();
+      var storedProducts = localStorage.getItem("products");
+      if (storedProducts) {
+        var products = JSON.parse(storedProducts);
+        var filteredProducts = products.filter(function(product) {
+          return product.nombre.toLowerCase().includes(searchTerm);
+        });
+        var productContainer = document.getElementById("productContainer");
+        productContainer.innerHTML = "";
+        filteredProducts.forEach(function(product) {
+          var productCard = renderProduct(product);
+          productContainer.appendChild(productCard);
+        });
+      }
+    });
+  </script>
 </body>
-
 </html>
