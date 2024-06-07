@@ -2,11 +2,7 @@
 <html lang="es">
 <head>
   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-WRKJWCRW');</script>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WRKJWCRW');</script>
   <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,37 +31,32 @@
       margin: 20px auto;
       max-width: 90%;
     }
-
     .tarjeta-adicional {
-      width: 48%; /* Dos tarjetas por fila */
+      width: 48%;
       background-color: #f9f9f9;
       padding: 20px;
-      margin-bottom: 20px; /* Espacio entre tarjetas verticalmente */
+      margin-bottom: 20px;
       box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
       text-align: center;
     }
-
     .tarjeta-adicional h2 {
       font-size: 28px;
-      color: #45C0DE; /* Color de los títulos */
+      color: #45C0DE;
       margin-bottom: 15px;
     }
-
     .tarjeta-adicional h3 {
       font-size: 24px;
       color: #835fde;
       margin-bottom: 5px;
       text-align: center;
     }
-
     .tarjeta-adicional p {
       font-size: 20px;
       line-height: 1.6;
       margin-bottom: 10px;
       text-align: justify;
     }
-
     .tarjeta-adicional img {
       width: 25%;
       margin-bottom: 10px;
@@ -74,22 +65,21 @@
     }
   </style>
 </head>
-
-<body onload="inicializarUsuarios(); mostrarAlerta()">
+<body>
   <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WRKJWCRW"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WRKJWCRW" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
+
   <!-- Navbar -->
   <div class="container_hed">
     <a class="navbar-brand" href="#"><img src="./imagenes/Logo.png" alt="Mi Logo" title="MiLog"></a>
     <div class="container mt-3">
       <form id="searchForm" class="form-inline my-2 my-lg-0 justify-content-center">
         <input class="form-control mr-sm-2 search-input" type="search" placeholder="Nombre del producto" aria-label="Search" id="searchInput">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="searchButton" style=" background-color: rgb(207, 207, 207); border-color: rgb(207, 207, 207);"><i class="fas fa-search" style="color: grey;"></i></button>
-        </form>
-      </div>
-   </div> 
+        <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="searchButton" style="background-color: rgb(207, 207, 207); border-color: rgb(207, 207, 207);"><i class="fas fa-search" style="color: grey;"></i></button>
+      </form>
+    </div>
+  </div> 
   <nav class="navbar navbar-expand-lg navbar-light bg-light mt-3" style="background-color: #45DE62;">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -114,26 +104,18 @@
   <div class="container">
     <div class="row mb-4">
       <div class="col">
-        <!-- Fin de la barra de busqueda -->
         <center>
-        <button id="sortAZButton" class="btn btn-primary mb-4" style="background-color: #458BDE; border: 2px #458BDE;">Ordenar por Nombre (A-Z)</button>
-        <button id="sortZAButton" class="btn btn-primary mb-4" style="background-color: #458BDE; border: 2px #458BDE;">Ordenar por Nombre (Z-A)</button>
-        <button id="sortCapacidadButton" class="btn btn-primary mb-4" style="background-color: #458BDE; border: 2px #458BDE;">Buscar por capacidad</button>
+          <button id="sortAZButton" class="btn btn-primary mb-4" style="background-color: #458BDE; border: 2px #458BDE;">Ordenar por Nombre (A-Z)</button>
+          <button id="sortZAButton" class="btn btn-primary mb-4" style="background-color: #458BDE; border: 2px #458BDE;">Ordenar por Nombre (Z-A)</button>
+          <button id="sortCapacidadButton" class="btn btn-primary mb-4" style="background-color: #458BDE; border: 2px #458BDE;">Buscar por capacidad</button>
         </center>
       </div>
     </div>
-    <!-- Componente para agregar desde el admin -->
 
-    <div id="productList">
-      <!-- Las tarjetas se agregarán dinámicamente con JavaScript -->
-    </div>
-
-    <div class="contenedor-tarjetas row" id ="productContainer">
+    <div id="productContainer" class="contenedor-tarjetas row">
       <!-- Las tarjetas de productos se renderizarán aquí -->
     </div>
 
-
-    <!-- Agrega el video debajo de todos los productos -->
     <div class="row mt-4">
       <div class="col text-center">
         <video controls width="640" height="360">
@@ -142,6 +124,7 @@
         </video>
       </div>
     </div>
+
     <div class="tarjetas">
       <div class="tarjeta-adicional">
         <h2>¿Qué es la Aromaterapia?</h2>
@@ -173,29 +156,26 @@
           o equilibrados, según sus necesidades y preferencias.
         </p>
       </div>
-  </div>
+    </div>
 
-  <h2 id="accesorios" class="Subtitle">ACCESORIOS</h2>
-<div class="container">
-  <div class="row mb-4">
-    <div class="col">
-      <!-- Fin de la barra de busqueda -->
-      <center>
-        <button id="sortAZButton" class="btn btn-primary mb-4" style="background-color: #2fe748; border: 2px #2fe748;">Ordenar por Nombre (A-Z)</button>
-        <button id="sortZAButton" class="btn btn-primary mb-4" style="background-color: #2fe748; border: 2px #2fe748;">Ordenar por Nombre (Z-A)</button>
-      </center>
+    <h2 id="accesorios" class="Subtitle">ACCESORIOS</h2>
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col">
+          <center>
+            <button id="sortAZButtonAcc" class="btn btn-primary mb-4" style="background-color: #2fe748; border: 2px #2fe748;">Ordenar por Nombre (A-Z)</button>
+            <button id="sortZAButtonAcc" class="btn btn-primary mb-4" style="background-color: #2fe748; border: 2px #2fe748;">Ordenar por Nombre (Z-A)</button>
+          </center>
+        </div>
+      </div>
+
+      <div id="accesoriosContainer" class="contenedor-tarjetas row">
+        <!-- Las tarjetas de accesorios se renderizarán aquí -->
+      </div>
     </div>
   </div>
-  <!-- Componente para agregar desde el admin -->
-  <div id="accesoriosList">
-    <!-- Las tarjetas se agregarán dinámicamente con JavaScript -->
-  </div>
-  <div class="contenedor-tarjetas row" id="accesoriosContainer">
-    <!-- Las tarjetas de accesorios se renderizarán aquí -->
-  </div>  
-  </div>
 
- <!-- Footer -->
+  <!-- Footer -->
   <footer id="Foot" class="footer">
     <div class="container">
       <div class="row">
@@ -208,131 +188,90 @@
       </div>
     </div>
   </footer>
-  
-
 
   <!-- JavaScript y JQuery -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <!-- Carrusel -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script src="Principal.js"></script>
   <script src="Productos.js"></script>
   <script src="Accesorios.js"></script>
 
- 
   <script>
     // Función para cargar y renderizar los productos
     function loadProducts() {
-      loadProductsFromLocalStorage(); // Cargar productos desde el almacenamiento local
-      const productList = document.getElementById("productList");
+      const productList = document.getElementById("productContainer");
       productList.innerHTML = ""; // Limpiar el contenido previo
-  
-      // Verificar si hay productos disponibles
+
       if (typeof products === 'undefined' || products.length === 0) {
         console.log('No hay productos disponibles.');
         return;
       }
-  
-      // Iterar sobre cada producto y renderizarlo en la página
+
       products.forEach(product => {
         const productCard = document.createElement("div");
-        productCard.classList.add("product-card");
-  
-        const productImage = document.createElement("img");
-        productImage.src = product.image;
-        productImage.alt = product.name;
-  
-        const productDetails = document.createElement("div");
-        productDetails.classList.add("product-details");
-  
-        const productName = document.createElement("h3");
-        productName.textContent = product.name;
-  
-        const productPrice = document.createElement("p");
-        productPrice.textContent = `Precio: $${product.price}`;
-  
-        // Añadir los elementos creados a las tarjetas y luego al contenedor
-        productDetails.appendChild(productName);
-        productDetails.appendChild(productPrice);
-        productCard.appendChild(productImage);
-        productCard.appendChild(productDetails);
+        productCard.classList.add("col-md-4", "mb-4");
+
+        const productCardInner = `
+          <div class="card">
+            <img src="${product.image}" class="card-img-top" alt="${product.name}">
+            <div class="card-body">
+              <h5 class="card-title">${product.name}</h5>
+              <p class="card-text">Precio: $${product.price}</p>
+            </div>
+          </div>
+        `;
+
+        productCard.innerHTML = productCardInner;
         productList.appendChild(productCard);
-  
-        // Muestra el producto en la consola
-        console.log('Producto:', {
-          nombre: product.name,
-          precio: product.price,
-          imagen: product.image
-        });
       });
     }
-  
+
     // Ejemplo de cómo podría ser la función loadProductsFromLocalStorage
     function loadProductsFromLocalStorage() {
-      // Simulación de carga de productos desde localStorage
       const storedProducts = localStorage.getItem('products');
       if (storedProducts) {
         products = JSON.parse(storedProducts);
       } else {
-        products = []; // Si no hay productos en localStorage, inicializa un array vacío.
+        products = [];
       }
     }
-  
+
     // Llamar a la función para cargar y mostrar los productos
+    loadProductsFromLocalStorage();
     loadProducts();
-    localStorage.removeItem('products'); // Elimina los productos del almacenamiento local después de cargarlos
-  </script>
 
-
-
-
-  <script>
-    
-    // Función para cargar y renderizar
+    // Función para cargar y renderizar los accesorios
     function loadAccesorios() {
-      loadAccesoriosFromLocalStorage();
-      const accesorioList = document.getElementById("accesorioList");
+      const accesorioList = document.getElementById("accesoriosContainer");
       accesorioList.innerHTML = ""; // Limpiar el contenido previo
-  
+
       if (typeof accesorios === 'undefined' || accesorios.length === 0) {
         console.log('No hay accesorios disponibles.');
         return;
       }
-      
+
       accesorios.forEach(accesorio => {
         const accesorioCard = document.createElement("div");
-        accesorioCard.classList.add("accesorio-card");
-  
-        const accesorioImage = document.createElement("img");
-        accesorioImage.src = accesorio.image;
-        accesorioImage.alt = accesorio.name;
-  
-        const accesorioDetails = document.createElement("div");
-        accesorioDetails.classList.add("accesorio-details");
-  
-        const accesorioName = document.createElement("h3");
-        accesorioName.textContent = accesorio.name;
-  
-        const accesorioPrice = document.createElement("p");
-        accesorioPrice.textContent = `Precio: $${accesorio.price}`;
-  
-        // Añadir los elementos creados a las tarjetas y luego al contenedor
-        accesorioDetails.appendChild(accesorioName);
-        accesorioDetails.appendChild(accesorioPrice);
-        accesorioCard.appendChild(accesorioImage);
-        accesorioCard.appendChild(accesorioDetails);
-        accesorioList.appendChild(accesorioDetails);
-  
-        console.log('Accesorio:', {
-          nombre: accesorio.name,
-          precio: accesorio.price,
-          imagen: accesorio.image
-        });
+        accesorioCard.classList.add("col-md-4", "mb-4");
+
+        const accesorioCardInner = `
+          <div class="card">
+            <img src="${accesorio.image}" class="card-img-top" alt="${accesorio.name}">
+            <div class="card-body">
+              <h5 class="card-title">${accesorio.name}</h5>
+              <p class="card-text">Precio: $${accesorio.price}</p>
+            </div>
+          </div>
+        `;
+
+        accesorioCard.innerHTML = accesorioCardInner;
+        accesorioList.appendChild(accesorioCard);
       });
     }
-  
+
+    // Ejemplo de cómo podría ser la función loadAccesoriosFromLocalStorage
     function loadAccesoriosFromLocalStorage() {
       const storedAccesorios = localStorage.getItem('accesorios');
       if (storedAccesorios) {
@@ -341,12 +280,10 @@
         accesorios = [];
       }
     }
-  
+
+    // Llamar a la función para cargar y mostrar los accesorios
+    loadAccesoriosFromLocalStorage();
     loadAccesorios();
-    localStorage.removeItem('accesorios');
   </script>
-  
-
 </body>
-
 </html>
