@@ -54,9 +54,11 @@ function renderizarProductos(productos) {
     });
 
     link.appendChild(button);
+    content.appendChild(name);
     content.appendChild(description);
     content.appendChild(link);
     card.appendChild(content);
+    card.appendChild(img);
     productContainer.appendChild(card);
   });
 }
