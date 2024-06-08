@@ -118,10 +118,13 @@ function buscarProducto() {
       var cartButton = document.createElement('button');
   
       link.appendChild(button);
+      content.appendChild(name);
       content.appendChild(description);
       content.appendChild(link);
+      card.appendChild(img);
       card.appendChild(content);
-      productContainer.appendChild(card);    });
+      productContainer.appendChild(card);
+    });
   } else {
     // Si no se encontraron resultados, mostrar un mensaje en la página
     productContainer.textContent = 'No se encontraron resultados para la búsqueda: ' + searchTerm;
@@ -176,49 +179,6 @@ document.getElementById('sortCapacidadButton').addEventListener('click', ordenar
   } catch (error) {
     console.error(error);
   }
-
-  // Productos.js
-
-// Función para cargar y renderizar los productos
-function loadProducts() {
-  fetch('data/productos.json')
-    .then(response => response.json())
-    .then(products => {
-      const productList = document.getElementById("productList");
-      productList.innerHTML = ""; // Limpiar el contenido previo
-
-      // Verificar si hay productos disponibles
-      if (!products || products.length === 0) {
-        console.log('No hay productos disponibles.');
-        return;
-      }
-
-      // Iterar sobre cada producto y renderizarlo en la página
-      products.forEach(product => {
-        const productCard = document.createElement("div");
-        productCard.classList.add("product-card");
-
-        const productImage = document.createElement("img");
-        productImage.src = product.image;
-        productImage.alt = product.name;
-
-        const productDetails = document.createElement("div");
-        productDetails.classList.add("product-details");
-
-        const productName = document.createElement("h3");
-        productName.textContent = product.name;
-
-        // Añadir los elementos creados a las tarjetas y luego al contenedor
-        productCard.appendChild(productImage);
-        productCard.appendChild(productDetails);
-        productList.appendChild(productCard);
-      });
-    })
-    .catch(error => console.error('Error al cargar los productos:', error));
-}
-
-// Llamar a la función para cargar y mostrar los productos
-loadProducts();
 });
 
 
