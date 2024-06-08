@@ -229,12 +229,6 @@ function loadProducts() {
         productCard.appendChild(productImage);
         productCard.appendChild(productDetails);
         productList.appendChild(productCard);
-
-        // Muestra el producto en la consola
-        console.log('Producto:', {
-          nombre: product.name,
-          imagen: product.image
-        });
       });
     })
     .catch(error => console.error('Error al cargar los productos:', error));
