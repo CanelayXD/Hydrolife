@@ -54,7 +54,6 @@ function renderizarProductos(productos) {
     });
 
     link.appendChild(button);
-    content.appendChild(name);
     content.appendChild(description);
     content.appendChild(link);
     card.appendChild(content);
@@ -152,11 +151,10 @@ function buscarProducto() {
       content.appendChild(name);
       content.appendChild(description);
       content.appendChild(link);
-      content.appendChild(cartButton); // Agregar el botón "Agregar al carrito"
-      content.appendChild(favoritesButton); // Agregar el botón "Agregar a favoritos"
       card.appendChild(img);
       card.appendChild(content);
-      productContainer.appendChild(card);    });
+      productContainer.appendChild(card);
+    });
   } else {
     // Si no se encontraron resultados, mostrar un mensaje en la página
     productContainer.textContent = 'No se encontraron resultados para la búsqueda: ' + searchTerm;
