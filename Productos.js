@@ -29,8 +29,6 @@ function renderizarProductos(productos) {
     content.classList.add('contenido');
     var name = document.createElement('h2');
     name.textContent = producto.nombre;
-    var description = document.createElement('p');
-    description.textContent = producto.descripcion;
     var link = document.createElement('a');
     link.href = producto.url;
     var button = document.createElement('button');
@@ -39,7 +37,6 @@ function renderizarProductos(productos) {
 
     link.appendChild(button);
     content.appendChild(name);
-    content.appendChild(description);
     content.appendChild(link);
     card.appendChild(img);
     card.appendChild(content);
@@ -133,20 +130,6 @@ function buscarProducto() {
 
 // Asignar la función buscarProducto al evento click del botón de búsqueda
 document.getElementById('searchButton').addEventListener('click', buscarProducto);
-
-// Función para cargar productos desde localStorage
-function loadProductsFromLocalStorage() {
-  // Simulación de carga de productos desde localStorage
-  const storedProducts = localStorage.getItem('products');
-  if (storedProducts) {
-    productos = JSON.parse(storedProducts);
-  } else {
-    productos = []; // Si no hay productos en localStorage, inicializa un array vacío.
-  }
-}
-
-// Llamar a la función para cargar y mostrar los productos
-loadProductsFromLocalStorage();
 
 // Evento de carga de la página
 document.addEventListener("DOMContentLoaded", async () => {
