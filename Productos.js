@@ -245,7 +245,6 @@ function loadProducts() {
         productName.textContent = product.name;
 
         // Añadir los elementos creados a las tarjetas y luego al contenedor
-        productDetails.appendChild(productName);
         productCard.appendChild(productImage);
         productCard.appendChild(productDetails);
         productList.appendChild(productCard);
