@@ -57,8 +57,8 @@ function renderizarProductos(productos) {
     content.appendChild(name);
     content.appendChild(description);
     content.appendChild(link);
-    card.appendChild(content);
     card.appendChild(img);
+    card.appendChild(content);
     productContainer.appendChild(card);
   });
 }
@@ -132,31 +132,13 @@ function buscarProducto() {
       button.classList.add('boton');
       button.textContent = "Ver detalles";
       var cartButton = document.createElement('button');
-      cartButton.classList.add('boton', 'boton-carrito');
-      cartButton.textContent = "Agregar al carrito";
-  
-      // Agregar evento click al botón "Agregar al carrito"
-      cartButton.addEventListener('click', function() {
-        agregarAlCarrito(producto);
-      });
-  
-      var favoritesButton = document.createElement('button');
-      favoritesButton.classList.add('boton', 'boton-favoritos');
-      favoritesButton.textContent = "Agregar a favoritos";
-  
-      // Agregar evento click al botón "Agregar a favoritos"
-      favoritesButton.addEventListener('click', function() {
-        agregarAFavoritos(producto);
-      });
   
       link.appendChild(button);
-      content.appendChild(name);
       content.appendChild(description);
       content.appendChild(link);
       card.appendChild(img);
       card.appendChild(content);
-      productContainer.appendChild(card);
-    });
+      productContainer.appendChild(card);    });
   } else {
     // Si no se encontraron resultados, mostrar un mensaje en la página
     productContainer.textContent = 'No se encontraron resultados para la búsqueda: ' + searchTerm;
@@ -242,6 +224,17 @@ function loadProducts() {
 
         const productName = document.createElement("h3");
         productName.textContent = product.name;
+
+        // Añadir los elementos creados a las tarjetas y luego al contenedor
+        productCard.appendChild(productImage);
+        productCard.appendChild(productDetails);
+        productList.appendChild(productCard);
+
+        // Muestra el producto en la consola
+        console.log('Producto:', {
+          nombre: product.name,
+          imagen: product.image
+        });
       });
     })
     .catch(error => console.error('Error al cargar los productos:', error));
