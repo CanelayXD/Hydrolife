@@ -242,12 +242,6 @@ function loadProducts() {
 
         const productName = document.createElement("h3");
         productName.textContent = product.name;
-
-        // Añadir los elementos creados a las tarjetas y luego al contenedor
-        productCard.appendChild(productImage);
-        productCard.appendChild(productDetails);
-        productList.appendChild(productCard);
-
       });
     })
     .catch(error => console.error('Error al cargar los productos:', error));
