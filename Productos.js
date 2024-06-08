@@ -41,6 +41,7 @@ function renderizarProductos(productos) {
     content.appendChild(name);
     content.appendChild(description);
     content.appendChild(link);
+    card.appendChild(img);
     card.appendChild(content);
     productContainer.appendChild(card);
   });
@@ -89,11 +90,6 @@ function buscarProducto() {
     resultados.forEach(function(producto) {
       var card = document.createElement('div');
       card.classList.add('tarjeta-producto');
-
-      var img = document.createElement('img');
-      img.src = producto.imagen;
-      img.alt = producto.nombre;
-      img.title = producto.nombre;
 
       var content = document.createElement('div');
       content.classList.add('contenido');
