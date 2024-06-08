@@ -91,6 +91,11 @@ function buscarProducto() {
       var card = document.createElement('div');
       card.classList.add('tarjeta-producto');
 
+      var img = document.createElement('img');
+      img.src = producto.imagen;
+      img.alt = producto.nombre;
+      img.title = producto.nombre;
+
       var content = document.createElement('div');
       content.classList.add('contenido');
 
@@ -193,10 +198,6 @@ function loadProducts() {
       products.forEach(product => {
         const productCard = document.createElement("div");
         productCard.classList.add("product-card");
-
-        const productImage = document.createElement("img");
-        productImage.src = product.image;
-        productImage.alt = product.name;
 
         const productDetails = document.createElement("div");
         productDetails.classList.add("product-details");
