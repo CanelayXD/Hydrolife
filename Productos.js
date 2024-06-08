@@ -37,22 +37,6 @@ function renderizarProductos(productos) {
     button.classList.add('boton');
     button.textContent = "Ver detalles";
 
-    var cartButton = document.createElement('button');
-    cartButton.classList.add('boton', 'boton-carrito');
-
-    // Agregar evento click al botón "Agregar al carrito"
-    cartButton.addEventListener('click', function() {
-      agregarAlCarrito(producto);
-    });
-
-    var favoritesButton = document.createElement('button');
-    favoritesButton.classList.add('boton', 'boton-favoritos');
-
-    // Agregar evento click al botón "Agregar a favoritos"
-    favoritesButton.addEventListener('click', function() {
-      agregarAFavoritos(producto);
-    });
-
     link.appendChild(button);
     content.appendChild(name);
     content.appendChild(description);
