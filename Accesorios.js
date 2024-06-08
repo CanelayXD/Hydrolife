@@ -58,46 +58,46 @@ function ordenarZAAccesorios() {
   renderizarAccesorios(accesorios);
   alert('Accesorios ordenados de Z a A');
 }
-// Función para manejar la búsqueda de productos
-function buscarProducto() {
+// Función para manejar la búsqueda de accesorios
+function buscarAccesorios() {
     // Obtener el valor ingresado en el campo de búsqueda
     var searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
   
-    // Filtrar la lista de productos para encontrar coincidencias con el término de búsqueda
-    var resultados = productos.filter(function(producto) {
-      return producto.nombre.toLowerCase().includes(searchTerm);
+    // Filtrar la lista de accesorios para encontrar coincidencias con el término de búsqueda
+    var resultados = accesorios.filter(function(accesorios) {
+      return accesorio.nombre.toLowerCase().includes(searchTerm);
     });
   
     // Mostrar los resultados de la búsqueda en la página HTML
-    var productContainer = document.getElementById('productContainer');
-    productContainer.innerHTML = '';
+    var accesoriosContainer = document.getElementById('accesoriosContainer');
+    accesoriosContainer.innerHTML = '';
   
     if (resultados.length > 0) {
-      // Si se encontraron resultados, renderizar los productos coincidentes
-      resultados.forEach(function(producto) {
+      // Si se encontraron resultados, renderizar los accesorios coincidentes
+      resultados.forEach(function(accesorio) {
         var card = document.createElement('div');
-        card.classList.add('tarjeta-producto');
+        card.classList.add('tarjeta-accesorio');
   
         var img = document.createElement('img');
-        img.src = producto.imagen;
-        img.alt = producto.nombre;
-        img.title = producto.nombre;
+        img.src = accesorio.imagen;
+        img.alt = accesorio.nombre;
+        img.title = accesorio.nombre;
   
         var content = document.createElement('div');
         content.classList.add('contenido');
   
         var name = document.createElement('h2');
-        name.textContent = producto.nombre;
+        name.textContent = accesorio.nombre;
   
         var description = document.createElement('p');
-        description.textContent = producto.descripcion;
+        description.textContent = accesorio.descripcion;
   
         var capacity = document.createElement('p');
         capacity.classList.add('capacidad');
-        capacity.textContent = `Capacidad: ${producto.capacidad}`;
+        capacity.textContent = `Capacidad: ${accesorio.capacidad}`;
   
         var link = document.createElement('a');
-        link.href = producto.url;
+        link.href = accesorio.url;
   
         var button = document.createElement('button');
         button.classList.add('boton');
@@ -110,28 +110,28 @@ function buscarProducto() {
         content.appendChild(link);
         card.appendChild(img);
         card.appendChild(content);
-        productContainer.appendChild(card);
+        accesoriosContainer.appendChild(card);
       });
     } else {
       // Si no se encontraron resultados, mostrar un mensaje en la página
-      productContainer.textContent = 'No se encontraron resultados para la búsqueda: ' + searchTerm;
+      accesoriosContainer.textContent = 'No se encontraron resultados para la búsqueda: ' + searchTerm;
     }
   }
   
-  // Asignar la función buscarProducto al evento click del botón de búsqueda
-  document.getElementById('searchButton').addEventListener('click', buscarProducto);
+  // Asignar la función buscarAccesorios al evento click del botón de búsqueda
+  document.getElementById('searchButton').addEventListener('click', buscarAccesorios);
 
 // Evento de carga de la página
 document.addEventListener("DOMContentLoaded", async () => {
     try {
       // Cargar datos
-      const { productos, log } = await cargarDatos();
+      const { accesorios, log } = await cargarDatos();
   
-      // Imprimir los productos cargados
-      console.log('Productos cargados:', productos);
+      // Imprimir los accesorios cargados
+      console.log('Accesorios cargados:', accesorios);
   
-      // Renderizar productos
-      renderizarProductos(productos);
+      // Renderizar accesorios
+      renderizarAccesorios(accesorios);
   
       // Mostrar log en algún lugar de la página
       document.getElementById('logContainer').textContent = log;
@@ -143,10 +143,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Función para manejar el evento de ordenar de Z a A
   document.getElementById('sortZAButton').addEventListener('click', ordenarZA);
   
-  document.getElementById('sortCapacidadButton').addEventListener('click', ordenarPorCapacidad);
-  
       // Evento de búsqueda
-      document.getElementById('searchButton').addEventListener('click', buscarProducto);
+      document.getElementById('searchButton').addEventListener('click', buscarAccesorios);
   
       // Resto de los eventos
     } catch (error) {
