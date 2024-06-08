@@ -76,9 +76,9 @@
       <form id="searchForm" class="form-inline my-2 my-lg-0 justify-content-center">
         <input class="form-control mr-sm-2 search-input" type="search" placeholder="Nombre del producto" aria-label="Search" id="searchInput">
         <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="searchButton" style=" background-color: rgb(207, 207, 207); border-color: rgb(207, 207, 207);"><i class="fas fa-search" style="color: grey;"></i></button>
-      </form>
-    </div>
-  </div> 
+        </form>
+      </div>
+   </div> 
   <nav class="navbar navbar-expand-lg navbar-light bg-light mt-3" style="background-color: #45DE62;">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -92,7 +92,7 @@
           <a class="nav-link custom-link text-center" href="#producte">Tinas</a>
         </li>
         <li class="nav-item custom-item">
-          <a class="nav-link custom-link text-center" href="#articles">Accesorios</a>
+          <a class="nav-link custom-link text-center" href="#accesorios">Accesorios</a>
         </li>
       </ul>
     </div>
@@ -105,9 +105,9 @@
       <div class="col">
         <!-- Fin de la barra de busqueda -->
         <center>
-        <button id="sortAZButtonProduct" class="btn btn-primary mb-4" style="background-color: #458BDE; border: 2px #458BDE;">Ordenar por Nombre (A-Z)</button>
-        <button id="sortZAButtonProduct" class="btn btn-primary mb-4" style="background-color: #458BDE; border: 2px #458BDE;">Ordenar por Nombre (Z-A)</button>
-        <button id="sortCapacidadButtonProduct" class="btn btn-primary mb-4" style="background-color: #458BDE; border: 2px #458BDE;">Buscar por capacidad</button>
+        <button id="sortAZButton" class="btn btn-primary mb-4" style="background-color: #458BDE; border: 2px #458BDE;">Ordenar por Nombre (A-Z)</button>
+        <button id="sortZAButton" class="btn btn-primary mb-4" style="background-color: #458BDE; border: 2px #458BDE;">Ordenar por Nombre (Z-A)</button>
+        <button id="sortCapacidadButton" class="btn btn-primary mb-4" style="background-color: #458BDE; border: 2px #458BDE;">Buscar por capacidad</button>
         </center>
       </div>
     </div>
@@ -117,9 +117,10 @@
       <!-- Las tarjetas se agregarán dinámicamente con JavaScript -->
     </div>
 
-    <div class="contenedor-tarjetas row" id="productContainer">
+    <div class="contenedor-tarjetas row" id ="productContainer">
       <!-- Las tarjetas de productos se renderizarán aquí -->
     </div>
+
 
     <!-- Agrega el video debajo de todos los productos -->
     <div class="row mt-4">
@@ -161,39 +162,49 @@
           o equilibrados, según sus necesidades y preferencias.
         </p>
       </div>
-    </div>
   </div>
 
-  <h2 id="articles" class="Subtitle">ACCESORIOS</h2>
-  <div class="container">
-    <div class="row mb-4">
-      <div class="col">
-        <!-- Fin de la barra de busqueda -->
-        <center>
-        <button id="sortAZButtonAccessory" class="btn btn-primary mb-4" style="background-color: #458BDE; border: 2px #458BDE;">Ordenar por Nombre (A-Z)</button>
-        <button id="sortZAButtonAccessory" class="btn btn-primary mb-4" style="background-color: #458BDE; border: 2px #458BDE;">Ordenar por Nombre (Z-A)</button>
-        <button id="sortTipoButtonAccessory" class="btn btn-primary mb-4" style="background-color: #458BDE; border: 2px #458BDE;">Buscar por tipo</button>
-        </center>
+  <h2 id="accesorios" class="Subtitle">ACCESORIOS</h2>
+<div class="container">
+  <div class="row mb-4">
+    <div class="col">
+      <!-- Fin de la barra de busqueda -->
+      <center>
+        <button id="sortAZButton" class="btn btn-primary mb-4" style="background-color: #2fe748; border: 2px #2fe748;">Ordenar por Nombre (A-Z)</button>
+        <button id="sortZAButton" class="btn btn-primary mb-4" style="background-color: #2fe748; border: 2px #2fe748;">Ordenar por Nombre (Z-A)</button>
+      </center>
+    </div>
+  </div>
+  <!-- Componente para agregar desde el admin -->
+  <div id="accesoriosList">
+    <!-- Las tarjetas se agregarán dinámicamente con JavaScript -->
+  </div>
+  <div class="contenedor-tarjetas row" id="accesoriosContainer">
+    <!-- Las tarjetas de accesorios se renderizarán aquí -->
+  </div>  
+  </div>
+
+ <!-- Footer -->
+  <footer id="Foot" class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h4>Hydrolife</h4>
+          <ul>
+            <li>2024</li>
+          </ul>
+        </div>
       </div>
     </div>
+  </footer>
+  
 
-    <div id="accessoryList">
-      <!-- Las tarjetas se agregarán dinámicamente con JavaScript -->
-    </div>
 
-    <div class="contenedor-tarjetas row" id="accessoryContainer">
-      <!-- Las tarjetas de productos se renderizarán aquí -->
-    </div>
-  </div>
-
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <!-- Bootstrap JS -->
+  <!-- JavaScript y JQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <!-- Carrusel -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <!-- Scripts personalizados -->
-  <script src="Usuarios.js"></script>
   <script src="Productos.js"></script>
   <script src="Accesorios.js"></script>
 </body>
