@@ -244,6 +244,62 @@ document.getElementById('sortCapacidadButton').addEventListener('click', ordenar
   } catch (error) {
     console.error(error);
   }
+
+  // Productos.js
+
+// Función para cargar y renderizar los productos
+function loadProducts() {
+  fetch('data/productos.json')
+    .then(response => response.json())
+    .then(products => {
+      const productList = document.getElementById("productList");
+      productList.innerHTML = ""; // Limpiar el contenido previo
+
+      // Verificar si hay productos disponibles
+      if (!products || products.length === 0) {
+        console.log('No hay productos disponibles.');
+        return;
+      }
+
+      // Iterar sobre cada producto y renderizarlo en la página
+      products.forEach(product => {
+        const productCard = document.createElement("div");
+        productCard.classList.add("product-card");
+
+        const productImage = document.createElement("img");
+        productImage.src = product.image;
+        productImage.alt = product.name;
+
+        const productDetails = document.createElement("div");
+        productDetails.classList.add("product-details");
+
+        const productName = document.createElement("h3");
+        productName.textContent = product.name;
+
+        const productPrice = document.createElement("p");
+        productPrice.textContent = `Precio: $${product.price}`;
+
+        // Añadir los elementos creados a las tarjetas y luego al contenedor
+        productDetails.appendChild(productName);
+        productDetails.appendChild(productPrice);
+        productCard.appendChild(productImage);
+        productCard.appendChild(productDetails);
+        productList.appendChild(productCard);
+
+        // Muestra el producto en la consola
+        console.log('Producto:', {
+          nombre: product.name,
+          precio: product.price,
+          imagen: product.image
+        });
+      });
+    })
+    .catch(error => console.error('Error al cargar los productos:', error));
+}
+
+// Llamar a la función para cargar y mostrar los productos
+loadProducts();
+
 });
 
 
