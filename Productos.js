@@ -120,7 +120,6 @@ function buscarProducto() {
       link.appendChild(button);
       content.appendChild(description);
       content.appendChild(link);
-      card.appendChild(img);
       card.appendChild(content);
       productContainer.appendChild(card);    });
   } else {
