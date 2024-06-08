@@ -41,7 +41,6 @@ function renderizarProductos(productos) {
     content.appendChild(name);
     content.appendChild(description);
     content.appendChild(link);
-    card.appendChild(img);
     card.appendChild(content);
     productContainer.appendChild(card);
   });
