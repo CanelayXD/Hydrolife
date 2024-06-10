@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4WMSS4Y8K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-V4WMSS4Y8K');
+  </script>
+  <title>Hydrolife</title>
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Carrusel -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="Princi.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    /* Estilos para la tarjeta de detalle */
+    .tarjeta-detalle {
+      width: 90%;
+      text-align: center;
+      margin: 20px auto;
+      display: flex;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+      border-radius: 10px;
+      overflow: hidden;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .tarjeta-detalle img {
+      width: 40%;
+      height: auto;
+      object-fit: cover;
+      margin: 20px;
+    }
+
+    .contenido {
+      width: 60%;
+      padding: 25px;
+      background-color: white;
+      text-align: left;
+    }
+
+    .contenido h2 {
+      text-align: center;
+      font-size: 35px;
+      background: linear-gradient(to right, #63abe1, #178b8d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+
+    .contenido h3 {
+      font-size: 25px;
+      margin-bottom: 5px;
+      text-align: center;
+    }
+
+    .contenido p {
+      font-size: 20px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .imagenes-adicionales {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .imagenes-adicionales img {
+      width: 48%;
+      margin-bottom: 10px;
+      height: auto;
+      object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+      .tarjeta-detalle {
+        flex-direction: column;
+      }
+
+      .tarjeta-detalle img {
+        width: 100%;
+      }
+
+      .contenido {
+        width: 100%;
+        text-align: center;
+      }
+
+      .imagenes-adicionales img {
+        width: 100%;
+      }
+    }
+
+    /* Estilos para las tarjetas adicionales */
+    .container-tarjetas {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 20px auto;
+      max-width: 90%;
+    }
+
+    .tarjeta-adicional {
+      width: 48%; /* Dos tarjetas por fila */
+      background-color: #f9f9f9;
+      padding: 20px;
+      margin-bottom: 20px; /* Espacio entre tarjetas verticalmente */
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .tarjeta-adicional h2 {
+      font-size: 28px;
+      color: #f74780; /* Color de los títulos */
+      margin-bottom: 15px;
+    }
+
+    .tarjeta-adicional h3 {
+      font-size: 24px;
+      color: #835fde;
+      margin-bottom: 5px;
+      text-align: center;
+    }
+
+    .tarjeta-adicional p {
+      font-size: 20px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+      text-align: justify;
+    }
+
+    .tarjeta-adicional img {
+      width: 25%;
+      margin-bottom: 10px;
+      height: auto;
+      object-fit: cover;
+    }
+
+  </style>
+  <title>Detalles del Producto</title>
+  <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="container_hed">
+    <a class="navbar-brand" href="#"><img src="./imagenes/Logo.png" alt="Mi Logo" title="MiLog"></a>
+    <div class="container mt-3">
+      <form id="searchForm" class="form-inline my-2 my-lg-0 justify-content-center">
+        <input class="form-control mr-sm-2 search-input" type="search" placeholder="Nombre del producto" aria-label="Search" id="searchInput">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="searchButton" style=" background-color: rgb(207, 207, 207); border-color: rgb(207, 207, 207);"><i class="fas fa-search" style="color: grey;"></i></button>
+      </form>
+    </div>
+  </div> 
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mt-3" style="background-color: #45DE62;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav" style="background-color: #45DE62;">
+      <ul class="navbar-nav w-100 justify-content-around">
+        <li class="nav-item custom-item">
+          <a class="nav-link custom-link text-center" href="Princi.html">Inicio</a>
+        </li>
+        <li class="nav-item custom-item">
+          <a class="nav-link custom-link text-center" href="Princi.html">Tinas</a>
+        </li>
+        <li class="nav-item custom-item">
+          <a class="nav-link custom-link text-center" href="Princi.html">Accesorios</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="tarjeta-detalle">
+    <img src="imagenes/Sirius.png" alt="Producto Grande">
+    <div class="contenido">
+      <h2>SIRIUS</h2>
+      <h3>Especificaciones</h3>
+      <p class="caract">Cant. Personas: 3 (uso recomendado).</p>
+      <p class="caract">Material: Acrílico termoformado.</p>
+      <p class="caract">Control de aire.</p>
+      <p class="caract">Toma de succión.</p>
+      <p class="caract">7 Hidrojets.</p>
+      <p class="caract">1 Botón de encendido.</p>
+      <p class="caract">Bomba 1.5 HP A 110V.</p>
+      <p class="caract">Volumen de 800 litros.</p>
+      <p class="caract">Cascada.</p>
+      <p class="caract">Manerales.</p>
+      <p class="caract">Dimensiones <br>
+        • Largo: 1.08 mts<br>
+        • Ancho: 1.47 mts<br>
+        • Alto: 57 cm
+      </p>
+    </div>
+  </div>
+
+  <!-- Tarjetas adicionales -->
+  <div class="container-tarjetas">
+    <div class="tarjeta-adicional">
+      <h2>Instrucciones de seguridad</h2>
+      <p>
+        Revisar que el desagüe, las conexiones de agua y correctamente instaladas, antes de usarse.</p>
+    </div>
+    <div class="tarjeta-adicional">
+      <h2>Equipo de funcionamiento</h2>
+      <p>
+        • Sistema de llenado. <br>
+        • Botón de encendido y Control de aire.</p>
+      <img src="imagenes/Logo.png">
+    </div>
+    <div class="tarjeta-adicional">
+      <h2>Componentes</h2>
+      <h3>Jetts</h3>
+      <p>
+        Jetts dirigibles para manipular de manera manual la dirección del aire por la boquilla del agua.
+      </p>
+      <h3>Control de aire</h3>
+      <p>
+        Ayuda a cambiar la circulación del agua de la tina a la bomba y aumenta o disminuye el burbujeo del hidromasaje.
+      </p>
+      <h3>Toma de succión</h3>
+      <p>
+        Su función es la recolección del agua solo con girar la manija del control de aire y después a los jetts.
+      </p>
+    </div>
+    <div class="tarjeta-adicional">
+      <h2>Sistema de llenado</h2>
+      <p>
+        • Asegúrese que la válvula del desagüe se encuentre cerrada al llenar su spa.<br>
+        • La temperatura del agua no debe exceder los 40°C.<br>
+        • La cascada va conectada a las válvulas de los manerales.<br>
+        • En los manerales conectar agua fría y agua caliente, funcionando como una mescladora.<br>
+        • Entrada de los manerales es de ½.
+      </p>
+    </div>
+    <div class="tarjeta-adicional">
+      <h2>Mantenimiento</h2>
+      <p>
+        Después del uso de la tina de hidromasaje, limpiar y secar con franela suave.<br>
+        Ventilar el área del motor y de las mangueras después de su uso.<br>
+        No usar detergentes fuertes.<br>
+        Desconectar a la red eléctrica cuando:<br>
+          1. Al momento de dar mantenimiento.<br>
+          2. Cuando la tina este a media capacidad de agua.<br>
+          3. Cuando esté totalmente vacía.
+      </p>
+    </div>
+    <div class="tarjeta-adicional">
+      <h2>Servicio</h2>
+      <p>
+        • Para cualquier aclaración o duda técnica de su tina de hidromasaje, consulte a nuestro departamento técnico.<br>
+        • En caso de desperfecto o mal funcionamiento del producto durante el periodo de garantía dirigirse exclusivamente al personal autorizado.<br>
+        • La empresa no responde por los daños eventuales causados por productos o reparaciones inapropiadas.<br>
+        • La garantía no aplica a partes eléctricas.
+      </p>
+    </div>
+    <div class="tarjeta-adicional">
+      <h2>Instalación de seguridad eléctrica</h2>
+      <p>
+        • La tina se conecta a una instalación fija a la red eléctrica de alimentación conforme a las normas NOM-001-SEDE-2012.<br>
+        • Es recomendable utilizar un cable número 10, el cual puede soportar un amperaje de 30 con temperaturas de 60 °C, 75 °C y 90°C.<br>
+        • Proteger la conexión contra humedad.<br>
+        • La tina debe estar conectada a la red de forma directa mediante un interruptor diferencial termomagnetico de 30 o 40 amperes apropiado para el consumo de corriente.
+      </p>
+    </div>
+    <div class="tarjeta-adicional">
+      <h2>Notas de revisión</h2>
+      <p>
+        Antes de la instalación, conozca las partes de la tina y preséntela donde desea colocarla.<br>
+        En necesario que el aria donde se colocara la tina, se encuentre plana y libre de pendientes y de humedad.<br>
+        Llene la tina 5cm arriba de los jetts dirigibles y presione el botón de encendido, cheque que cada uno de los jets funcione c orrectamente.<br>
+        El funcionamiento se aprecia con a expulsión de aire al poner en máximo el control de aire.<br>
+        Apague y encienda en control neumático varias veces para indicar que funcione de manera correcta.<br>
+        Revisar que el sistema perimetral de las mangueras no presente fugas de agua.<br>
+      </p>
+    </div>
+    <div class="tarjeta-adicional">
+      <h2>Observaciones de fábrica</h2>
+      <p>
+        • Las imágenes de este manual son simuladas con fines ilustrativos, puede haber variaciones en tonalidades y por características solicitadas por el cliente.<br>
+        • Hydrolife se reserva el derecho de realizar mejoras o modificaciones en nuestros productos sin previo aviso, motivadas por razones técnicas o estéticas que mejoren el producto.
+      </p>
+    </div>
+  </div>
+
+  <div class="imagenes-adicionales">
+    <img src="imagenes/Logo.png" alt="Producto Extra 1">
+    <img src="imagenes/Logo.png" alt="Producto Extra 2">
+    <img src="imagenes/Logo.png" alt="Producto Extra 3">
+    <img src="imagenes/Logo.png" alt="Producto Extra 4">
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
