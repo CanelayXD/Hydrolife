@@ -30,6 +30,8 @@ function renderizarProductos(productos) {
     content.classList.add('contenido');
     var name = document.createElement('h2');
     name.textContent = producto.nombre;
+    var capacidad = document.createElement('p');
+    capacidad.textContent = 'Capacidad: ' + (producto.capacidad || 'N/A');
     var link = document.createElement('a');
     link.href = producto.url;
     var button = document.createElement('button');
@@ -38,6 +40,7 @@ function renderizarProductos(productos) {
 
     link.appendChild(button);
     content.appendChild(name);
+    content.appendChild(capacidad);
     content.appendChild(link);
     card.appendChild(img);
     card.appendChild(content);
@@ -57,6 +60,20 @@ function ordenarZA() {
   productos.sort((a, b) => b.nombre.localeCompare(a.nombre));
   renderizarProductos(productos);
   alert('Productos ordenados de Z a A');
+}
+
+// Función para ordenar los productos por capacidad de menor a mayor
+function ordenarCapacidadAsc() {
+  productos.sort((a, b) => (a.capacidad || 0) - (b.capacidad || 0));
+  renderizarProductos(productos);
+  alert('Productos ordenados por capacidad (menor a mayor)');
+}
+
+// Función para ordenar los productos por capacidad de mayor a menor
+function ordenarCapacidadDesc() {
+  productos.sort((a, b) => (b.capacidad || 0) - (a.capacidad || 0));
+  renderizarProductos(productos);
+  alert('Productos ordenados por capacidad (mayor a menor)');
 }
 
 // Función para manejar la búsqueda de productos
@@ -81,6 +98,8 @@ function buscarProducto() {
       content.classList.add('contenido');
       var name = document.createElement('h2');
       name.textContent = producto.nombre;
+      var capacidad = document.createElement('p');
+      capacidad.textContent = 'Capacidad: ' + (producto.capacidad || 'N/A');
       var link = document.createElement('a');
       link.href = producto.url;
       var button = document.createElement('button');
@@ -89,6 +108,7 @@ function buscarProducto() {
 
       link.appendChild(button);
       content.appendChild(name);
+      content.appendChild(capacidad);
       content.appendChild(link);
       card.appendChild(img);
       card.appendChild(content);
@@ -108,6 +128,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     document.getElementById('sortAZButton').addEventListener('click', ordenarAZ);
     document.getElementById('sortZAButton').addEventListener('click', ordenarZA);
+    document.getElementById('sortCapacidadAscButton').addEventListener('click', ordenarCapacidadAsc);
+    document.getElementById('sortCapacidadDescButton').addEventListener('click', ordenarCapacidadDesc);
     document.getElementById('searchButton').addEventListener('click', buscarProducto);
   } catch (error) {
     console.error(error);
