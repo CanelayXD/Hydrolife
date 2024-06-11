@@ -9,49 +9,49 @@
       "id": 2,
       "nombre": "Cojín",
       "imagen": "imagenes/Logo.png",
-      "url": "Manerales.html"
+      "url": "Cojin.html"
     },
     {
       "id": 3,
       "nombre": "Bomba",
       "imagen": "imagenes/Logo.png",
-      "url": "Manerales.html"
+      "url": "Bomba.html"
     },
     {
       "id": 4,
       "nombre": "Asiento",
       "imagen": "imagenes/Logo.png",
-      "url": "Manerales.html"
+      "url": "Asiento.html"
     },
     {
       "id": 5,
       "nombre": "Cascada",
       "imagen": "imagenes/Logo.png",
-      "url": "Manerales.html"
+      "url": "Cascada.html"
     },
     {
       "id": 6,
       "nombre": "Blower",
       "imagen": "imagenes/Logo.png",
-      "url": "Manerales.html"
+      "url": "Blower.html"
     },
     {
       "id": 7,
       "nombre": "Filtro de agua",
       "imagen": "imagenes/Logo.png",
-      "url": "Manerales.html"
+      "url": "Filtro.html"
     },
     {
       "id": 8,
       "nombre": "Cromoterapia",
       "imagen": "imagenes/Logo.png",
-      "url": "Manerales.html"
+      "url": "Cromoterapia.html"
     },
     {
       "id": 9,
       "nombre": "Aromaterapia",
       "imagen": "imagenes/Logo.png",
-      "url": "Manerales.html"
+      "url": "Aromaterapia.html"
     }
   ] 
   
