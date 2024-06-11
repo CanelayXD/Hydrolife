@@ -87,12 +87,14 @@
       "id": 13,
       "nombre": "Indra",
       "imagen": "imagenes/Indra.png",
+      "capacidad": 2,
       "url": "Indra.html"
     },
     {
       "id": 14,
       "nombre": "Mantra",
       "imagen": "imagenes/Mantra.png",
+      "capacidad": 2,
       "url": "Mantra.html"
     },
     {

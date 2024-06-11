@@ -12,7 +12,7 @@ async function cargarDatosProductos() {
     return { productos: productosJSON };
   } catch (error) {
     console.error(error);
-    return { productos: [] }; // Si hay un error, retorna productos vacíos y log vacío
+    return { productos: [] }; // Si hay un error, retorna productos vacíos
   }
 }
 
@@ -62,76 +62,38 @@ function ordenarZA() {
   alert('Productos ordenados de Z a A');
 }
 
-// Función para ordenar los productos por capacidad de menor a mayor
+// Función para ordenar los productos por capacidad ascendente
 function ordenarCapacidadAsc() {
   productos.sort((a, b) => (a.capacidad || 0) - (b.capacidad || 0));
   renderizarProductos(productos);
-  alert('Productos ordenados por capacidad (menor a mayor)');
+  alert('Productos ordenados por capacidad (Menor a Mayor)');
 }
 
-// Función para ordenar los productos por capacidad de mayor a menor
+// Función para ordenar los productos por capacidad descendente
 function ordenarCapacidadDesc() {
   productos.sort((a, b) => (b.capacidad || 0) - (a.capacidad || 0));
   renderizarProductos(productos);
-  alert('Productos ordenados por capacidad (mayor a menor)');
+  alert('Productos ordenados por capacidad (Mayor a Menor)');
 }
 
-// Función para manejar la búsqueda de productos
-function buscarProducto() {
-  var searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
-  var resultados = productos.filter(function(producto) {
-    return producto.nombre.toLowerCase().includes(searchTerm);
-  });
+document.getElementById('sortAZButton').addEventListener('click', ordenarAZ);
+document.getElementById('sortZAButton').addEventListener('click', ordenarZA);
+document.getElementById('sortCapacidadAscButton').addEventListener('click', ordenarCapacidadAsc);
+document.getElementById('sortCapacidadDescButton').addEventListener('click', ordenarCapacidadDesc);
 
-  var productContainer = document.getElementById('productContainer');
-  productContainer.innerHTML = '';
-
-  if (resultados.length > 0) {
-    resultados.forEach(function(producto) {
-      var card = document.createElement('div');
-      card.classList.add('tarjeta-producto', 'col-md-4', 'mb-4');
-      var img = document.createElement('img');
-      img.src = producto.imagen;
-      img.alt = producto.nombre;
-      img.title = producto.nombre;
-      var content = document.createElement('div');
-      content.classList.add('contenido');
-      var name = document.createElement('h2');
-      name.textContent = producto.nombre;
-      var capacidad = document.createElement('p');
-      capacidad.textContent = 'Capacidad: ' + (producto.capacidad || 'N/A');
-      var link = document.createElement('a');
-      link.href = producto.url;
-      var button = document.createElement('button');
-      button.classList.add('boton', 'btn', 'btn-primary');
-      button.textContent = "Ver detalles";
-
-      link.appendChild(button);
-      content.appendChild(name);
-      content.appendChild(capacidad);
-      content.appendChild(link);
-      card.appendChild(img);
-      card.appendChild(content);
-      productContainer.appendChild(card);
-    });
-  } else {
-    productContainer.textContent = 'No se encontraron resultados para la búsqueda: ' + searchTerm;
-  }
+// FUNCION PARA FILTRAR LOS PRODUCTOS SEGUN LA BÚSQUEDA
+function filtrarProductos(productos, termino) {
+  return productos.filter(producto => producto.nombre.toLowerCase().includes(termino.toLowerCase()));
 }
 
-// Evento de carga de la página
-document.addEventListener("DOMContentLoaded", async () => {
-  try {
-    const { productos, log } = await cargarDatosProductos();
-    console.log('Productos cargados:', productos);
-    renderizarProductos(productos);
-
-    document.getElementById('sortAZButton').addEventListener('click', ordenarAZ);
-    document.getElementById('sortZAButton').addEventListener('click', ordenarZA);
-    document.getElementById('sortCapacidadAscButton').addEventListener('click', ordenarCapacidadAsc);
-    document.getElementById('sortCapacidadDescButton').addEventListener('click', ordenarCapacidadDesc);
-    document.getElementById('searchButton').addEventListener('click', buscarProducto);
-  } catch (error) {
-    console.error(error);
-  }
+document.getElementById('searchButton').addEventListener('click', function () {
+  const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+  const productosFiltrados = filtrarProductos(productos, searchTerm);
+  renderizarProductos(productosFiltrados);
 });
+
+// Cargar y renderizar los productos al cargar la página
+window.onload = async function() {
+  const { productos } = await cargarDatosProductos();
+  renderizarProductos(productos);
+};
