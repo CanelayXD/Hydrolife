@@ -1,7 +1,7 @@
 let accesorios = []; // Variable global para almacenar los accesorios
 
 // FUNCION PARA CARGAR LOS ACCESORIOS DESDE EL JSON
-async function cargarAccesorios() {
+async function cargarDatosAccesorios() {
   try {
     const responseAccesorios = await fetch('data/accesorios.json'); // Ruta al JSON de accesorios
     if (!responseAccesorios.ok) {
@@ -12,7 +12,7 @@ async function cargarAccesorios() {
     return { accesorios: accesoriosJSON };
   } catch (error) {
     console.error(error);
-    return { accesorios: [] }; // Si hay un error, retorna accesorios vacíos
+    return { accesorios: [] }; // Si hay un error, retorna accesorios vacíos y log vacío
   }
 }
 
@@ -21,7 +21,7 @@ function renderizarAccesorios(accesorios) {
   accesoriosContainer.innerHTML = '';
   accesorios.forEach(accesorio => {
     var card = document.createElement('div');
-    card.classList.add('tarjeta-accesorio');
+    card.classList.add('tarjeta-producto', 'col-md-4', 'mb-4');
     var img = document.createElement('img');
     img.src = accesorio.imagen;
     img.alt = accesorio.nombre;
@@ -33,9 +33,9 @@ function renderizarAccesorios(accesorios) {
     var link = document.createElement('a');
     link.href = accesorio.url;
     var button = document.createElement('button');
-    button.classList.add('boton');
+    button.classList.add('boton', 'btn', 'btn-primary');
     button.textContent = "Ver detalles";
-    
+
     link.appendChild(button);
     content.appendChild(name);
     content.appendChild(link);
@@ -58,96 +58,58 @@ function ordenarZAAccesorios() {
   renderizarAccesorios(accesorios);
   alert('Accesorios ordenados de Z a A');
 }
+
 // Función para manejar la búsqueda de accesorios
-function buscarAccesorios() {
-    // Obtener el valor ingresado en el campo de búsqueda
-    var searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
-  
-    // Filtrar la lista de accesorios para encontrar coincidencias con el término de búsqueda
-    var resultados = accesorios.filter(function(accesorios) {
-      return accesorio.nombre.toLowerCase().includes(searchTerm);
+function buscarAccesorio() {
+  var searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
+  var resultados = accesorios.filter(function(accesorio) {
+    return accesorio.nombre.toLowerCase().includes(searchTerm);
+  });
+
+  var accesoriosContainer = document.getElementById('accesoriosContainer');
+  accesoriosContainer.innerHTML = '';
+
+  if (resultados.length > 0) {
+    resultados.forEach(function(accesorio) {
+      var card = document.createElement('div');
+      card.classList.add('tarjeta-producto', 'col-md-4', 'mb-4');
+      var img = document.createElement('img');
+      img.src = accesorio.imagen;
+      img.alt = accesorio.nombre;
+      img.title = accesorio.nombre;
+      var content = document.createElement('div');
+      content.classList.add('contenido');
+      var name = document.createElement('h2');
+      name.textContent = accesorio.nombre;
+      var link = document.createElement('a');
+      link.href = accesorio.url;
+      var button = document.createElement('button');
+      button.classList.add('boton', 'btn', 'btn-primary');
+      button.textContent = "Ver detalles";
+
+      link.appendChild(button);
+      content.appendChild(name);
+      content.appendChild(link);
+      card.appendChild(img);
+      card.appendChild(content);
+      accesoriosContainer.appendChild(card);
     });
-  
-    // Mostrar los resultados de la búsqueda en la página HTML
-    var accesoriosContainer = document.getElementById('accesoriosContainer');
-    accesoriosContainer.innerHTML = '';
-  
-    if (resultados.length > 0) {
-      // Si se encontraron resultados, renderizar los accesorios coincidentes
-      resultados.forEach(function(accesorio) {
-        var card = document.createElement('div');
-        card.classList.add('tarjeta-accesorio');
-  
-        var img = document.createElement('img');
-        img.src = accesorio.imagen;
-        img.alt = accesorio.nombre;
-        img.title = accesorio.nombre;
-  
-        var content = document.createElement('div');
-        content.classList.add('contenido');
-  
-        var name = document.createElement('h2');
-        name.textContent = accesorio.nombre;
-  
-        var description = document.createElement('p');
-        description.textContent = accesorio.descripcion;
-  
-        var capacity = document.createElement('p');
-        capacity.classList.add('capacidad');
-        capacity.textContent = `Capacidad: ${accesorio.capacidad}`;
-  
-        var link = document.createElement('a');
-        link.href = accesorio.url;
-  
-        var button = document.createElement('button');
-        button.classList.add('boton');
-        button.textContent = "Ver detalles";
-        var cartButton = document.createElement('button');
-    
-        link.appendChild(button);
-        content.appendChild(name);
-        content.appendChild(description);
-        content.appendChild(link);
-        card.appendChild(img);
-        card.appendChild(content);
-        accesoriosContainer.appendChild(card);
-      });
-    } else {
-      // Si no se encontraron resultados, mostrar un mensaje en la página
-      accesoriosContainer.textContent = 'No se encontraron resultados para la búsqueda: ' + searchTerm;
-    }
+  } else {
+    accesoriosContainer.textContent = 'No se encontraron resultados para la búsqueda: ' + searchTerm;
   }
-  
-  // Asignar la función buscarAccesorios al evento click del botón de búsqueda
-  document.getElementById('searchButton').addEventListener('click', buscarAccesorios);
+}
 
 // Evento de carga de la página
 document.addEventListener("DOMContentLoaded", async () => {
-    try {
-      // Cargar datos
-      const { accesorios, log } = await cargarDatos();
-  
-      // Imprimir los accesorios cargados
-      console.log('Accesorios cargados:', accesorios);
-  
-      // Renderizar accesorios
-      renderizarAccesorios(accesorios);
-  
-      // Mostrar log en algún lugar de la página
-      document.getElementById('logContainer').textContent = log;
-  
-      // Asignar funciones a eventos
-     // Función para manejar el evento de ordenar de A a Z
-  document.getElementById('sortAZButton').addEventListener('click', ordenarAZ);
-  
-  // Función para manejar el evento de ordenar de Z a A
-  document.getElementById('sortZAButton').addEventListener('click', ordenarZA);
-  
-      // Evento de búsqueda
-      document.getElementById('searchButton').addEventListener('click', buscarAccesorios);
-  
-      // Resto de los eventos
-    } catch (error) {
-      console.error(error);
-    } 
+  try {
+    const { accesorios, log } = await cargarDatosAccesorios();
+    console.log('Accesorios cargados:', accesorios);
+    renderizarAccesorios(accesorios);
+
+    document.getElementById('sortAZButtonAccesorios').addEventListener('click', ordenarAZAccesorios);
+    document.getElementById('sortZAButtonAccesorios').addEventListener('click', ordenarZAAccesorios);
+    document.getElementById('searchButton').addEventListener('click', buscarAccesorio);
+  } catch (error) {
+    console.error(error);
+  }
 });

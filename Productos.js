@@ -1,7 +1,7 @@
 let productos = []; // Variable global para almacenar los productos
 
 // FUNCION PARA CARGAR LOS PRODUCTOS DESDE EL JSON
-async function cargarDatos() {
+async function cargarDatosProductos() {
   try {
     const responseProductos = await fetch('data/productos.json'); // Ruta al JSON de productos
     if (!responseProductos.ok) {
@@ -15,12 +15,13 @@ async function cargarDatos() {
     return { productos: [] }; // Si hay un error, retorna productos vacíos y log vacío
   }
 }
+
 function renderizarProductos(productos) {
   var productContainer = document.getElementById('productContainer'); 
   productContainer.innerHTML = '';
   productos.forEach(producto => {
     var card = document.createElement('div');
-    card.classList.add('tarjeta-producto');
+    card.classList.add('tarjeta-producto', 'col-md-4', 'mb-4');
     var img = document.createElement('img');
     img.src = producto.imagen;
     img.alt = producto.nombre;
@@ -32,7 +33,7 @@ function renderizarProductos(productos) {
     var link = document.createElement('a');
     link.href = producto.url;
     var button = document.createElement('button');
-    button.classList.add('boton');
+    button.classList.add('boton', 'btn', 'btn-primary');
     button.textContent = "Ver detalles";
 
     link.appendChild(button);
@@ -58,111 +59,57 @@ function ordenarZA() {
   alert('Productos ordenados de Z a A');
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-  document.getElementById('sortAZButton').addEventListener('click', ordenarAZ);
-  document.getElementById('sortZAButton').addEventListener('click', ordenarZA);
-});
-
-function ordenarPorCapacidad() {
-  productos.sort((a, b) => a.capacidad - b.capacidad);
-  renderizarProductos(productos);
-  alert('Productos ordenados por capacidad');
-}
 // Función para manejar la búsqueda de productos
 function buscarProducto() {
-  // Obtener el valor ingresado en el campo de búsqueda
   var searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
-
-  // Filtrar la lista de productos para encontrar coincidencias con el término de búsqueda
   var resultados = productos.filter(function(producto) {
     return producto.nombre.toLowerCase().includes(searchTerm);
   });
 
-  // Mostrar los resultados de la búsqueda en la página HTML
   var productContainer = document.getElementById('productContainer');
   productContainer.innerHTML = '';
 
   if (resultados.length > 0) {
-    // Si se encontraron resultados, renderizar los productos coincidentes
     resultados.forEach(function(producto) {
       var card = document.createElement('div');
-      card.classList.add('tarjeta-producto');
-
+      card.classList.add('tarjeta-producto', 'col-md-4', 'mb-4');
       var img = document.createElement('img');
       img.src = producto.imagen;
       img.alt = producto.nombre;
       img.title = producto.nombre;
-
       var content = document.createElement('div');
       content.classList.add('contenido');
-
       var name = document.createElement('h2');
       name.textContent = producto.nombre;
-
-      var description = document.createElement('p');
-      description.textContent = producto.descripcion;
-
-      var capacity = document.createElement('p');
-      capacity.classList.add('capacidad');
-      capacity.textContent = `Capacidad: ${producto.capacidad}`;
-
       var link = document.createElement('a');
       link.href = producto.url;
-
       var button = document.createElement('button');
-      button.classList.add('boton');
+      button.classList.add('boton', 'btn', 'btn-primary');
       button.textContent = "Ver detalles";
-      var cartButton = document.createElement('button');
-  
+
       link.appendChild(button);
       content.appendChild(name);
-      content.appendChild(description);
       content.appendChild(link);
       card.appendChild(img);
       card.appendChild(content);
       productContainer.appendChild(card);
     });
   } else {
-    // Si no se encontraron resultados, mostrar un mensaje en la página
     productContainer.textContent = 'No se encontraron resultados para la búsqueda: ' + searchTerm;
   }
 }
 
-// Asignar la función buscarProducto al evento click del botón de búsqueda
-document.getElementById('searchButton').addEventListener('click', buscarProducto);
-
 // Evento de carga de la página
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    // Cargar datos
-    const { productos, log } = await cargarDatos();
-
-    // Imprimir los productos cargados
+    const { productos, log } = await cargarDatosProductos();
     console.log('Productos cargados:', productos);
-
-    // Renderizar productos
     renderizarProductos(productos);
 
-    // Mostrar log en algún lugar de la página
-    document.getElementById('logContainer').textContent = log;
-
-    // Asignar funciones a eventos
-   // Función para manejar el evento de ordenar de A a Z
-document.getElementById('sortAZButton').addEventListener('click', ordenarAZ);
-
-// Función para manejar el evento de ordenar de Z a A
-document.getElementById('sortZAButton').addEventListener('click', ordenarZA);
-
-document.getElementById('sortCapacidadButton').addEventListener('click', ordenarPorCapacidad);
-
-    // Evento de búsqueda
+    document.getElementById('sortAZButton').addEventListener('click', ordenarAZ);
+    document.getElementById('sortZAButton').addEventListener('click', ordenarZA);
     document.getElementById('searchButton').addEventListener('click', buscarProducto);
-
-    // Resto de los eventos
   } catch (error) {
     console.error(error);
   }
 });
-
-
-
