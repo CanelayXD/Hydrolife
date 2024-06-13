@@ -20,6 +20,88 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="Princi.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    /* Estilos para la tarjeta de detalle */
+    .tarjeta-detalle {
+      width: 90%;
+      text-align: center;
+      margin: 20px auto;
+      display: flex;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+      border-radius: 10px;
+      overflow: hidden;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .tarjeta-detalle img {
+      width: 40%;
+      height: auto;
+      object-fit: cover;
+      margin: 20px;
+    }
+
+    .contenido {
+      width: 60%;
+      padding: 25px;
+      background-color: white;
+      text-align: left;
+    }
+
+    .contenido h2 {
+      text-align: center;
+      font-size: 35px;
+      background: linear-gradient(to right, #63abe1, #178b8d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+
+    .contenido h3 {
+      font-size: 25px;
+      margin-bottom: 5px;
+      text-align: center;
+    }
+
+    .contenido p {
+      font-size: 20px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .imagenes-adicionales {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .imagenes-adicionales img {
+      width: 48%;
+      margin-bottom: 10px;
+      height: auto;
+      object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+      .tarjeta-detalle {
+        flex-direction: column;
+      }
+
+      .tarjeta-detalle img {
+        width: 100%;
+      }
+
+      .contenido {
+        width: 100%;
+        text-align: center;
+      }
+
+      .imagenes-adicionales img {
+        width: 100%;
+      }
+    }
+  </style>
   <title>Detalles del Producto</title>
   <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
