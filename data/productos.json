@@ -156,51 +156,51 @@
     {
       "id": 23,
       "nombre": "Karuna",
-      "imagen": "imagenes/Logo.png",
+      "imagen": "imagenes/Karuna.png",
       "capacidad": 1,
-      "url": "Manual.html"
+      "url": "Karuna.html"
     },
     {
       "id": 24,
       "nombre": "Sensation",
-      "imagen": "imagenes/Logo.png",
+      "imagen": "imagenes/Sensation.png",
       "capacidad": 1,
-      "url": "Princi.html"
+      "url": "Sensation.html"
     },
     {
       "id": 25,
       "nombre": "Inspiration",
-      "imagen": "imagenes/Logo.png",
+      "imagen": "imagenes/Inspiration.png",
       "capacidad": 1,
-      "url": "Princi.html"
+      "url": "Inspiration.html"
     },
     {
       "id": 26,
       "nombre": "Musa",
-      "imagen": "imagenes/Logo.png",
+      "imagen": "imagenes/Musa.png",
       "capacidad": 1,
-      "url": "Princi.html"
+      "url": "Musa.html"
     },
     {
       "id": 27,
       "nombre": "Vancover",
-      "imagen": "imagenes/Logo.png",
+      "imagen": "imagenes/Vancover.png",
       "capacidad": 1,
-      "url": "Princi.html"
+      "url": "Vancover.html"
     },
     {
       "id": 28,
       "nombre": "Mónaco",
-      "imagen": "imagenes/Logo.png",
+      "imagen": "imagenes/Monaco.png",
       "capacidad": 1,
-      "url": "Princi.html"
+      "url": "Monaco.html"
     },
     {
       "id": 29,
       "nombre": "Umbrella",
-      "imagen": "imagenes/Logo.png",
+      "imagen": "imagenes/Umbrella.png",
       "capacidad": 1,
-      "url": "Princi.html"
+      "url": "Umbrella.html"
     }
   ]
   
