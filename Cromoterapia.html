@@ -103,9 +103,16 @@
     }
 
     /* Estilos adicionales para el segundo cuadro */
-    .segundo-cuadro p {
-      text-align: left; /* alinear texto a la izquierda */
-      font-size: 25px;
+    .segundo-cuadro {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .segundo-cuadro .color-item {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
     }
 
     .segundo-cuadro h4 {
@@ -114,6 +121,12 @@
       margin-bottom: 5px;
       text-align: left;
       font-weight: bold;
+    }
+
+    .segundo-cuadro p {
+      text-align: left; /* alinear texto a la izquierda */
+      font-size: 25px;
+      margin-left: 70px;
     }
 
     /* Colores para los subtítulos */
@@ -193,27 +206,34 @@
   </div>
 
   <div class="tarjeta-detalle segundo-cuadro">
-    <p>
-        <h4 class="rojo">Rojo:</h4> Sistema Circulatorio ( Promueve la vitalidad y la energía ).<br>
-    </p>
-    <p>
-        <h4 class="naranja">Naranja:</h4> Sistema Respiratorio y Nervioso ( Anti-Fatiga, Beneficia el Cuerpo y Mente ).<br>
-    </p>
-    <p>
-        <h4 class="amarillo">Amarillo:</h4> El estímulo intelectual se fortalece ( Energetiza y Relaja  ).<br>
-    </p>
-    <p>
-        <h4 class="verde">Verde:</h4> El sistema nervioso se fortalece y otorga Tranquilidad ( Relaja la Visión ).<br>
-    </p>
-    <p>
-        <h4 class="azul">Azul:</h4> Calma el Dolor Repentino ( Relaja el Intelecto ).<br>
-    </p>
-    <p>
-        <h4 class="morado">Morado:</h4> Promueve la Paz y la Tranquilidad ( Abre el Subconsciente ).<br>
-    </p>
-    <p>
-        <h4 class="rosa">Rosa:</h4> Armoniza las emociones.
-    </p>
+    <div class="color-item">
+      <h4 class="rojo">Rojo:</h4>
+      <p>Sistema Circulatorio ( Promueve la vitalidad y la energía ).</p>
+    </div>
+    <div class="color-item">
+      <h4 class="naranja">Naranja:</h4>
+      <p>Sistema Respiratorio y Nervioso ( Anti-Fatiga, Beneficia el Cuerpo y Mente ).</p>
+    </div>
+    <div class="color-item">
+      <h4 class="amarillo">Amarillo:</h4>
+      <p>El estímulo intelectual se fortalece ( Energetiza y Relaja ).</p>
+    </div>
+    <div class="color-item">
+      <h4 class="verde">Verde:</h4>
+      <p>El sistema nervioso se fortalece y otorga Tranquilidad ( Relaja la Visión ).</p>
+    </div>
+    <div class="color-item">
+      <h4 class="azul">Azul:</h4>
+      <p>Calma el Dolor Repentino ( Relaja el Intelecto ).</p>
+    </div>
+    <div class="color-item">
+      <h4 class="morado">Morado:</h4>
+      <p>Promueve la Paz y la Tranquilidad ( Abre el Subconsciente ).</p>
+    </div>
+    <div class="color-item">
+      <h4 class="rosa">Rosa:</h4>
+      <p>Armoniza las emociones.</p>
+    </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
