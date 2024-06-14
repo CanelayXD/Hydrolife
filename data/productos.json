@@ -152,6 +152,55 @@
       "imagen": "imagenes/Latika.png",
       "capacidad": 16,
       "url": "Latika.html"
+    },
+    {
+      "id": 23,
+      "nombre": "Karuna",
+      "imagen": "imagenes/Logo.png",
+      "capacidad": 1,
+      "url": "Princi.html"
+    },
+    {
+      "id": 24,
+      "nombre": "Sensation",
+      "imagen": "imagenes/Logo.png",
+      "capacidad": 1,
+      "url": "Princi.html"
+    },
+    {
+      "id": 25,
+      "nombre": "Inspiration",
+      "imagen": "imagenes/Logo.png",
+      "capacidad": 1,
+      "url": "Princi.html"
+    },
+    {
+      "id": 26,
+      "nombre": "Musa",
+      "imagen": "imagenes/Logo.png",
+      "capacidad": 1,
+      "url": "Princi.html"
+    },
+    {
+      "id": 27,
+      "nombre": "Vancover",
+      "imagen": "imagenes/Logo.png",
+      "capacidad": 1,
+      "url": "Princi.html"
+    },
+    {
+      "id": 28,
+      "nombre": "Mónaco",
+      "imagen": "imagenes/Logo.png",
+      "capacidad": 1,
+      "url": "Princi.html"
+    },
+    {
+      "id": 29,
+      "nombre": "Umbrella",
+      "imagen": "imagenes/Logo.png",
+      "capacidad": 1,
+      "url": "Princi.html"
     }
   ]
   
