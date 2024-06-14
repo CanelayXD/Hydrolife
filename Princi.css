@@ -22,7 +22,7 @@ comment-input {
 
 .comment-input button {
   padding: 10px 15px;
-  background-color: #45DE62;
+  background-color: #5DE890;
   color: white;
   border: 14px;
   border-radius: 5px;
@@ -226,7 +226,7 @@ owl-carousel .owl-item img {
 .footer {
   margin-top: 100px;
   border-top: 30px;
-  background-color: #45DE62;
+  background-color: #5DE890;
   background-size: cover;
   padding: 30px 0;
 }
