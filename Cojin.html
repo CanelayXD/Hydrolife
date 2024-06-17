@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4WMSS4Y8K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-V4WMSS4Y8K');
+  </script>
+  <title>Hydrolife</title>
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Carrusel -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="Princi.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    /* Estilos para la tarjeta de detalle */
+    .tarjeta-detalle {
+      width: 90%;
+      text-align: justify;
+      margin: 20px auto;
+      display: flex;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+      border-radius: 10px;
+      overflow: hidden;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .tarjeta-detalle img {
+      width: 40%;
+      height: auto;
+      object-fit: cover;
+      margin: 20px;
+    }
+
+    .contenido {
+      width: 60%;
+      padding: 25px;
+      background-color: white;
+      text-align: justify;
+    }
+
+    .contenido h2 {
+      text-align: center;
+      font-size: 35px;
+      background: linear-gradient(to right, #63abe1, #178b8d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+
+    .contenido h3 {
+      font-size: 25px;
+      margin-bottom: 5px;
+      text-align: center;
+    }
+
+    .contenido p {
+      font-size: 20px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+      text-align: justify;
+    }
+
+    .imagenes-adicionales {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .imagenes-adicionales img {
+      width: 48%;
+      margin-bottom: 10px;
+      height: auto;
+      object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+      .tarjeta-detalle {
+        flex-direction: column;
+      }
+
+      .tarjeta-detalle img {
+        width: 100%;
+      }
+
+      .contenido {
+        width: 100%;
+        text-align: center;
+      }
+
+      .imagenes-adicionales img {
+        width: 100%;
+      }
+    }
+  </style>
+  <title>Detalles del Producto</title>
+  <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="container_hed">
+    <a class="navbar-brand" href="#"><img src="./imagenes/Logo.png" alt="Mi Logo" title="MiLog"></a>
+    <div class="container mt-3">
+      <form id="searchForm" class="form-inline my-2 my-lg-0 justify-content-center">
+        <input class="form-control mr-sm-2 search-input" type="search" placeholder="Nombre del producto" aria-label="Search" id="searchInput">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="searchButton" style=" background-color: rgb(207, 207, 207); border-color: rgb(207, 207, 207);"><i class="fas fa-search" style="color: grey;"></i></button>
+      </form>
+    </div>
+  </div> 
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mt-3" style="background-color: #5DE890;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav" style="background-color: #5DE890;">
+      <ul class="navbar-nav w-100 justify-content-around">
+        <li class="nav-item custom-item">
+          <a class="nav-link custom-link text-center" href="Princi.html">Inicio</a>
+        </li>
+        <li class="nav-item custom-item">
+          <a class="nav-link custom-link text-center" href="Princi.html">Tinas</a>
+        </li>
+        <li class="nav-item custom-item">
+          <a class="nav-link custom-link text-center" href="Princi.html">Accesorios</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="tarjeta-detalle">
+    <img src="imagenes/Cojin.png" alt="Producto Grande">
+    <div class="contenido">
+      <h2>COJÍN</h2>
+      <h3>¿Qué es?</h3>
+      <p>
+        Un cojín para tinas es un accesorio valioso para cualquier 
+        persona que desee mejorar su experiencia de baño. 
+        Proporcionando soporte adicional y mejorando la comodidad, 
+        estos cojines pueden transformar un baño regular en una 
+        experiencia de spa relajante. Con diversos diseños y materiales 
+        disponibles, los cojines para tinas pueden adaptarse a 
+        diferentes necesidades y preferencias, ofreciendo una solución 
+        simple pero efectiva para disfrutar de un baño más confortable y seguro.
+      </p>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
