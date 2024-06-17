@@ -105,20 +105,20 @@
 
     /* Estilos adicionales para el segundo cuadro */
     .segundo-cuadro {
-      width: 90%;
-      text-align: justify;
-      display: flex;
-      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
-      border-radius: 10px;
-      overflow: hidden;
-      flex-direction: row;
-    }
+  width: 100%; /* Ocupar todo el ancho del contenedor */
+  display: flex;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 20px; /* Añadir un relleno para que el texto no toque los bordes */
+  box-sizing: border-box; /* Incluir el relleno y el borde en el tamaño total del cuadro */
+}
 
-    .segundo-cuadro .contenido {
-      font-size: 20px;
-      margin-bottom: 10px;
-      text-align: justify;      
-    }
+.segundo-cuadro .contenido {
+  font-size: 20px;
+  text-align: justify;
+  width: 100%; /* Asegurarse de que la clase contenido ocupe todo el ancho del cuadro */
+}
 
     .segundo-cuadro .contenido p {
       text-align: justify;
