@@ -201,6 +201,13 @@
       "imagen": "imagenes/Umbrella.png",
       "capacidad": 1,
       "url": "Umbrella.html"
+    },
+    {
+      "id": 30,
+      "nombre": "Inventa",
+      "imagen": "imagenes/Inventa.png",
+      "capacidad": 1,
+      "url": "Inventa.html"
     }
   ]
   
