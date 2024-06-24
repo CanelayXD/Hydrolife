@@ -43,8 +43,9 @@
             }
 
             .imagenes-adicionales img {
-            width: 48%;
-            margin-bottom: 10px;
+            display: block;
+            margin: 0 auto 20px; /* Centrar las imágenes */
+            width: 100%;
             height: auto;
             object-fit: cover;
             -webkit-user-drag: none;
@@ -73,7 +74,6 @@
             }
             }
             .watermarked {
-            position: relative;
             display: inline-block;
             }
 
@@ -83,7 +83,6 @@
 
             .watermarked::before {
             content: "HYDROLIFE";
-            position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -97,6 +96,10 @@
         <div class="container_hed">
             <a class="navbar-brand" href="Aure.html"><img src="./imagenes/Logo.png" alt="Mi Logo" title="MiLog"></a>
         </div> 
+
+        <div class="contenido">
+            <h2>AURE IMÁGENES</h2>
+        </div>
         <div class="imagenes-adicionales">
             <div class="watermarked">
                 <img src="imagenes/Aure1.png" alt="Producto Extra 1">
