@@ -1,61 +1,104 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-V4WMSS4Y8K');
-  </script>
-  <title>Hydrolife</title>
-  <!-- Estilos CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <!-- Carrusel -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="Princi.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        document.addEventListener('contextmenu', function (e) {
-            e.preventDefault();
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-V4WMSS4Y8K');
+    </script>
+    <title>Hydrolife</title>
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Carrusel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="Princi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.addEventListener('contextmenu', function (e) {
+                e.preventDefault();
+            });
         });
-    });
-  </script>
-        <style>
-            .contenido h2 {
+    </script>
+    <style>
+        .tarjeta-detalle {
+            width: 90%;
+            text-align: justify;
+            margin: 20px auto;
+            display: flex;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+            overflow: hidden;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .tarjeta-detalle img {
+            width: 40%;
+            height: auto;
+            object-fit: cover;
+            margin: 20px;
+        }
+
+        .contenido h2 {
             text-align: center;
             font-size: 35px;
             background: linear-gradient(to right, #63abe1, #178b8d);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 10px;
-            }
-            
-            .imagenes-adicionales {
+        }
+
+        .imagenes-adicionales {
             width: 100%;
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            }
+        }
 
-            .imagenes-adicionales img {
-            display: block;
-            margin: 0 auto 20px; /* Centrar las imágenes */
-            width: 100%;
+        .imagen-cuadro {
+            width: calc(33.333% - 20px);
+            margin: 10px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #ddd;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            position: relative; /* Necesario para la marca de agua */
+        }
+
+        .imagen-cuadro img {
+            width: 90%;
             height: auto;
-            object-fit: cover;
+            object-fit: contain;
             -webkit-user-drag: none;
             -khtml-user-drag: none;
             -moz-user-drag: none;
             -o-user-drag: none;
             user-drag: none;
-            }
+        }
 
-            @media (max-width: 768px) {
+        .watermarked::after {
+            content: "HYDROLIFE";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.5);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
             .tarjeta-detalle {
                 flex-direction: column;
             }
@@ -69,45 +112,33 @@
                 text-align: center;
             }
 
-            .imagenes-adicionales img {
+            .imagen-cuadro {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .imagen-cuadro {
                 width: 100%;
             }
-            }
-            .watermarked {
-            display: inline-block;
-            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="container_hed">
+        <a class="navbar-brand" href="Aure.html"><img src="./imagenes/Logo.png" alt="Mi Logo" title="MiLog"></a>
+    </div> 
 
-            .watermarked img {
-            display: block;
-            }
-
-            .watermarked::before {
-            content: "HYDROLIFE";
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 24px;
-            color: rgba(255, 255, 255, 0.5);
-            }
-        </style>
-    </head>
-    <body>
-        <!-- Navbar -->
-        <div class="container_hed">
-            <a class="navbar-brand" href="Aure.html"><img src="./imagenes/Logo.png" alt="Mi Logo" title="MiLog"></a>
-        </div> 
-
-        <div class="contenido">
-            <h2>AURE IMÁGENES</h2>
-        </div>
-        <div class="imagenes-adicionales">
-            <div class="watermarked">
-                <img src="imagenes/Aure1.png" alt="Producto Extra 1">
-                <img src="imagenes/Aure2.png" alt="Producto Extra 2">
-                <img src="imagenes/Aure3.png" alt="Producto Extra 3">
-                <img src="imagenes/Aure4.png" alt="Producto Extra 4">
-                <img src="imagenes/Aure5.png" alt="Producto Extra 5">
-            </div>
-        </div>
-    </body>   
+    <div class="contenido">
+        <h2>AURE IMÁGENES</h2>
+    </div>
+    <div class="imagenes-adicionales">
+        <div class="imagen-cuadro watermarked"><img src="imagenes/Aure1.png" alt="Producto Extra 1"></div>
+        <div class="imagen-cuadro watermarked"><img src="imagenes/Aure2.png" alt="Producto Extra 2"></div>
+        <div class="imagen-cuadro watermarked"><img src="imagenes/Aure3.png" alt="Producto Extra 3"></div>
+        <div class="imagen-cuadro watermarked"><img src="imagenes/Aure4.png" alt="Producto Extra 4"></div>
+        <div class="imagen-cuadro watermarked"><img src="imagenes/Aure5.png" alt="Producto Extra 5"></div>
+    </div>
+</body>   
 </html>
