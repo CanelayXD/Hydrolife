@@ -26,25 +26,6 @@
         });
     </script>
     <style>
-        .tarjeta-detalle {
-            width: 90%;
-            text-align: justify;
-            margin: 20px auto;
-            display: flex;
-            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
-            border-radius: 10px;
-            overflow: hidden;
-            flex-direction: row;
-            align-items: center;
-        }
-
-        .tarjeta-detalle img {
-            width: 40%;
-            height: auto;
-            object-fit: cover;
-            margin: 20px;
-        }
-
         .contenido h2 {
             text-align: center;
             font-size: 35px;
@@ -57,13 +38,13 @@
         .imagenes-adicionales {
             width: 100%;
             display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            flex-direction: column; /* Cambiar a columna */
+            align-items: center;
         }
 
         .imagen-cuadro {
-            width: calc(33.333% - 20px);
-            margin: 10px;
+            width: 90%; /* Ocupar 90% del contenedor */
+            margin: 10px 0;
             box-sizing: border-box;
             display: flex;
             justify-content: center;
@@ -72,11 +53,11 @@
             padding: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
-            position: relative; /* Necesario para la marca de agua */
+            position: relative;
         }
 
         .imagen-cuadro img {
-            width: 90%;
+            width: 100%;
             height: auto;
             object-fit: contain;
             -webkit-user-drag: none;
@@ -86,24 +67,27 @@
             user-drag: none;
         }
 
-        .watermarked {
-        display: inline-block;
-        }
-
+        /* Marca de agua oculta por defecto */
         .watermarked img {
-        display: block;
+            position: relative;
         }
 
-        .watermarked::before {
-        content: "HYDROLIFE";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 24px;
-        color: rgba(255, 255, 255, 0.5);
-        pointer-events: none;
-        z-index: 1;
+        .watermarked img::after {
+            content: "HYDROLIFE";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        /* Mostrar la marca de agua cuando la imagen es descargada */
+        .watermarked img:hover::after {
+            opacity: 1;
         }
 
         @media (max-width: 768px) {
@@ -118,16 +102,6 @@
             .contenido {
                 width: 100%;
                 text-align: center;
-            }
-
-            .imagen-cuadro {
-                width: calc(50% - 20px);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .imagen-cuadro {
-                width: 100%;
             }
         }
     </style>
