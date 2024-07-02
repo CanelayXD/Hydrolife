@@ -68,9 +68,9 @@ owl-carousel .owl-item img {
 }
 
 .navbar-brand img {
-  width: 150px;
-  padding-left: 10px;
-  /* Ajusta el tamaño de tu logotipo según sea necesario */
+  width: 150px !important; /* Aumenta el ancho del logotipo */
+  height: auto !important; /* Ajusta la altura automáticamente */
+  padding-left: 40px !important; /* Incrementa el padding-left */
 }
 
 .search-input {
