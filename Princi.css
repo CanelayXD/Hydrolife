@@ -151,6 +151,7 @@ owl-carousel .owl-item img {
   height: 200px; /* Altura fija para la imagen */
   object-fit: contain; /* Asegura que la imagen se ajuste al contenedor */
   margin: 0;
+  padding-top: 25px;
   display: block;
 }
 
