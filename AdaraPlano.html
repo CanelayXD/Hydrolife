@@ -139,7 +139,7 @@
     // Cargar el archivo .obj
     const loader = new THREE.OBJLoader();
     loader.load(
-      'Adara.obj', // Ruta a tu archivo .obj
+      'data/Adara.obj', // Ruta a tu archivo .obj
       function (object) {
         scene.add(object);
         object.position.y -= 60; // Ajusta la posición si es necesario
