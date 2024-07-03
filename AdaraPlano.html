@@ -33,12 +33,12 @@
     .imagenes-adicionales {
         width: 100%;
         display: flex;
-        flex-direction: column; /* Cambiar a columna */
+        flex-direction: column;
         align-items: center;
     }
 
     .imagen-cuadro {
-        width: 90%; /* Ocupar 90% del contenedor */
+        width: 90%;
         margin: 10px 0;
         box-sizing: border-box;
         display: flex;
@@ -62,7 +62,6 @@
         user-drag: none;
     }
 
-    /* Marca de agua oculta por defecto */
     .watermarked img {
         position: relative;
     }
@@ -80,7 +79,6 @@
         pointer-events: none;
     }
 
-    /* Mostrar la marca de agua cuando la imagen es descargada */
     .watermarked img:hover::after {
         opacity: 1;
     }
@@ -101,10 +99,20 @@
     }
 
     #obj-container {
-        width: 100%;
-        height: 600px;
+        width: 90%; /* Asegurarse de que el contenedor tenga el mismo ancho que las imágenes */
+        height: 600px; /* Ajustar la altura según sea necesario */
+        margin: 10px 0;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #ddd;
+        padding: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        position: relative;
     }
-</style>
+  </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -118,42 +126,46 @@
   </div>
   <div class="imagenes-adicionales">
     <div class="imagen-cuadro watermarked"><img src="imagenes/AdaraPlano.jpeg"></div>
-  </div>
-  <div class="imagenes-adicionales">
     <div id="obj-container"></div>
   </div>
-  <div id="obj-container"></div>
-  
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
   <script>
-    // Configuración básica de la escena, la cámara y el renderizador
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0xffffff); // Fondo blanco
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(window.innerWidth * 0.9, 600); // Ajustar el tamaño del renderizador
     document.getElementById('obj-container').appendChild(renderer.domElement);
 
-    // Añadir controles de órbita
     const controls = new THREE.OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true; // Activar amortiguación (inercia)
-    controls.dampingFactor = 0.25; // Factor de amortiguación
-    controls.screenSpacePanning = false; // No permitir el desplazamiento en pantalla
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.25;
+    controls.screenSpacePanning = false;
 
-    // Configuración de la luz
     const light = new THREE.DirectionalLight(0xffffff, 1);
     light.position.set(1, 1, 1).normalize();
     scene.add(light);
 
-    // Cargar el archivo .obj
     const loader = new THREE.OBJLoader();
     loader.load(
-      'data/Adara.obj', // Ruta a tu archivo .obj
+      'data/Adara.obj',
       function (object) {
+        const box = new THREE.Box3().setFromObject(object);
+        const center = box.getCenter(new THREE.Vector3());
+        const size = box.getSize(new THREE.Vector3());
+
+        object.position.x += (object.position.x - center.x);
+        object.position.y += (object.position.y - center.y);
+        object.position.z += (object.position.z - center.z);
+
+        const maxSize = Math.max(size.x, size.y, size.z);
+        const scale = 100 / maxSize; // Ajustar el valor de escala según sea necesario
+        object.scale.set(scale, scale, scale);
+
         scene.add(object);
-        object.position.y -= 60; // Ajusta la posición si es necesario
       },
       function (xhr) {
         console.log((xhr.loaded / xhr.total * 100) + '% cargado');
@@ -163,20 +175,18 @@
       }
     );
 
-    camera.position.z = 100;
+    camera.position.z = 200;
 
-    // Función de animación
     function animate() {
       requestAnimationFrame(animate);
-      controls.update(); // Actualizar los controles de órbita
+      controls.update();
       renderer.render(scene, camera);
     }
     animate();
 
-    // Ajustar el tamaño del renderizador al redimensionar la ventana
     window.addEventListener('resize', () => {
-      const width = window.innerWidth;
-      const height = window.innerHeight;
+      const width = window.innerWidth * 0.9; // Ajustar el tamaño al 90% del ancho de la ventana
+      const height = 600;
       renderer.setSize(width, height);
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
