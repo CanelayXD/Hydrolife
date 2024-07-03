@@ -99,8 +99,8 @@
     }
 
     #obj-container {
-        width: 90%; /* Asegurarse de que el contenedor tenga el mismo ancho que las imágenes */
-        height: 600px; /* Ajustar la altura según sea necesario */
+        width: 90%; /* Mismo ancho que las imágenes */
+        height: auto; /* Altura auto para mantener la proporción */
         margin: 10px 0;
         box-sizing: border-box;
         display: flex;
@@ -110,6 +110,12 @@
         padding: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
+        position: relative;
+    }
+
+    .obj-wrapper {
+        width: 100%; /* Ajuste a 100% del contenedor */
+        height: 400px; /* Mismo alto que las imágenes */
         position: relative;
     }
   </style>
@@ -126,7 +132,9 @@
   </div>
   <div class="imagenes-adicionales">
     <div class="imagen-cuadro watermarked"><img src="imagenes/AdaraPlano.jpeg"></div>
-    <div id="obj-container"></div>
+    <div id="obj-container" class="imagen-cuadro">
+        <div class="obj-wrapper" id="obj-wrapper"></div>
+    </div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -135,10 +143,11 @@
   <script>
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0xffffff); // Fondo blanco
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(75, 2, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize(window.innerWidth * 0.9, 600); // Ajustar el tamaño del renderizador
-    document.getElementById('obj-container').appendChild(renderer.domElement);
+    const objWrapper = document.getElementById('obj-wrapper');
+    renderer.setSize(objWrapper.clientWidth, objWrapper.clientHeight);
+    objWrapper.appendChild(renderer.domElement);
 
     const controls = new THREE.OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
@@ -151,7 +160,7 @@
 
     const loader = new THREE.OBJLoader();
     loader.load(
-      'data/Adara.obj',
+      'Adara.obj',
       function (object) {
         const box = new THREE.Box3().setFromObject(object);
         const center = box.getCenter(new THREE.Vector3());
@@ -185,8 +194,8 @@
     animate();
 
     window.addEventListener('resize', () => {
-      const width = window.innerWidth * 0.9; // Ajustar el tamaño al 90% del ancho de la ventana
-      const height = 600;
+      const width = objWrapper.clientWidth;
+      const height = objWrapper.clientHeight;
       renderer.setSize(width, height);
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
