@@ -99,6 +99,11 @@
             text-align: center;
         }
     }
+
+    #obj-container {
+        width: 100%;
+        height: 600px;
+    }
 </style>
 </head>
 <body>
@@ -110,11 +115,61 @@
   </div> 
   <div class="contenido">
     <h2>Plano Tina Adara</h2>
-</div>
-<div class="imagenes-adicionales">
+  </div>
+  <div class="imagenes-adicionales">
     <div class="imagen-cuadro watermarked"><img src="imagenes/AdaraPlano.jpeg"></div>
-</div>
-    
+  </div>
+  <div id="obj-container"></div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
+  <script>
+    // Configuración básica de la escena, la cámara y el renderizador
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.getElementById('obj-container').appendChild(renderer.domElement);
+
+    // Configuración de la luz
+    const light = new THREE.DirectionalLight(0xffffff, 1);
+    light.position.set(1, 1, 1).normalize();
+    scene.add(light);
+
+    // Cargar el archivo .obj
+    const loader = new THREE.OBJLoader();
+    loader.load(
+      'Adara.obj', // Ruta a tu archivo .obj
+      function (object) {
+        scene.add(object);
+        object.position.y -= 60; // Ajusta la posición si es necesario
+      },
+      function (xhr) {
+        console.log((xhr.loaded / xhr.total * 100) + '% cargado');
+      },
+      function (error) {
+        console.log('Error al cargar el archivo .obj');
+      }
+    );
+
+    camera.position.z = 100;
+
+    // Función de animación
+    function animate() {
+      requestAnimationFrame(animate);
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    // Ajustar el tamaño del renderizador al redimensionar la ventana
+    window.addEventListener('resize', () => {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      renderer.setSize(width, height);
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+    });
+  </script>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
