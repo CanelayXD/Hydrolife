@@ -10,6 +10,13 @@
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-V4WMSS4Y8K');
+
+    // Desactivar clic derecho en la imagen
+    document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+    });
   </script>
   <title>Hydrolife</title>
   <!-- Estilos CSS -->
