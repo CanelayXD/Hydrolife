@@ -28,6 +28,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/MTLLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
   <style>
     .contenido h2 {
         text-align: center;
@@ -147,12 +148,18 @@
 
       const scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-      const renderer = new THREE.WebGLRenderer();
+      const renderer = new THREE.WebGLRenderer({ antialias: true });
       renderer.setSize(width, height);
       container.appendChild(renderer.domElement);
 
-      const light = new THREE.AmbientLight(0xffffff); // soft white light
-      scene.add(light);
+      const ambientLight = new THREE.AmbientLight(0x404040); // soft white light
+      scene.add(ambientLight);
+
+      const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+      directionalLight.position.set(1, 1, 1).normalize();
+      scene.add(directionalLight);
+
+      const controls = new THREE.OrbitControls(camera, renderer.domElement);
 
       const loader = new THREE.MTLLoader();
       loader.load(mtlPath, function (materials) {
@@ -162,6 +169,11 @@
         objLoader.load(objPath, function (object) {
           scene.add(object);
           object.position.y = -50;
+          object.traverse(function (child) {
+            if (child instanceof THREE.Mesh) {
+              child.material.side = THREE.DoubleSide; // Evita caras transparentes
+            }
+          });
         });
       });
 
@@ -169,6 +181,7 @@
 
       const animate = function () {
         requestAnimationFrame(animate);
+        controls.update();
         renderer.render(scene, camera);
       };
 
