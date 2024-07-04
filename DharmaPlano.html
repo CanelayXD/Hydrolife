@@ -9,8 +9,10 @@
     gtag('js', new Date());
     gtag('config', 'G-V4WMSS4Y8K');
 
-    // Desactivar clic derecho
-    document.addEventListener('contextmenu', event => event.preventDefault());
+    // Desactivar clic derecho en toda la página
+    document.addEventListener('DOMContentLoaded', (event) => {
+      document.addEventListener('contextmenu', event => event.preventDefault());
+    });
 
     // Función para descargar la imagen con marca de agua
     function downloadImage() {
