@@ -20,16 +20,93 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <title>Plano</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+    });
+</script>
   <style>
-    .iframe-container {
-      text-align: center;
-      margin-bottom: 20px; /* Ajusta este valor según sea necesario */
+    .contenido h2 {
+        text-align: center;
+        font-size: 35px;
+        background: linear-gradient(to right, #63abe1, #178b8d);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 10px;
     }
 
-    .iframe-container iframe {
-      border: none;
+    .imagenes-adicionales {
+        width: 100%;
+        display: flex;
+        flex-direction: column; /* Cambiar a columna */
+        align-items: center;
     }
-  </style>
+
+    .imagen-cuadro {
+        width: 90%; /* Ocupar 90% del contenedor */
+        margin: 10px 0;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #ddd;
+        padding: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        position: relative;
+    }
+
+    .imagen-cuadro img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        -webkit-user-drag: none;
+        -khtml-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
+        user-drag: none;
+    }
+
+    /* Marca de agua oculta por defecto */
+    .watermarked img {
+        position: relative;
+    }
+
+    .watermarked img::after {
+        content: "HYDROLIFE";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 24px;
+        color: rgba(255, 255, 255, 0.5);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+    }
+
+    /* Mostrar la marca de agua cuando la imagen es descargada */
+    .watermarked img:hover::after {
+        opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+        .tarjeta-detalle {
+            flex-direction: column;
+        }
+
+        .tarjeta-detalle img {
+            width: 100%;
+        }
+
+        .contenido {
+            width: 100%;
+            text-align: center;
+        }
+    }
+</style>
 </head>
 <body>
     <!-- Navbar -->
@@ -38,10 +115,13 @@
       <img src="./imagenes/Logo.png" alt="Mi Logo" title="MiLog">
     </a>
   </div> 
-    <!-- Cuadro para leer el PDF -->
-    <div class="iframe-container">
-    <h4>Plano Tina Inspiration</h4>
-    <iframe src="data/CATALOGO HYDROLIFE.pdf" width="1200" height="900" style="border: none;"></iframe>
+  <div class="contenido">
+    <h2>Plano Tina Inspiration</h2>
+</div>
+<div class="imagenes-adicionales">
+    <div class="imagen-cuadro watermarked"><img src="imagenes/AdaraPlano.jpeg"></div>
+</div>
+    
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
