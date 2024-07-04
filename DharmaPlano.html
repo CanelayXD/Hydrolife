@@ -8,6 +8,40 @@
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-V4WMSS4Y8K');
+
+    // Desactivar clic derecho
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
+    // Función para descargar la imagen con marca de agua
+    function downloadImage() {
+      const img = document.querySelector('.watermarked img');
+      const watermarkText = "HYDROLIFE";
+
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+
+      // Configurar el tamaño del canvas igual al de la imagen
+      canvas.width = img.naturalWidth;
+      canvas.height = img.naturalHeight;
+
+      // Dibujar la imagen en el canvas
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+      // Aplicar la marca de agua
+      ctx.font = '48px Arial';
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(watermarkText, canvas.width / 2, canvas.height / 2);
+
+      // Crear un enlace para descargar la nueva imagen
+      const link = document.createElement('a');
+      link.href = canvas.toDataURL('image/jpeg');
+      link.download = 'DharmaPlanoWatermarked.jpeg';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
   </script>
   <title>Hydrolife</title>
   <!-- Estilos CSS -->
@@ -33,12 +67,12 @@
     .imagenes-adicionales {
         width: 100%;
         display: flex;
-        flex-direction: column; /* Cambiar a columna */
+        flex-direction: column;
         align-items: center;
     }
 
     .imagen-cuadro {
-        width: 90%; /* Ocupar 90% del contenedor */
+        width: 90%;
         margin: 10px 0;
         box-sizing: border-box;
         display: flex;
@@ -62,29 +96,6 @@
         user-drag: none;
     }
 
-    /* Marca de agua oculta por defecto */
-    .watermarked img {
-        position: relative;
-    }
-
-    .watermarked img::after {
-        content: "HYDROLIFE";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 24px;
-        color: rgba(255, 255, 255, 0.5);
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        pointer-events: none;
-    }
-
-    /* Mostrar la marca de agua cuando la imagen es descargada */
-    .watermarked img:hover::after {
-        opacity: 1;
-    }
-
     @media (max-width: 768px) {
         .tarjeta-detalle {
             flex-direction: column;
@@ -99,22 +110,23 @@
             text-align: center;
         }
     }
-</style>
+  </style>
 </head>
 <body>
-    <!-- Navbar -->
+  <!-- Navbar -->
   <div class="container_hed">
     <a class="navbar-brand" href="javascript:void(0);" onclick="history.back();">
       <img src="./imagenes/Logo.png" alt="Mi Logo" title="MiLog">
     </a>
-  </div> 
+  </div>
   <div class="contenido">
     <h2>Plano Tina Dharma</h2>
-</div>
-<div class="imagenes-adicionales">
-    <div class="imagen-cuadro watermarked"><img src="imagenes/DharmaPlano.jpeg"></div>
-</div>
-    
+  </div>
+  <div class="imagenes-adicionales">
+    <div class="imagen-cuadro watermarked">
+      <img src="imagenes/DharmaPlano.jpeg">
+    </div>
+  </div>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
