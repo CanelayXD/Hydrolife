@@ -112,7 +112,7 @@
     /* Estilos para los modelos 3D */
     .model-container {
         width: 90%;
-        height: 400px; /* Ajusta la altura según tus necesidades */
+        height: 800px; /* Ajusta la altura según tus necesidades */
         margin: 10px 0;
         border: 1px solid #ddd;
         padding: 10px;
@@ -150,6 +150,7 @@
       const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
       const renderer = new THREE.WebGLRenderer({ antialias: true });
       renderer.setSize(width, height);
+      renderer.setClearColor(0x808080); // Fondo gris
       container.appendChild(renderer.domElement);
 
       const ambientLight = new THREE.AmbientLight(0x404040); // soft white light
