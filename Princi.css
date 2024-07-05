@@ -34,6 +34,7 @@
   width: 100%;
   height: auto;
   background-color: #5DE890 !important;
+  border-color: #5DE890;
   /* Sombra */
 }
 
@@ -47,22 +48,6 @@
   align-items: center;
 }
 
-owl-carousel .owl-item img {
-  border-radius: 10px;
-  /* Bordes redondeados */
-  border: 2px;
-  max-width: 100%;
-  /* Ajuste del ancho máximo de las imágenes */
-  max-height: auto;
-  /* Ajuste de la altura máxima de las imágenes */
-  width: auto;
-  /* Ajuste del ancho automático */
-  height: auto;
-  /* Ajuste de la altura automática */
-  object-fit: cover;
-  /* Para que la imagen se ajuste dentro del contenedor sin perder su relación de aspecto */
-}
-
 .navbar-brand img {
   width: 150px !important; /* Aumenta el ancho del logotipo */
   height: auto !important; /* Ajusta la altura automáticamente */
@@ -74,10 +59,6 @@ owl-carousel .owl-item img {
   height: 40px;
   margin-left: 20%;
   font-style: normal;
-}
-
-.icon_car {
- /*margin-left: 100%;*/
 }
 
 .navbar-nav .custom-item .nav-link {
@@ -98,30 +79,6 @@ owl-carousel .owl-item img {
 
 .navbar-nav .custom-item .nav-link:active {
   color: #009dff;
-}
-
-/* Estilos para el carrusel */
-.owl-carousel {
-  width: 100%;
-  background-image: "/imagenes/Back.jpeg" !important;
-  margin-top: 10px;
-}
-
-.owl-prev,
-.owl-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 24px;
-  color: #1bb125;
-}
-
-.owl-prev {
-  left: -30px;
-}
-
-.owl-next {
-  right: -30px;
 }
 
 .tarjeta-producto {
