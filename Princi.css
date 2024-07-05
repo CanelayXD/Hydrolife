@@ -80,15 +80,9 @@ comment-input {
   color: #009dff;
 }
 
-/* Estilos para el carrusel */
-.owl-carousel {
-  width: 100%;
-  background-image: "/imagenes/Back.jpeg" !important;
-  margin-top: 10px;
-}
-
 .tarjeta-producto {
   display: flex;
+  background-color: white; /* Fondo blanco para la tarjeta de detalle */
   flex-direction: column;
   justify-content: space-between; /* Asegura que los botones se posicionen en la parte inferior */
   font-family: 'Courier New', Courier, monospace;
@@ -112,6 +106,7 @@ comment-input {
   margin: 0;
   padding-top: 25px;
   display: block;
+  background-color: white; /* Fondo blanco para la tarjeta de detalle */
 }
 
 
@@ -148,6 +143,7 @@ comment-input {
   margin-bottom: 10px;
   text-align: left;
   padding-left: 20px;
+  background-color: white; /* Fondo blanco para la tarjeta de detalle */
 }
 
 .boton {
@@ -183,6 +179,7 @@ comment-input {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  background-color: white; /* Fondo blanco para la tarjeta de detalle */
 }
 
 .footer {
@@ -242,6 +239,7 @@ comment-input {
   .tarjeta-producto {
     width: 90%;
     margin-bottom: 20px;
+    background-color: white; /* Fondo blanco para la tarjeta de detalle */
   }
 
   .search-input {
@@ -259,11 +257,13 @@ comment-input {
   flex-direction: column;
   align-items: center;
   max-width: 200px; /* Ancho máximo para limitar el tamaño de la tarjeta */
+  background-color: white; /* Fondo blanco para la tarjeta de detalle */
 }
 .product-card img {
   max-width: 100%;
   height: auto;
   margin-bottom: 5px; /* Reducir el margin-bottom */
+  background-color: white; /* Fondo blanco para la tarjeta de detalle */
 }
 
 .product-details {
