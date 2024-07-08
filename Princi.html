@@ -12,11 +12,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="Princi.css">
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-V4WMSS4Y8K');
-    
     document.addEventListener('DOMContentLoaded', function () {
         document.addEventListener('contextmenu', function (e) {
             e.preventDefault();
@@ -26,15 +21,17 @@
 </head>
 
 <body>
-  <!-- Header -->
+  <!-- Navbar -->
   <div class="container_hed">
     <a class="navbar-brand" href="#"><img src="./imagenes/Logo.png" alt="Mi Logo" title="MiLog"></a>
     <div class="container mt-3">
       <form id="searchForm" class="form-inline my-2 my-lg-0 justify-content-center">
         <input class="form-control mr-sm-2 search-input" type="search" placeholder="Nombre del producto" aria-label="Search" id="searchInput">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="searchButton" style=" background-color: rgb(207, 207, 207); border-color: rgb(207, 207, 207);"><i class="fas fa-search" style="color: grey;"></i></button>
       </form>
     </div>
   </div>
+
   <!-- Navbar for Product Categories -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light mt-3" style="background-color: #5DE890;">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,21 +51,6 @@
       </ul>
     </div>
   </nav>
-
-  <!-- Carrusel de imágenes 
-  <div class="row justify-content-center carousel-container" style="margin-top: 0;">
-    <div class="col-md-12">
-      <div class="owl-carousel owl-theme">
-        <div class="item"><a href="detalleFabuloso.html"><img src="imagenes/Adara.png" alt="Descripción de la imagen 1"
-              title="DP1"></a></div>
-        <div class="item"><a href="detalleLysol.html"><img src="imagenes/Ajna.png" alt="Descripción de la imagen 2"
-              title="DP2"></a></div>
-        <div class="item"><a href="detalleFoca.html"><img src="imagenes/Anubis.png" alt="Descripción de la imagen 3"
-              title="DP3"></a></div>
-      </div>
-    </div>
-  </div>
-  -->
 
   <!-- Product Section -->
   <h2 id="producte" class="Subtitle">TINAS</h2>
