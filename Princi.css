@@ -93,7 +93,8 @@ owl-carousel .owl-item img {
   transition: color 0.3s;
   margin-right: 20px;
   font-size: 18px;
-  font-weight: bold;
+  font-family: Playball;
+  font-weight: Regular;
   color: black; /* Color por defecto de las letras */
   position: relative; /* Necesario para el pseudo-elemento */
 }
