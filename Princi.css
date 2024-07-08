@@ -92,11 +92,14 @@ owl-carousel .owl-item img {
 .navbar-nav .custom-item .nav-link {
   transition: color 0.3s;
   margin-right: 20px;
-  font-size: 18px;
+  font-size: 50px;
   font-family: Playball;
   font-weight: Regular;
-  color: black; /* Color por defecto de las letras */
+  color: white;
+  opacity: 1;
+  text-align: center;
   position: relative; /* Necesario para el pseudo-elemento */
+  -webkit-text-stroke: 1px black; /* Grosor y color del borde */
 }
 
 .navbar-nav .custom-item .nav-link::after {
