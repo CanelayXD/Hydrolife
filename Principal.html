@@ -13,9 +13,31 @@
             margin: 0;
             padding: 0;
         }
+        .navbar {
+            width: 100%;
+            background: #333;
+            overflow: hidden;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background: #ddd;
+            color: black;
+        }
         .carousel {
             width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            position: relative;
             overflow: hidden;
+            border: 2px solid #ddd;
+            border-radius: 10px;
         }
         .carousel-track {
             display: flex;
@@ -28,6 +50,7 @@
         .carousel-slide img {
             width: 100%;
             display: block;
+            border-radius: 10px;
         }
         .carousel-buttons {
             position: absolute;
@@ -44,9 +67,20 @@
             padding: 10px;
             cursor: pointer;
         }
+        .content {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
     </style>
 </head>
 <body>
+    <div class="navbar">
+        <a href="#home">Inicio</a>
+        <a href="#about">Acerca de</a>
+        <a href="#services">Servicios</a>
+        <a href="#contact">Contacto</a>
+    </div>
     <div class="carousel">
         <div class="carousel-track">
             <div class="carousel-slide">
@@ -62,10 +96,16 @@
                 <img src="imagenes/Aure.png" alt="Promo 4">
             </div>
         </div>
+        <div class="carousel-buttons">
+            <button class="carousel-button" id="prevButton">‹</button>
+            <button class="carousel-button" id="nextButton">›</button>
+        </div>
     </div>
-    <div class="carousel-buttons">
-        <button class="carousel-button" id="prevButton">‹</button>
-        <button class="carousel-button" id="nextButton">›</button>
+    <div class="content">
+        <!-- Aquí puedes agregar más contenido, como artículos -->
+        <h1>Bienvenido a nuestro catálogo</h1>
+        <p>Aquí encontrarás una variedad de productos que ofrecemos.</p>
+        <!-- Más contenido -->
     </div>
     <script>
         const track = document.querySelector('.carousel-track');
