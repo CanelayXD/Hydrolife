@@ -94,11 +94,16 @@ owl-carousel .owl-item img {
   margin-right: 20px;
   font-size: 18px;
   font-weight: bold;
+  color: black; /* Agrega un color predeterminado para el texto */
+  -webkit-background-clip: border-box; /* Cambia esto para asegurarse de que el texto no sea transparente */
 }
 
 .navbar-nav .custom-item .nav-link:hover {
   background: linear-gradient(to right, #add8e6, #d974f2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
 
 .navbar-nav .custom-item .nav-link:active {
   color: #ff0000;
