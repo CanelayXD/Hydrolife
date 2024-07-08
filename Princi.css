@@ -29,27 +29,57 @@ comment-input {
   background-color: rgb(118, 69, 225);
 }
 
+.carousel-container {
+  width: 101.2%;
+  height: auto;
+  background-image: url("imagenes/Back.jpeg");
+  /* Espacio entre el carrusel y la barra de navegación */
+  margin-bottom: 30px;
+  /* Espacio entre el carrusel y la parte inferior de la página */
+  border: 2px solid #ccc;
+  /* Añadir un contorno alrededor del carrusel */
+  border-radius: 5px;
+  /* Añadir bordes redondeados */
+  padding: 5px;
+  /* Añadir espacio interno alrededor del carrusel */
+  box-shadow: 0px 15px 10px rgba(46, 175, 210, 1.5);
+}
+
 /* Estilos para el navbar */
 .navbar {
   width: 100%;
   height: auto;
   background-color: #5DE890 !important;
-  /* Sombra */
 }
 
 .container_hed {
   display: flex;
   flex-direction: row; /* Asegura que los elementos se alineen horizontalmente */
-  gap: 20px; /* Espacio entre los elementos */
+  gap: 10px; /* Espacio entre los elementos */
   width: 100%;
   height: auto;
   align-items: center;
 }
 
+owl-carousel .owl-item img {
+  border-radius: 10px;
+  /* Bordes redondeados */
+  border: 2px rgb(92, 248, 240) !important;
+  max-width: 100%;
+  /* Ajuste del ancho máximo de las imágenes */
+  max-height: auto;
+  /* Ajuste de la altura máxima de las imágenes */
+  width: auto;
+  /* Ajuste del ancho automático */
+  height: auto;
+  /* Ajuste de la altura automática */
+  object-fit: cover;
+  /* Para que la imagen se ajuste dentro del contenedor sin perder su relación de aspecto */
+}
+
 .navbar-brand img {
-  width: 150px !important; /* Aumenta el ancho del logotipo */
-  height: auto !important; /* Ajusta la altura automáticamente */
-  padding-left: 40px !important; /* Incrementa el padding-left */
+  width: 120px;
+  /* Ajusta el tamaño de tu logotipo según sea necesario */
 }
 
 .search-input {
@@ -57,6 +87,10 @@ comment-input {
   height: 40px;
   margin-left: 20%;
   font-style: normal;
+}
+
+.icon_car {
+ /*margin-left: 100%;*/
 }
 
 .navbar-nav .custom-item .nav-link {
@@ -69,13 +103,37 @@ comment-input {
 }
 
 .navbar-nav .custom-item .nav-link:hover {
-  background: #009dff;
+  background: linear-gradient(to right, #add8e6, #d974f2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .navbar-nav .custom-item .nav-link:active {
-  color: #009dff;
+  color: #ff0000;
+}
+
+/* Estilos para el carrusel */
+.owl-carousel {
+  width: 100%;
+  background-image: "/imagenes/Back.jpeg" !important;
+  margin-top: 10px;
+}
+
+.owl-prev,
+.owl-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: #1bb125;
+}
+
+.owl-prev {
+  left: -30px;
+}
+
+.owl-next {
+  right: -30px;
 }
 
 .tarjeta-producto {
