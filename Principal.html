@@ -17,45 +17,9 @@
             e.preventDefault();
         });
     });
-  </script>
-  <style>
-    .carousel-container {
-        position: relative;
-        max-width: 100%;
-        margin: 20px auto;
-    }
-    .carousel-track {
-        display: flex;
-        overflow: hidden;
-        max-width: 100%;
-        height: 200px; /* Ajustar la altura aquí */
-    }
-    .carousel-slide {
-        min-width: 100%;
-        transition: transform 0.5s ease;
-    }
-    .carousel-slide img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Para que la imagen cubra el contenedor */
-    }
-    .carousel-buttons {
-        position: absolute;
-        top: 50%;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        transform: translateY(-50%);
-    }
-    .carousel-button {
-        background: rgba(0, 0, 0, 0.5);
-        border: none;
-        color: white;
-        padding: 10px;
-        cursor: pointer;
-    }
-  </style>
+</script>
 </head>
+
 <body>
   <!-- Navbar -->
   <div class="container_hed">
@@ -76,7 +40,7 @@
     <div class="collapse navbar-collapse justify-content-center" id="navbarNav" style="background-color: #5DE890;">
       <ul class="navbar-nav w-100 justify-content-around">
         <li class="nav-item custom-item">
-          <a class="nav-link custom-link text-center" href="Princi.html">Inicio</a>
+          <a class="nav-link custom-link text-center" href="Princi.html" font-family="Playball" font-weight="Regular">Inicio</a>
         </li>
         <li class="nav-item custom-item">
           <a class="nav-link custom-link text-center" href="#producte">Tinas</a>
@@ -88,34 +52,12 @@
     </div>
   </nav>
 
-  <!-- Carrusel -->
-  <div class="carousel-container">
-    <div class="carousel-track">
-      <div class="carousel-slide">
-        <img src="imagenes/Promo1.png" alt="Promo 1">
-      </div>
-      <div class="carousel-slide">
-        <img src="imagenes/Promo2.png" alt="Promo 2">
-      </div>
-      <div class="carousel-slide">
-        <img src="imagenes/Promo3.png" alt="Promo 3">
-      </div>
-      <div class="carousel-slide">
-        <img src="imagenes/Promo4.png" alt="Promo 4">
-      </div>
-    </div>
-    <div class="carousel-buttons">
-      <button class="carousel-button" id="prevButton">‹</button>
-      <button class="carousel-button" id="nextButton">›</button>
-    </div>
-  </div>
-
   <!-- Product Section -->
   <h2 id="producte" class="Subtitle">TINAS</h2>
   <div class="container">
     <div class="row mb-4">
       <div class="col">
-        <!-- Fin de la barra de búsqueda -->
+        <!-- Fin de la barra de busqueda -->
         <center>
           <button id="sortAZButton" class="btn btn-primary mb-4" style="background-color: #458BDE; border: 2px #458BDE;">Ordenar por Nombre (A-Z)</button>
           <button id="sortZAButton" class="btn btn-primary mb-4" style="background-color: #458BDE; border: 2px #458BDE;">Ordenar por Nombre (Z-A)</button>
@@ -125,6 +67,7 @@
       </div>
     </div>
     <!-- Componente para agregar desde el admin -->
+
     <div id="productList">
       <!-- Las tarjetas se agregarán dinámicamente con JavaScript -->
     </div>
@@ -149,7 +92,7 @@
   <div class="container">
     <div class="row mb-4">
       <div class="col">
-        <!-- Fin de la barra de búsqueda -->
+        <!-- Fin de la barra de busqueda -->
         <center>
           <button id="sortAZButtonAccesorios" class="btn btn-primary mb-4" style="background-color: #344f6d; border: 2px #344f6d;">Ordenar por Nombre (A-Z)</button>
           <button id="sortZAButtonAccesorios" class="btn btn-primary mb-4" style="background-color: #344f6d; border: 2px #344f6d;">Ordenar por Nombre (Z-A)</button>
@@ -165,20 +108,21 @@
     </div>  
   </div>
 
-  <!-- Footer -->
-  <footer id="Foot" class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-          <center>
-            <h4>Hydrolife</h4>
-            <p>Recomendaciones<br>
-            </p>
-          </center>
-        </div>
+ <!-- Footer -->
+<footer id="Foot" class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <center>
+          <h4>Hydrolife</h4>
+          <p>Recomendaciones<br>
+          </p>
+        </center>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
+
 
   <!-- JavaScript and jQuery -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -187,32 +131,5 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script src="Productos.js"></script>
   <script src="Accesorios.js"></script>
-  <script>
-    const track = document.querySelector('.carousel-track');
-    const slides = Array.from(track.children);
-    const nextButton = document.querySelector('#nextButton');
-    const prevButton = document.querySelector('#prevButton');
-    const slideWidth = slides[0].getBoundingClientRect().width;
-
-    let currentIndex = 0;
-
-    nextButton.addEventListener('click', () => {
-        if (currentIndex < slides.length - 1) {
-            currentIndex++;
-        } else {
-            currentIndex = 0;
-        }
-        track.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
-    });
-
-    prevButton.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-        } else {
-            currentIndex = slides.length - 1;
-        }
-        track.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
-    });
-  </script>
 </body>
 </html>
