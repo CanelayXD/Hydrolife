@@ -1,5 +1,5 @@
 /* Estilos personalizados */
-comment-input {
+.comment-input {
   position: fixed;
   top: 30px;
   bottom: 5px;
@@ -33,15 +33,10 @@ comment-input {
   width: 101.2%;
   height: auto;
   background-image: url("imagenes/Back.jpeg");
-  /* Espacio entre el carrusel y la barra de navegación */
   margin-bottom: 30px;
-  /* Espacio entre el carrusel y la parte inferior de la página */
   border: 2px solid #ccc;
-  /* Añadir un contorno alrededor del carrusel */
   border-radius: 5px;
-  /* Añadir bordes redondeados */
   padding: 5px;
-  /* Añadir espacio interno alrededor del carrusel */
   box-shadow: 0px 15px 10px rgba(46, 175, 210, 1.5);
 }
 
@@ -54,287 +49,122 @@ comment-input {
 
 .container_hed {
   display: flex;
-  flex-direction: row; /* Asegura que los elementos se alineen horizontalmente */
-  gap: 10px; /* Espacio entre los elementos */
+  flex-direction: row;
+  gap: 10px;
   width: 100%;
   height: auto;
   align-items: center;
 }
 
-owl-carousel .owl-item img {
+.owl-carousel .owl-item img {
   border-radius: 10px;
-  /* Bordes redondeados */
   border: 2px rgb(92, 248, 240) !important;
   max-width: 100%;
-  /* Ajuste del ancho máximo de las imágenes */
-  max-height: auto;
-  /* Ajuste de la altura máxima de las imágenes */
-  width: auto;
-  /* Ajuste del ancho automático */
   height: auto;
-  /* Ajuste de la altura automática */
+  width: auto;
   object-fit: cover;
-  /* Para que la imagen se ajuste dentro del contenedor sin perder su relación de aspecto */
 }
 
 .navbar-brand img {
   width: 120px;
-  /* Ajusta el tamaño de tu logotipo según sea necesario */
 }
 
 .search-input {
-  width: 50% !important; 
-  height: 40px;
-  margin-left: 20%;
-  font-style: normal;
+  width: 50% !important;
 }
 
-.icon_car {
- /*margin-left: 100%;*/
-}
-
-.navbar-nav .custom-item .nav-link {
-  transition: color 0.3s;
-  margin-right: 20px;
-  font-size: 18px;
-  font-weight: bold;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.navbar-nav .custom-item .nav-link:hover {
-  background: linear-gradient(to right, #add8e6, #d974f2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.navbar-nav .custom-item .nav-link:active {
-  color: #ff0000;
-}
-
-/* Estilos para el carrusel */
-.owl-carousel {
-  width: 100%;
-  background-image: "/imagenes/Back.jpeg" !important;
-  margin-top: 10px;
-}
-
-.owl-prev,
-.owl-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 24px;
-  color: #1bb125;
-}
-
-.owl-prev {
-  left: -30px;
-}
-
-.owl-next {
-  right: -30px;
-}
-
-.tarjeta-producto {
-  display: flex;
-  background-color: white; /* Fondo blanco para la tarjeta de detalle */
-  flex-direction: column;
-  justify-content: space-between; /* Asegura que los botones se posicionen en la parte inferior */
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 20px;
-  text-align: center;
-  width: 300px;
-  height: auto;
-  overflow: hidden;
-  margin-right: 20px;
-  margin-left: 20px;
-  margin-top: 20px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
-      border-radius: 10px;
-}
-
-
-.tarjeta-producto img {
-  width: 100%;
-  height: 200px; /* Altura fija para la imagen */
-  object-fit: contain; /* Asegura que la imagen se ajuste al contenedor */
-  margin: 0;
-  padding-top: 25px;
-  display: block;
-  background-color: white; /* Fondo blanco para la tarjeta de detalle */
-}
-
-
-.contenido {
-  padding: 20px;
-  text-align: center !important;
-  background-color: white;
-}
-
-
-.Subtitle {
-  margin-top: 15px;
-  font-size: 60px;
-  margin-bottom: 10;
-  text-align: center;
-  background: black;
-  /* Cambia los colores según tu preferencia */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.contenido h2 {
-  font-size: 25px;
-  margin-bottom: 10px;
-  margin-top: 50px;
-}
-.contenido h3 {
-  font-size: 20px;
-  margin-bottom: 5px;
-}
-
-.contenido p {
-  font-size: 14px;
-  margin-bottom: 10px;
-  text-align: left;
-  padding-left: 20px;
-  background-color: white; /* Fondo blanco para la tarjeta de detalle */
-}
-
-.boton {
-  background-color: #45DE96;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 20px;
-  display: block;
-  width: 100%;
-  padding: 10px;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.boton-container {
-  margin-top: auto;
-  text-align: center;
-  position: relative;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-}
-
-
-.boton:hover {
-  background-color: #344f6d;
-}
-
-.contenedor-tarjetas {
-  margin-top: 50px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  background-color: white; /* Fondo blanco para la tarjeta de detalle */
-}
-
-.footer {
-  margin-top: 100px;
-  border-top: 30px;
-  background-color: #5DE890;
-  background-size: cover;
-  padding: 30px 0;
-}
-
-.footer .container {
-  display: flex;
-  justify-content: center;
-}
-
-.footer .container .row {
-  margin-left: -15px;
-  margin-right: -15px;
-}
-
-.footer .container .row .col-md-3 {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.footer h4 {
-  font-size: 18px;
-  color: #333;
-}
-
-.footer ul {
+nav ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-.footer ul li {
-  margin-bottom: 10px;
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
 }
 
-.footer ul li a {
-  color: #555;
+nav ul li a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Estilos personalizados para los elementos del navbar */
+.custom-item {
+  flex: 1; /* Para que los elementos ocupen el mismo espacio horizontal */
+  text-align: center;
+}
+
+.custom-link {
+  color: black;
+  display: block;
+  padding: 10px;
+}
+
+.custom-link:hover {
+  color: #458BDE;
+  font-weight: bold;
   text-decoration: none;
 }
 
-.footer ul li a:hover {
-  color: #007bff;
+.custom-link.active {
+  color: #458BDE;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
-
-
-@media only screen and (max-width: 768px) {
-  .contenedor-tarjetas {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .tarjeta-producto {
-    width: 90%;
-    margin-bottom: 20px;
-    background-color: white; /* Fondo blanco para la tarjeta de detalle */
-  }
-
-  .search-input {
-    width: auto !important; 
-    height: 40px;
-    margin-left: 10px;
-    font-style: normal;
-  }
-}
- /* -------- AQUI SE MODIFICA EL ESTILO DE LA TARJETA DE CUANDO SE AGREGA AL ADMIN -------- */
- .product-card {
-  padding: 8px; /* Reducir el padding */
-  margin-bottom: 10px; /* Reducir el margin-bottom */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 200px; /* Ancho máximo para limitar el tamaño de la tarjeta */
-  background-color: white; /* Fondo blanco para la tarjeta de detalle */
-}
-.product-card img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 5px; /* Reducir el margin-bottom */
-  background-color: white; /* Fondo blanco para la tarjeta de detalle */
+.Subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 30px 0;
+  color: #458BDE;
 }
 
-.product-details {
+.footer {
+  background-color: #5DE890;
+  padding: 20px 0;
+  color: black;
   text-align: center;
 }
 
-.product-details h3 {
-  margin-bottom: 12px; /* Reducir el margin-bottom */
-  font-size: 16px; /* Reducir el font-size */
+/* Estilos para las tarjetas de producto */
+.contenedor-tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.product-details p {
-  font-size: 14px; /* Reducir el font-size */
-  color: #333;
-  font-weight: bold;
-  margin-bottom: 0;
+.card {
+  flex: 1 1 calc(33.333% - 10px);
+  /* Estilo personalizado para las tarjetas */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.card img {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.card-body {
+  text-align: center;
+}
+
+/* Media queries para hacer el diseño responsive */
+@media (max-width: 768px) {
+  .card {
+    flex: 1 1 calc(50% - 10px);
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    flex: 1 1 100%;
+  }
+}
