@@ -110,7 +110,7 @@
 .v54813_208 {
   width: 67px;
   height: 65px;
-  background: url("imagenes/v54808_208.png");
+  background: url("imagenes/v54813_208.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -133,7 +133,6 @@
   left: 0px;
   overflow: hidden;
 }
-
 comment-input {
   position: fixed;
   top: 30px;
