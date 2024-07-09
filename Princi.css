@@ -88,6 +88,8 @@
   overflow: hidden;
 }
 
+
+
 comment-input {
   position: fixed;
   top: 30px;
@@ -148,6 +150,55 @@ owl-carousel .owl-item img {
   /* Ajuste de la altura automática */
   object-fit: cover;
   /* Para que la imagen se ajuste dentro del contenedor sin perder su relación de aspecto */
+}
+
+.navbar-brand img {
+  width: 120px;
+  /* Ajusta el tamaño de tu logotipo según sea necesario */
+}
+
+.search-input {
+  width: 50% !important; 
+  height: 40px;
+  margin-left: 20%;
+  font-style: normal;
+}
+
+.navbar-nav .custom-item .nav-link {
+  transition: color 0.3s;
+  margin-right: 20px;
+  font-size: 66px;
+  font-family: Playball;
+  font-weight: Regular;
+  color: white;
+  opacity: 1;
+  text-align: center;
+  position: relative; /* Necesario para el pseudo-elemento */
+  -webkit-text-stroke: 0.5px black; /* Grosor y color del borde */
+  text-stroke: 0.5px black; /* Grosor y color del borde */
+}
+
+.navbar-nav .custom-item .nav-link::after {
+  content: ''; /* Contenido vacío para el pseudo-elemento */
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px; /* Altura del degradado */
+  background: linear-gradient(to right, #add8e6, #d974f2);
+  transform: scaleX(0); /* Inicialmente oculto */
+  transform-origin: bottom left;
+  transition: transform 0.3s ease; /* Animación de transición */
+}
+
+.navbar-nav .custom-item .nav-link:hover::after {
+  transform: scaleX(1); /* Mostrar el degradado al pasar el cursor */
+}
+
+
+
+.navbar-nav .custom-item .nav-link:active {
+  color: #ff0000;
 }
 
 /* Estilos para el carrusel */
