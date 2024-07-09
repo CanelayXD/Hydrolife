@@ -170,6 +170,11 @@ owl-carousel .owl-item img {
   font-style: normal;
 }
 
+#searchButton img {
+  width: 20px; /* Ajusta el tamaño de la imagen según sea necesario */
+  height: 20px; /* Ajusta el tamaño de la imagen según sea necesario */
+}
+
 /* Resto de tus estilos */
 .navbar-nav .custom-item .nav-link {
   transition: color 0.3s;
