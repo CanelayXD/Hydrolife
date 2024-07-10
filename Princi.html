@@ -49,14 +49,17 @@ function searchFunction() {
 
 <body>
 <!-- Navbar -->
-<div class="container mt-3">
-  <form id="searchForm" class="form-inline my-2 my-lg-0 justify-content-center">
-    <input class="form-control mr-sm-2 search-input" type="search" placeholder="Nombre del producto" aria-label="Search" id="searchInput">
-    <img src="./imagenes/v54808_182.png" alt="Search" id="searchImage" style="width: 35px; height: 35px; cursor: pointer;" onclick="searchFunction()">
-  </form>
+<div class="container_hed d-flex align-items-center">
+  <a class="navbar-brand" href="#"><img src="./imagenes/Logo.png" alt="Mi Logo" title="MiLog"></a>
+  <div class="container mt-3">
+    <form id="searchForm" class="form-inline my-2 my-lg-0 justify-content-center">
+      <input class="form-control mr-sm-2 search-input" type="search" placeholder="Nombre del producto" aria-label="Search" id="searchInput">
+      <img src="./imagenes/v54808_182.png" alt="Search" id="searchImage" style="width: 35px; height: 35px; cursor: pointer;" onclick="searchFunction()">
+    </form>
+  </div>
+  <div id="searchResults" class="mt-4"></div>
+  
 </div>
-<div id="searchResults" class="mt-4"></div>
-
 
 
   <!-- Navbar for Product Categories -->
