@@ -155,11 +155,20 @@ owl-carousel .owl-item img {
 .container_hed {
   display: flex;
   align-items: center;
+  margin-bottom: 0; /* Elimina cualquier margen inferior */
+}
+
+.bg-custom {
+  background-color: rgba(137, 232, 39, 1) !important;
+}
+
+#navbarNav {
+  background-color: rgba(137, 232, 39, 1) !important;
 }
 
 .navbar-brand img {
-  padding-left: 125px;
-  width: 270px;
+  padding-left: 25px;
+  width: 200px;
   /* Ajusta el tamaño de tu logotipo según sea necesario */
 }
 
@@ -170,24 +179,35 @@ owl-carousel .owl-item img {
   font-style: normal;
 }
 
-#searchButton img {
-  width: 30px; /* Ajusta el tamaño de la imagen según sea necesario */
-  height: 30px; /* Ajusta el tamaño de la imagen según sea necesario */
+#searchImage {
+  width: 35px; /* Ajusta el tamaño de la imagen de búsqueda */
+  height: 35px; /* Ajusta el tamaño de la imagen de búsqueda */
+  cursor: pointer; /* Cambia el cursor a puntero cuando se pasa sobre la imagen */
+}
+
+/* Estilos para las barras de navegación */
+.navbar {
+  margin-bottom: 5 !important; /* Elimina el margen inferior */
+  padding-bottom: 5 !important; /* Elimina el padding inferior */
+}
+
+.mt-3 {
+  margin-top: 0.5rem !important; /* Reduce el margen superior */
 }
 
 /* Resto de tus estilos */
 .navbar-nav .custom-item .nav-link {
   transition: color 0.3s;
   margin-right: 20px;
-  font-size: 66px;
+  font-size: 45px;
   font-family: Playball;
-  font-weight: Regular;
+  font-weight: bold;
   color: white;
   opacity: 1;
   text-align: center;
   position: relative; /* Necesario para el pseudo-elemento */
-  -webkit-text-stroke: 0.5px black; /* Grosor y color del borde */
-  text-stroke: 0.5px black; /* Grosor y color del borde */
+  -webkit-text-stroke: 1px black; /* Grosor y color del borde */
+  text-stroke: 1px black; /* Grosor y color del borde */
 }
 
 .navbar-nav .custom-item .nav-link::after {
@@ -210,7 +230,6 @@ owl-carousel .owl-item img {
 .navbar-nav .custom-item .nav-link:active {
   color: #ff0000;
 }
-
 
 /* Estilos para el carrusel */
 .owl-carousel {
