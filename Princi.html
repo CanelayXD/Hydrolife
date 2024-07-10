@@ -19,31 +19,30 @@
 });
 
 function searchFunction() {
-    const searchInput = document.getElementById('searchInput').value.trim().toLowerCase();
-    console.log('Buscar:', searchInput);
+      const searchInput = document.getElementById('searchInput').value.trim().toLowerCase();
+      console.log('Buscar:', searchInput);
 
-    // Obtener todos los productos
-    const allProducts = document.querySelectorAll('#productContainer .tarjeta-producto');
+      // Obtener todos los productos
+      const allProducts = document.querySelectorAll('#productContainer .tarjeta-producto');
 
-    // Filtrar productos basados en el texto de búsqueda
-    const filteredProducts = Array.from(allProducts).filter(product => {
-        const productName = product.querySelector('h2').innerText.trim().toLowerCase();
-        return productName.includes(searchInput);
-    });
+      // Filtrar productos basados en el texto de búsqueda
+      const filteredProducts = Array.from(allProducts).filter(product => {
+          const productName = product.querySelector('h2').innerText.trim().toLowerCase();
+          return productName.includes(searchInput);
+      });
 
-    // Mostrar resultados de búsqueda
-    const searchResultsContainer = document.getElementById('searchResults');
-    searchResultsContainer.innerHTML = ''; // Limpiar resultados anteriores
+      // Mostrar resultados de búsqueda
+      const searchResultsContainer = document.getElementById('searchResults');
+      searchResultsContainer.innerHTML = ''; // Limpiar resultados anteriores
 
-    if (filteredProducts.length > 0) {
-        filteredProducts.forEach(product => {
-            searchResultsContainer.appendChild(product.cloneNode(true));
-        });
-    } else {
-        searchResultsContainer.innerHTML = '<p>No se encontraron productos.</p>';
+      if (filteredProducts.length > 0) {
+          filteredProducts.forEach(product => {
+              searchResultsContainer.appendChild(product.cloneNode(true));
+          });
+      } else {
+          searchResultsContainer.innerHTML = '<p>No se encontraron productos.</p>';
+      }
     }
-}
-
 </script>
 </head>
 
