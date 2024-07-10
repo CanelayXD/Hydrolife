@@ -179,6 +179,14 @@ owl-carousel .owl-item img {
   font-style: normal;
 }
 
+#searchResults {
+  margin-top: 20px;
+}
+#searchResults .tarjeta-producto {
+  display: inline-block;
+  margin: 10px;
+}
+
 #searchImage {
   width: 35px; /* Ajusta el tamaño de la imagen de búsqueda */
   height: 35px; /* Ajusta el tamaño de la imagen de búsqueda */
