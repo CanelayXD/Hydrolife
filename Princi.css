@@ -162,6 +162,13 @@ owl-carousel .owl-item img {
   background-color: rgba(137, 232, 39, 1) !important;
 }
 
+.navbar {
+  width: 100%; /* Ancho completo */
+  max-width: 700px; /* Ancho máximo deseado */
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #navbarNav {
   background-color: rgba(137, 232, 39, 1) !important;
   border-top-left-radius: 5px;
