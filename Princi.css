@@ -155,6 +155,7 @@ owl-carousel .owl-item img {
 .container_hed {
   display: flex;
   align-items: center;
+  margin-bottom: 0; /* Elimina cualquier margen inferior */
 }
 
 .bg-custom {
@@ -182,6 +183,16 @@ owl-carousel .owl-item img {
   width: 35px; /* Ajusta el tamaño de la imagen de búsqueda */
   height: 35px; /* Ajusta el tamaño de la imagen de búsqueda */
   cursor: pointer; /* Cambia el cursor a puntero cuando se pasa sobre la imagen */
+}
+
+/* Estilos para las barras de navegación */
+.navbar {
+  margin-bottom: 0 !important; /* Elimina el margen inferior */
+  padding-bottom: 0 !important; /* Elimina el padding inferior */
+}
+
+.mt-3 {
+  margin-top: 0.5rem !important; /* Reduce el margen superior */
 }
 
 /* Resto de tus estilos */
@@ -219,7 +230,6 @@ owl-carousel .owl-item img {
 .navbar-nav .custom-item .nav-link:active {
   color: #ff0000;
 }
-
 
 /* Estilos para el carrusel */
 .owl-carousel {
