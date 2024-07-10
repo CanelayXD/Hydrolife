@@ -157,6 +157,14 @@ owl-carousel .owl-item img {
   align-items: center;
 }
 
+.bg-custom {
+  background-color: rgba(137, 232, 39, 1) !important;
+}
+
+#navbarNav {
+  background-color: rgba(137, 232, 39, 1) !important;
+}
+
 .navbar-brand img {
   padding-left: 25px;
   width: 200px;
