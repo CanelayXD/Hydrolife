@@ -174,7 +174,10 @@ owl-carousel .owl-item img {
 
 #navbarNav {
   background-color: rgba(137, 232, 39, 1) !important;
-  margin-left: 20%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .navbar-brand img {
