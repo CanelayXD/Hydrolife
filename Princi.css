@@ -158,8 +158,8 @@ owl-carousel .owl-item img {
 }
 
 .navbar-brand img {
-  padding-left: 125px;
-  width: 270px;
+  padding-left: 25px;
+  width: 200px;
   /* Ajusta el tamaño de tu logotipo según sea necesario */
 }
 
@@ -170,16 +170,17 @@ owl-carousel .owl-item img {
   font-style: normal;
 }
 
-#searchButton img {
-  width: 30px; /* Ajusta el tamaño de la imagen según sea necesario */
-  height: 30px; /* Ajusta el tamaño de la imagen según sea necesario */
+#searchImage {
+  width: 35px; /* Ajusta el tamaño de la imagen de búsqueda */
+  height: 35px; /* Ajusta el tamaño de la imagen de búsqueda */
+  cursor: pointer; /* Cambia el cursor a puntero cuando se pasa sobre la imagen */
 }
 
 /* Resto de tus estilos */
 .navbar-nav .custom-item .nav-link {
   transition: color 0.3s;
   margin-right: 20px;
-  font-size: 45px;
+  font-size: 66px;
   font-family: Playball;
   font-weight: Regular;
   color: white;
