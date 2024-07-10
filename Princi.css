@@ -160,6 +160,7 @@ owl-carousel .owl-item img {
 
 .bg-custom {
   background-color: transparent !important;
+  margin-left: 20%;
 }
 
 .navbar {
@@ -175,10 +176,12 @@ owl-carousel .owl-item img {
 
 #navbarNav {
   background-color: rgba(137, 232, 39, 1) !important;
+  margin-left: 20%;
 }
 
 .navbar-brand img {
   padding-left: 25px;
+  margin-left: 20%;
   width: 200px;
   /* Ajusta el tamaño de tu logotipo según sea necesario */
 }
