@@ -17,31 +17,6 @@
             e.preventDefault();
         });
     });
-    function searchFunction() {
-      const searchInput = document.getElementById('searchInput').value.trim().toLowerCase();
-      console.log('Buscar:', searchInput);
-
-      // Obtener todos los productos
-      const allProducts = document.querySelectorAll('#productContainer .tarjeta-producto');
-
-      // Filtrar productos basados en el texto de búsqueda
-      const filteredProducts = Array.from(allProducts).filter(product => {
-          const productName = product.querySelector('h2').innerText.trim().toLowerCase();
-          return productName.includes(searchInput);
-      });
-
-      // Mostrar resultados de búsqueda
-      const searchResultsContainer = document.getElementById('searchResults');
-      searchResultsContainer.innerHTML = ''; // Limpiar resultados anteriores
-
-      if (filteredProducts.length > 0) {
-          filteredProducts.forEach(product => {
-              searchResultsContainer.appendChild(product.cloneNode(true));
-          });
-      } else {
-          searchResultsContainer.innerHTML = '<p>No se encontraron productos.</p>';
-      }
-    }
 </script>
 </head>
 
@@ -52,12 +27,12 @@
   <div class="container mt-3">
     <form id="searchForm" class="form-inline my-2 my-lg-0 justify-content-center">
       <input class="form-control mr-sm-2 search-input" type="search" placeholder="Nombre del producto" aria-label="Search" id="searchInput">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="searchButton">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="searchButton" style="background-color: transparent; border: none;">
         <img src="./imagenes/v54808_182.png" alt="Search" style="width: 35px; height: 35px;">
+      </button>
     </form>
   </div>
 </div>
-
 
   <!-- Navbar for Product Categories -->
 <nav class="navbar navbar-expand-lg navbar-light bg-custom mt-3">
