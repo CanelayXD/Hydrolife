@@ -17,13 +17,6 @@
             e.preventDefault();
         });
     });
-
-    function searchFunction() {
-    // Aquí puedes agregar la lógica para manejar la búsqueda
-    const searchInput = document.getElementById('searchInput').value;
-    console.log('Buscar:', searchInput);
-    // Añade tu lógica de búsqueda aquí
-  }
 </script>
 </head>
 
@@ -34,30 +27,32 @@
   <div class="container mt-3">
     <form id="searchForm" class="form-inline my-2 my-lg-0 justify-content-center">
       <input class="form-control mr-sm-2 search-input" type="search" placeholder="Nombre del producto" aria-label="Search" id="searchInput">
-      <img src="./imagenes/v54808_182.png" alt="Search" id="searchImage" style="width: 35px; height: 35px; cursor: pointer;" onclick="searchFunction()">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="searchButton">
+        <img src="./imagenes/v54808_182.png" alt="Search" style="width: 35px; height: 35px;">
     </form>
   </div>
 </div>
 
-<!-- Navbar for Product Categories -->
-<nav class="navbar navbar-expand-lg navbar-light bg-custom mt-3">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-    <ul class="navbar-nav w-100 justify-content-around">
-      <li class="nav-item custom-item">
-        <a class="nav-link custom-link text-center" href="Princi.html">Inicio</a>
-      </li>
-      <li class="nav-item custom-item">
-        <a class="nav-link custom-link text-center" href="#producte">Tinas</a>
-      </li>
-      <li class="nav-item custom-item">
-        <a class="nav-link custom-link text-center" href="#accesorios">Accesorios</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+
+  <!-- Navbar for Product Categories -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mt-3" style="background-color: rgba(137, 232, 39, 1);">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav" style="background-color: rgba(137, 232, 39, 1);">
+      <ul class="navbar-nav w-100 justify-content-around">
+        <li class="nav-item custom-item">
+          <a class="nav-link custom-link text-center" href="Princi.html">Inicio</a>
+        </li>
+        <li class="nav-item custom-item">
+          <a class="nav-link custom-link text-center" href="#producte">Tinas</a>
+        </li>
+        <li class="nav-item custom-item">
+          <a class="nav-link custom-link text-center" href="#accesorios">Accesorios</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
   <!-- Product Section -->
   <h2 id="producte" class="Subtitle">TINAS</h2>
