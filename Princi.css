@@ -187,8 +187,8 @@ owl-carousel .owl-item img {
 
 /* Estilos para las barras de navegación */
 .navbar {
-  margin-bottom: 0 !important; /* Elimina el margen inferior */
-  padding-bottom: 0 !important; /* Elimina el padding inferior */
+  margin-bottom: 5 !important; /* Elimina el margen inferior */
+  padding-bottom: 5 !important; /* Elimina el padding inferior */
 }
 
 .mt-3 {
