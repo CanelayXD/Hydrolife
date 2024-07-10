@@ -195,7 +195,7 @@ owl-carousel .owl-item img {
   opacity: 1;
   text-align: center;
   position: relative; /* Necesario para el pseudo-elemento */
-  -webkit-text-stroke: 0.5px black; /* Grosor y color del borde */
+  -webkit-text-stroke: 1.5px black; /* Grosor y color del borde */
   text-stroke: 1.5px black; /* Grosor y color del borde */
 }
 
