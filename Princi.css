@@ -166,6 +166,7 @@ owl-carousel .owl-item img {
   width: 100%; /* Ancho completo */
   max-width: 700px; /* Ancho máximo deseado */
   margin-right: auto;
+  padding-left: 25%;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border-bottom-left-radius: 5px;
