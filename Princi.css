@@ -271,6 +271,7 @@ owl-carousel .owl-item img {
 
 .tarjeta-producto {
   display: flex;
+  align-items: center;
   background-color: white; /* Fondo blanco para la tarjeta de detalle */
   flex-direction: column;
   justify-content: space-between; /* Asegura que los botones se posicionen en la parte inferior */
