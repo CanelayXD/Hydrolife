@@ -337,9 +337,10 @@ owl-carousel .owl-item img {
 }
 
 .boton {
-  background-color: #45DE96;
-  font-family: 'Courier New', Courier, monospace;
+  background-color: #783eff;
+  font-family: Playball;
   font-size: 20px;
+  font-weight: bold;
   display: block;
   width: 100%;
   padding: 10px;
@@ -368,7 +369,7 @@ owl-carousel .owl-item img {
   margin-top: 50px;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
   background-color: transparent; /* Fondo para la tarjeta de detalle */
 }
 
