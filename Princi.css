@@ -420,7 +420,7 @@ owl-carousel .owl-item img {
 
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 500px) {
   .contenedor-tarjetas {
     flex-direction: column;
     align-items: center;
