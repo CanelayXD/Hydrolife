@@ -179,7 +179,8 @@ owl-carousel .owl-item img {
 }
 
 .search-input {
-  width: 275px !important; 
+  width: 70% !important; 
+  max-width: 700px;
   height: 40px;
   font-style: normal;
 }
@@ -427,7 +428,7 @@ owl-carousel .owl-item img {
   }
 
   .tarjeta-producto {
-    width: 90%;
+    width: 75%;
     margin-bottom: 20px;
     background-color: white; /* Fondo blanco para la tarjeta de detalle */
   }
