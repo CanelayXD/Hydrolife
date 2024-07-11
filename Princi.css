@@ -368,7 +368,7 @@ owl-carousel .owl-item img {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: white; /* Fondo blanco para la tarjeta de detalle */
+  background-color: transparent; /* Fondo para la tarjeta de detalle */
 }
 
 .footer {
