@@ -369,7 +369,6 @@ owl-carousel .owl-item img {
   margin-top: 50px;
   display: flex;
   justify-content: center;
-  flex-direction: column;
   background-color: transparent; /* Fondo para la tarjeta de detalle */
 }
 
