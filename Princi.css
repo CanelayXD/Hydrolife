@@ -274,10 +274,10 @@ owl-carousel .owl-item img {
   background-color: white; /* Fondo blanco para la tarjeta de detalle */
   flex-direction: column;
   justify-content: space-between; /* Asegura que los botones se posicionen en la parte inferior */
-  font-family: 'Courier New', Courier, monospace;
+  font-family: Playball;
   font-size: 20px;
   text-align: center;
-  width: 300px;
+  width: 260px;
   height: auto;
   overflow: hidden;
   margin-right: 20px;
