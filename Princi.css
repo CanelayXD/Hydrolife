@@ -242,6 +242,31 @@ owl-carousel .owl-item img {
   }
 }
 
+/* Estilos para pantallas más grandes */
+@media (min-width: 769px) {
+  .container_hed {
+      justify-content: space-between;
+  }
+
+  .navbar-brand img {
+      width: 200px;
+      padding-left: 0;
+  }
+
+  .search-input {
+      width: 275px;
+  }
+
+  .navbar-nav {
+      justify-content: center;
+  }
+
+  .navbar-nav .custom-item .nav-link {
+      font-size: 24px;
+      margin-right: 20px;
+  }
+}
+
 /* Estilos para el carrusel */
 .owl-carousel {
   width: 100%;
