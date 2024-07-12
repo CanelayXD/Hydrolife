@@ -114,34 +114,38 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-  <!-- Navbar -->
-  <div class="container_hed">
-    <a class="navbar-brand" href="Princi.html"><img src="./imagenes/Logo.png" alt="Mi Logo" title="MiLog"></a>
-    <div class="container mt-3">
-      <form id="searchForm" class="form-inline my-2 my-lg-0 justify-content-center">
-        <input class="form-control mr-sm-2 search-input" type="search" placeholder="Nombre del producto" aria-label="Search" id="searchInput">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="searchButton" style=" background-color: rgb(207, 207, 207); border-color: rgb(207, 207, 207);"><i class="fas fa-search" style="color: grey;"></i></button>
-      </form>
-    </div>
-  </div> 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light mt-3" style="background-color: #5DE890;">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-center" id="navbarNav" style="background-color: #5DE890;">
-      <ul class="navbar-nav w-100 justify-content-around">
-        <li class="nav-item custom-item">
-          <a class="nav-link custom-link text-center" href="Princi.html">Inicio</a>
-        </li>
-        <li class="nav-item custom-item">
-          <a class="nav-link custom-link text-center" href="Princi.html">Tinas</a>
-        </li>
-        <li class="nav-item custom-item">
-          <a class="nav-link custom-link text-center" href="Princi.html">Accesorios</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+<!-- Navbar -->
+<div class="container_hed d-flex align-items-center justify-content-end">
+  <a class="navbar-brand" href="#"><img src="./imagenes/Logo.png" alt="Mi Logo" title="MiLog"></a>
+  <div class="container mt-3 d-flex flex-column align-items-center">
+    <form id="searchForm" class="form-inline my-2 my-lg-0 d-flex justify-content-center">
+      <input class="form-control mr-sm-2 search-input" type="search" placeholder="Nombre del producto" aria-label="Search" id="searchInput">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="searchButton" style="background-color: transparent; border: none;">
+        <img src="./imagenes/v54808_182.png" alt="Search" style="width: 35px; height: 35px;">
+      </button>
+    </form>
+
+    <!-- Navbar for Product Categories -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-custom mt-3">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav w-100 justify-content-around">
+          <li class="nav-item custom-item">
+            <a class="nav-link custom-link text-center" href="Princi.html">Inicio</a>
+          </li>
+          <li class="nav-item custom-item">
+            <a class="nav-link custom-link text-center" href="#producte">Tinas</a>
+          </li>
+          <li class="nav-item custom-item">
+            <a class="nav-link custom-link text-center" href="#accesorios">Accesorios</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
 
   <div class="tarjeta-detalle">
     <img src="imagenes/Onix.png" alt="Producto Grande">
