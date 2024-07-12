@@ -151,10 +151,12 @@ owl-carousel .owl-item img {
   object-fit: cover;
   /* Para que la imagen se ajuste dentro del contenedor sin perder su relación de aspecto */
 }
+
 .container_hed {
   display: flex;
   align-items: center;
   margin-bottom: 0; /* Elimina cualquier margen inferior */
+  justify-content: flex-end; /* Mueve los elementos hacia la derecha */
 }
 
 .bg-custom {
