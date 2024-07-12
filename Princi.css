@@ -174,7 +174,8 @@ owl-carousel .owl-item img {
 }
 
 .navbar-brand img {
-  margin-left: 25%;
+  border-left: 25px;
+  border-left-color: #ffffff;
   width: 200px; /* Ajusta el tamaño de tu logotipo según sea necesario */
 }
 
