@@ -16,12 +16,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="Princi.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             document.addEventListener('contextmenu', function (e) {
                 e.preventDefault();
+            });
+            const images = [
+                'imagenes/Adara1.jpeg',
+                'imagenes/Adara2.jpeg',
+                'imagenes/Adara3.jpeg',
+                'imagenes/Adara4.jpeg',
+                'imagenes/Adara5.jpeg'
+            ];
+            images.forEach((src, index) => {
+                const canvas = document.getElementById('canvas' + index);
+                const ctx = canvas.getContext('2d');
+                const img = new Image();
+                img.onload = function() {
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    ctx.font = '48px serif';
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+                    ctx.fillText('HYDROLIFE', 10, 50);
+                };
+                img.src = src;
             });
         });
     </script>
@@ -38,12 +56,12 @@
         .imagenes-adicionales {
             width: 100%;
             display: flex;
-            flex-direction: column; /* Cambiar a columna */
+            flex-direction: column;
             align-items: center;
         }
 
         .imagen-cuadro {
-            width: 90%; /* Ocupar 90% del contenedor */
+            width: 90%;
             margin: 10px 0;
             box-sizing: border-box;
             display: flex;
@@ -56,38 +74,9 @@
             position: relative;
         }
 
-        .imagen-cuadro img {
+        .imagen-cuadro canvas {
             width: 100%;
             height: auto;
-            object-fit: contain;
-            -webkit-user-drag: none;
-            -khtml-user-drag: none;
-            -moz-user-drag: none;
-            -o-user-drag: none;
-            user-drag: none;
-        }
-
-        /* Marca de agua oculta por defecto */
-        .watermarked img {
-            position: relative;
-        }
-
-        .watermarked img::after {
-            content: "HYDROLIFE";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 24px;
-            color: rgba(255, 255, 255, 0.5);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-
-        /* Mostrar la marca de agua cuando la imagen es descargada */
-        .watermarked img:hover::after {
-            opacity: 1;
         }
 
         @media (max-width: 768px) {
@@ -108,21 +97,21 @@
 </head>
 <body>
     <!-- Navbar -->
-  <div class="container_hed">
-    <a class="navbar-brand" href="javascript:void(0);" onclick="history.back();">
-      <img src="./imagenes/Logo.png" alt="Mi Logo" title="MiLog">
-    </a>
-  </div> 
+    <div>
+        <a href="javascript:void(0);" onclick="history.back();">
+            <img src="./imagenes/Logo.png" alt="Mi Logo">
+        </a>
+    </div>
 
     <div class="contenido">
         <h2>ADARA IMÁGENES</h2>
     </div>
     <div class="imagenes-adicionales">
-        <div class="imagen-cuadro watermarked"><img src="imagenes/Adara1.jpeg" alt="Producto Extra 1"></div>
-        <div class="imagen-cuadro watermarked"><img src="imagenes/Adara2.jpeg" alt="Producto Extra 2"></div>
-        <div class="imagen-cuadro watermarked"><img src="imagenes/Adara3.jpeg" alt="Producto Extra 3"></div>
-        <div class="imagen-cuadro watermarked"><img src="imagenes/Adara4.jpeg" alt="Producto Extra 4"></div>
-        <div class="imagen-cuadro watermarked"><img src="imagenes/Adara5.jpeg" alt="Producto Extra 5"></div>
+        <div class="imagen-cuadro"><canvas id="canvas0" width="500" height="500"></canvas></div>
+        <div class="imagen-cuadro"><canvas id="canvas1" width="500" height="500"></canvas></div>
+        <div class="imagen-cuadro"><canvas id="canvas2" width="500" height="500"></canvas></div>
+        <div class="imagen-cuadro"><canvas id="canvas3" width="500" height="500"></canvas></div>
+        <div class="imagen-cuadro"><canvas id="canvas4" width="500" height="500"></canvas></div>
     </div>
-</body>   
+</body>
 </html>
