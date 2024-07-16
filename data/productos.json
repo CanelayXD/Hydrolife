@@ -4,56 +4,56 @@
       "nombre": "Prana",
       "imagen": "imagenes/Prana.png",
       "capacidad": 2,
-      "url": "./../tinas/Prana/Prana.html"
+      "url": "tinas/Prana/Prana.html"
     },
     {
       "id": 2,
       "nombre": "Dharma",
       "imagen": "imagenes/Dharma.png",
       "capacidad": 1,
-      "url": "./../tinas/Dharma/Dharma.html"
+      "url": "tinas/Dharma/Dharma.html"
     },
     {
       "id": 3,
       "nombre": "Anubis",
       "imagen": "imagenes/Anubis.png",
       "capacidad": 2,
-      "url": "./../tinas/Anubis/Anubis.html"
+      "url": "tinas/Anubis/Anubis.html"
     },
     {
       "id": 4,
       "nombre": "Nair",
       "imagen": "imagenes/Nair.png",
       "capacidad": 2,
-      "url": "./../tinas/Nair/Nair.html"
+      "url": "tinas/Nair/Nair.html"
     },
     {
       "id": 5,
       "nombre": "Onix",
       "imagen": "imagenes/Onix.png",
       "capacidad": 5,
-      "url": "./../tinas/Onix/Onix.html"
+      "url": "tinas/Onix/Onix.html"
     },
     {
       "id": 6,
       "nombre": "Orion",
       "imagen": "imagenes/Orion.png",
       "capacidad": 1,
-      "url": "./../tinas/Orion/Orion.html"
+      "url": "tinas/Orion/Orion.html"
     },
     {
       "id": 7,
       "nombre": "Sirius",
       "imagen": "imagenes/Sirius.png",
       "capacidad": 2,
-      "url": "./../tinas/Sirius/Sirius.html"
+      "url": "tinas/Sirius/Sirius.html"
     },
     {
       "id": 8,
       "nombre": "Loto",
       "imagen": "imagenes/Loto.png",
       "capacidad": 1,
-      "url": "./../tinas/Loto/Loto.html"
+      "url": "tinas/Loto/Loto.html"
     },
     {
       "id": 9,
@@ -116,7 +116,7 @@
       "nombre": "Eureka",
       "imagen": "imagenes/Eureka.png",
       "capacidad": 10,
-      "url": "tinas/Eureka/.html"
+      "url": "tinas/Eureka/Eureka/.html"
     },
     {
       "id": 18,
