@@ -60,70 +60,70 @@
       "nombre": "Osiris",
       "imagen": "imagenes/Osiris.png",
       "capacidad": 1,
-      "url": "./../tinas/Osiris/Osiris.html"
+      "url": "tinas/Osiris/Osiris.html"
     },
     {
       "id": 10,
       "nombre": "Ajna",
       "imagen": "imagenes/Ajna.png",
       "capacidad": 1,
-      "url": "./../tinas/Ajna/Ajna.html"
+      "url": "tinas/Ajna/Ajna.html"
     },
     {
       "id": 11,
       "nombre": "Maya",
       "imagen": "imagenes/Maya.png",
       "capacidad": 2,
-      "url": "./../tinas/Maya/Maya.html"
+      "url": "tinas/Maya/Maya.html"
     },
     {
       "id": 12,
       "nombre": "Shanti",
       "imagen": "imagenes/Shanti.png",
       "capacidad": 1,
-      "url": "./../tinas/Shanti/Shanti.html"
+      "url": "tinas/Shanti/Shanti.html"
     },
     {
       "id": 13,
       "nombre": "Indra",
       "imagen": "imagenes/Indra.png",
       "capacidad": 2,
-      "url": "./../tinas/Indra/Indra.html"
+      "url": "tinas/Indra/Indra.html"
     },
     {
       "id": 14,
       "nombre": "Mantra",
       "imagen": "imagenes/Mantra.png",
       "capacidad": 2,
-      "url": "./../tinas/Mantra/Mantra.html"
+      "url": "tinas/Mantra/Mantra.html"
     },
     {
       "id": 15,
       "nombre": "Kiara",
       "imagen": "imagenes/Kiara.png",
       "capacidad": 7,
-      "url": "./../tinas/Kiara/Kiara.html"
+      "url": "tinas/Kiara/Kiara.html"
     },
     {
       "id": 16,
       "nombre": "Soma",
       "imagen": "imagenes/Soma.png",
       "capacidad": 2,
-      "url": "./../tinas/Soma/Soma.html"
+      "url": "tinas/Soma/Soma.html"
     },
     {
       "id": 17,
       "nombre": "Eureka",
       "imagen": "imagenes/Eureka.png",
       "capacidad": 10,
-      "url": "./../tinas/Eureka/.html"
+      "url": "tinas/Eureka/.html"
     },
     {
       "id": 18,
       "nombre": "Aure",
       "imagen": "imagenes/Aure.png",
       "capacidad": 5,
-      "url": "./../tinas/Aure/Aure.html"
+      "url": "tinas/Aure/Aure.html"
     },
     {
       "id": 19,
@@ -137,77 +137,77 @@
       "nombre": "Brahama",
       "imagen": "imagenes/Brahama.png",
       "capacidad": 2,
-      "url": "./../tinas/Brahama/Brahama.html"
+      "url": "tinas/Brahama/Brahama.html"
     },
     {
       "id": 21,
       "nombre": "Laserta",
       "imagen": "imagenes/Laserta.png",
       "capacidad": 2,
-      "url": "./../tinas/Laserta/Laserta.html"
+      "url": "tinas/Laserta/Laserta.html"
     },
     {
       "id": 22,
       "nombre": "Latika",
       "imagen": "imagenes/Latika.png",
       "capacidad": 16,
-      "url": "./../tinas/Latika/Latika.html"
+      "url": "tinas/Latika/Latika.html"
     },
     {
       "id": 23,
       "nombre": "Karuna",
       "imagen": "imagenes/Karuna.png",
       "capacidad": 1,
-      "url": "./../tinas/Karuna/Karuna.html"
+      "url": "tinas/Karuna/Karuna.html"
     },
     {
       "id": 24,
       "nombre": "Sensation",
       "imagen": "imagenes/Sensation.png",
       "capacidad": 1,
-      "url": "./../tinas/Sensation/Sensation.html"
+      "url": "tinas/Sensation/Sensation.html"
     },
     {
       "id": 25,
       "nombre": "Inspiration",
       "imagen": "imagenes/Inspiration.png",
       "capacidad": 1,
-      "url": "./../tinas/Inspiration/Inspiration.html"
+      "url": "tinas/Inspiration/Inspiration.html"
     },
     {
       "id": 26,
       "nombre": "Musa",
       "imagen": "imagenes/Musa.png",
       "capacidad": 1,
-      "url": "./../tinas/Musa/Musa.html"
+      "url": "tinas/Musa/Musa.html"
     },
     {
       "id": 27,
       "nombre": "Vancover",
       "imagen": "imagenes/Vancover.png",
       "capacidad": 1,
-      "url": "./../tinas/Vancover/Vancover.html"
+      "url": "tinas/Vancover/Vancover.html"
     },
     {
       "id": 28,
       "nombre": "Mónaco",
       "imagen": "imagenes/Monaco.png",
       "capacidad": 1,
-      "url": "./../tinas/Monaco/Monaco.html"
+      "url": "tinas/Monaco/Monaco.html"
     },
     {
       "id": 29,
       "nombre": "Umbrella",
       "imagen": "imagenes/Umbrella.png",
       "capacidad": 1,
-      "url": "./../tinas/Umbrella/Umbrella.html"
+      "url": "tinas/Umbrella/Umbrella.html"
     },
     {
       "id": 30,
       "nombre": "Inventa",
       "imagen": "imagenes/Inventa.png",
       "capacidad": 1,
-      "url": "./../tinas/Inventa/Inventa.html"
+      "url": "tinas/Inventa/Inventa.html"
     }
   ]
   
