@@ -8,6 +8,13 @@
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-V4WMSS4Y8K');
+
+    // Desactivar clic derecho en la imagen
+    document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+    });
   </script>
   <title>Hydrolife</title>
   <!-- Estilos CSS -->
@@ -18,15 +25,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="Princi.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <title>Plano</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        document.addEventListener('contextmenu', function (e) {
-            e.preventDefault();
-        });
-    });
-</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/MTLLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
   <style>
     .contenido h2 {
         text-align: center;
@@ -106,7 +108,19 @@
             text-align: center;
         }
     }
-</style>
+
+    /* Estilos para los modelos 3D */
+    .model-container {
+        width: 90%;
+        height: 800px; /* Ajusta la altura según tus necesidades */
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        padding: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        position: relative;
+    }
+  </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -116,12 +130,69 @@
     </a>
   </div> 
   <div class="contenido">
-    <h2>Plano Tina Dharma</h2>
-</div>
-<div class="imagenes-adicionales">
-    <div class="imagen-cuadro watermarked"><img src="imagenes/DharmaPlano.jpeg"></div>
-</div>
+    <h2>Plano Tina Brahama</h2>
+  </div>
+  <div class="imagenes-adicionales">
+    <div class="imagen-cuadro watermarked"><img src="./../../imagenes/BrahamaPlano.jpeg"></div>
+    <!-- Contenedores para los modelos 3D -->
+    <div class="model-container" id="model1"></div>
+    <div class="model-container" id="model2"></div>
+  </div>
     
+  <script>
+    // Función para cargar y renderizar un modelo 3D
+    function loadModel(containerId, objPath, mtlPath) {
+      const container = document.getElementById(containerId);
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+      const renderer = new THREE.WebGLRenderer({ antialias: true });
+      renderer.setSize(width, height);
+      renderer.setClearColor(0x808080); // Fondo gris
+      container.appendChild(renderer.domElement);
+
+      const ambientLight = new THREE.AmbientLight(0x404040); // soft white light
+      scene.add(ambientLight);
+
+      const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+      directionalLight.position.set(1, 1, 1).normalize();
+      scene.add(directionalLight);
+
+      const controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+      const loader = new THREE.MTLLoader();
+      loader.load(mtlPath, function (materials) {
+        materials.preload();
+        const objLoader = new THREE.OBJLoader();
+        objLoader.setMaterials(materials);
+        objLoader.load(objPath, function (object) {
+          scene.add(object);
+          object.position.y = -50;
+          object.traverse(function (child) {
+            if (child instanceof THREE.Mesh) {
+              child.material.side = THREE.DoubleSide; // Evita caras transparentes
+            }
+          });
+        });
+      });
+
+      camera.position.z = 200;
+
+      const animate = function () {
+        requestAnimationFrame(animate);
+        controls.update();
+        renderer.render(scene, camera);
+      };
+
+      animate();
+    }
+
+    // Cargar los modelos 3D
+    loadModel('model1', './../../objects/BRAHAMA_BLANCA.obj', './../../objects/BRAHAMA_BLANCA.mtl');
+    //loadModel('model2', './../../objects/BRAHAMA_HUESO.obj', './../../objects/BRAHAMA_HUESO.mtl');
+  </script>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
