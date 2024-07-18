@@ -95,8 +95,8 @@
 
         .image-list {
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
+            flex-direction: column; /* Cambiar la dirección a columna */
+            align-items: center;
             margin-top: 20px;
         }
 
@@ -115,8 +115,8 @@
         }
 
         .image-list-item canvas {
-            width: 100px;
-            height: 100px;
+            width: 150px; /* Aumentar el tamaño de las imágenes */
+            height: 150px; /* Aumentar el tamaño de las imágenes */
         }
 
         @media (max-width: 768px) {
