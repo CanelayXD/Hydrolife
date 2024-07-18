@@ -14,40 +14,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="../../Princi.css">
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            document.addEventListener('contextmenu', function (e) {
-                e.preventDefault();
-            });
-            const images = [
-                '../../imagenes/Eureka1.jpeg',
-                '../../imagenes/Eureka2.jpeg',
-                '../../imagenes/Eureka3.jpeg',
-                '../../imagenes/Eureka4.jpeg',
-            ];
-            images.forEach((src, index) => {
-                const canvas = document.getElementById('canvas' + index);
-                const ctx = canvas.getContext('2d');
-                const img = new Image();
-                img.onload = function() {
-                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-                    ctx.font = '48px serif';
-                    ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
-                    ctx.fillText('HYDROLIFE', 10, 50);
-                };
-                img.src = src;
-            });
-
-            // Agregar overlays
-            document.querySelectorAll('.imagen-cuadro').forEach((element, index) => {
-                const overlay = document.createElement('div');
-                overlay.className = 'overlay';
-                overlay.innerText = 'Captura de pantalla prohibida';
-                element.appendChild(overlay);
-            });
-        });
-    </script>
     <style>
         .contenido h2 {
             text-align: center;
@@ -64,31 +30,46 @@
             padding-left: 40px !important;
         }
 
-        .imagenes-adicionales {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .imagen-cuadro {
-            width: 90%;
-            margin: 10px 0;
-            box-sizing: border-box;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid #ddd;
-            padding: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+        .carousel {
             position: relative;
-            overflow: hidden; /* Añadido para prevenir la selección en móviles */
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+            overflow: hidden;
         }
 
-        .imagen-cuadro canvas {
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .carousel-slide canvas {
             width: 100%;
             height: auto;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .carousel-button.prev {
+            left: 10px;
+        }
+
+        .carousel-button.next {
+            right: 10px;
         }
 
         .overlay {
@@ -147,16 +128,81 @@
         <h2>EUREKA IMÁGENES</h2>
     </div>
 
-    <div class="imagenes-adicionales">
-        <div class="imagen-cuadro"><canvas id="canvas0" width="500" height="500"></canvas></div>
-        <div class="imagen-cuadro"><canvas id="canvas1" width="500" height="500"></canvas></div>
-        <div class="imagen-cuadro"><canvas id="canvas2" width="500" height="500"></canvas></div>
-        <div class="imagen-cuadro"><canvas id="canvas3" width="500" height="500"></canvas></div>
+    <div class="carousel">
+        <button class="carousel-button prev">❮</button>
+        <div class="carousel-container">
+            <div class="carousel-slide"><canvas id="canvas0" width="500" height="500"></canvas></div>
+            <div class="carousel-slide"><canvas id="canvas1" width="500" height="500"></canvas></div>
+            <div class="carousel-slide"><canvas id="canvas2" width="500" height="500"></canvas></div>
+            <div class="carousel-slide"><canvas id="canvas3" width="500" height="500"></canvas></div>
+        </div>
+        <button class="carousel-button next">❯</button>
     </div>
 
     <!-- Scripts necesarios -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.addEventListener('contextmenu', function (e) {
+                e.preventDefault();
+            });
+
+            const images = [
+                '../../imagenes/Eureka1.jpeg',
+                '../../imagenes/Eureka2.jpeg',
+                '../../imagenes/Eureka3.jpeg',
+                '../../imagenes/Eureka4.jpeg',
+            ];
+            images.forEach((src, index) => {
+                const canvas = document.getElementById('canvas' + index);
+                const ctx = canvas.getContext('2d');
+                const img = new Image();
+                img.onload = function() {
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    ctx.font = '48px serif';
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+                    ctx.fillText('HYDROLIFE', 10, 50);
+                };
+                img.src = src;
+            });
+
+            // Carrusel de imágenes
+            const carouselContainer = document.querySelector('.carousel-container');
+            const slides = document.querySelectorAll('.carousel-slide');
+            const prevButton = document.querySelector('.carousel-button.prev');
+            const nextButton = document.querySelector('.carousel-button.next');
+            
+            let index = 0;
+
+            function showSlide(newIndex) {
+                if (newIndex < 0) {
+                    index = slides.length - 1;
+                } else if (newIndex >= slides.length) {
+                    index = 0;
+                } else {
+                    index = newIndex;
+                }
+                carouselContainer.style.transform = `translateX(${-index * 100}%)`;
+            }
+
+            prevButton.addEventListener('click', () => {
+                showSlide(index - 1);
+            });
+
+            nextButton.addEventListener('click', () => {
+                showSlide(index + 1);
+            });
+
+            // Agregar overlays
+            document.querySelectorAll('.imagen-cuadro').forEach((element, index) => {
+                const overlay = document.createElement('div');
+                overlay.className = 'overlay';
+                overlay.innerText = 'Captura de pantalla prohibida';
+                element.appendChild(overlay);
+            });
+        });
+    </script>
 </body>
 </html>
