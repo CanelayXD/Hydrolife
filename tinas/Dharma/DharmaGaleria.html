@@ -177,8 +177,16 @@
         }
 
         .carousel-slide img {
-            width: 100%;
-            height: auto;
+            height: 400px; /* Fija la altura de las imágenes */
+            width: auto; /* Ajusta el ancho automáticamente */
+            object-fit: cover; /* Ajusta la imagen para cubrir el área */
+            user-drag: none; /* Previene arrastrar en WebKit */
+            user-select: none; /* Previene seleccionar */
+            -moz-user-select: none; /* Previene seleccionar en Firefox */
+            -webkit-user-drag: none; /* Previene arrastrar en Safari */
+            -webkit-user-select: none; /* Previene seleccionar en Safari */
+            -ms-user-select: none; /* Previene seleccionar en IE/Edge */
+            pointer-events: none; /* Previene arrastrar en otros navegadores */
         }
 
         .carousel-button {
