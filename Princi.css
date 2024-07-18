@@ -217,9 +217,8 @@ comment-input {
 }
 
 .carousel-container {
-  width: 101.2%;
-  height: auto;
-  margin-bottom: 30px;
+  width: 100%;
+  margin: 0 auto; /* Centrar el carrusel en el contenedor */
   border: 2px solid #ccc;
   border-radius: 5px;
   padding: 5px;
@@ -231,13 +230,13 @@ comment-input {
 }
 
 .owl-carousel .item img {
-  height: 300px; /* Altura fija para todas las imágenes */
-  width: auto; /* Ancho automático */
+  height: auto; /* Ajuste automático de la altura */
+  width: 100%; /* Ancho completo del contenedor */
   display: block;
   margin: 0 auto; /* Centrar las imágenes horizontalmente */
   border-radius: 10px; /* Bordes redondeados */
   border: 2px solid rgb(92, 248, 240); /* Borde de las imágenes */
-  object-fit: contain; /* Para que la imagen se ajuste dentro del contenedor sin perder su relación de aspecto */
+  object-fit: contain; /* Asegura que la imagen se ajuste al contenedor sin perder su relación de aspecto */
 }
 
 /* Estilos para el carrusel */
