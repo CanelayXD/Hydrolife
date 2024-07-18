@@ -22,6 +22,49 @@
             document.addEventListener('contextmenu', function (e) {
                 e.preventDefault();
             });
+            const images = [
+                '../../imagenes/Brahama1.jpeg',
+                '../../imagenes/Brahama2.jpeg',
+                '../../imagenes/Brahama3.jpeg'
+            ];
+            images.forEach((src, index) => {
+                const canvas = document.getElementById('canvas' + index);
+                const ctx = canvas.getContext('2d');
+                const img = new Image();
+                img.onload = function() {
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    ctx.font = '48px serif';
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+                    ctx.fillText('HYDROLIFE', 10, 50);
+                };
+                img.src = src;
+            });
+
+            // Agregar overlays
+            document.querySelectorAll('.imagen-cuadro').forEach((element, index) => {
+                const overlay = document.createElement('div');
+                overlay.className = 'overlay';
+                overlay.innerText = 'Captura de pantalla prohibida';
+                element.appendChild(overlay);
+            });
+
+            // Inicializar Owl Carousel
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 3
+                    },
+                    1000: {
+                        items: 5
+                    }
+                }
+            });
         });
     </script>
     <style>
@@ -34,21 +77,21 @@
             margin-bottom: 10px;
         }
 
-        .imagenes-adicionales {
-            width: 100%;
-            display: flex;
-            flex-direction: column; /* Cambiar a columna */
-            align-items: center;
-        }
-
         .imagen-logo {
             width: 200px;
             padding-top: 25px;
             padding-left: 40px;
         }
 
+        .imagenes-adicionales {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         .imagen-cuadro {
-            width: 90%; /* Ocupar 90% del contenedor */
+            width: 90%;
             margin: 10px 0;
             box-sizing: border-box;
             display: flex;
@@ -59,39 +102,31 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             position: relative;
+            overflow: hidden; /* Añadido para prevenir la selección en móviles */
         }
 
-        .imagen-cuadro img {
+        .imagen-cuadro canvas {
             width: 100%;
             height: auto;
-            object-fit: contain;
-            -webkit-user-drag: none;
-            -khtml-user-drag: none;
-            -moz-user-drag: none;
-            -o-user-drag: none;
-            user-drag: none;
         }
 
-        /* Marca de agua oculta por defecto */
-        .watermarked img {
-            position: relative;
-        }
-
-        .watermarked img::after {
-            content: "HYDROLIFE";
+        .overlay {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             font-size: 24px;
-            color: rgba(255, 255, 255, 0.5);
             opacity: 0;
-            transition: opacity 0.3s ease;
             pointer-events: none;
         }
 
-        /* Mostrar la marca de agua cuando la imagen es descargada */
-        .watermarked img:hover::after {
+        .imagen-cuadro:hover .overlay {
             opacity: 1;
         }
 
@@ -109,6 +144,22 @@
                 text-align: center;
             }
         }
+
+        /* Prevenir la selección en dispositivos móviles */
+        body {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Estilos para las imágenes del carrusel */
+        .owl-carousel .item img {
+            height: 300px; /* Altura fija para todas las imágenes */
+            width: auto; /* Ancho automático */
+            display: block;
+            margin: 0 auto; /* Centrar las imágenes horizontalmente */
+        }
     </style>
 </head>
 <body>
@@ -122,10 +173,28 @@
     <div class="contenido">
         <h2>BRAHAMA IMÁGENES</h2>
     </div>
-    <div class="imagenes-adicionales">
-        <div class="imagen-cuadro watermarked"><img src="../../imagenes/Brahama1.jpeg" alt="Producto Extra 1"></div>
-        <div class="imagen-cuadro watermarked"><img src="../../imagenes/Brahama2.jpeg" alt="Producto Extra 2"></div>
-        <div class="imagen-cuadro watermarked"><img src="../../imagenes/Brahama3.jpeg" alt="Producto Extra 3"></div>
+
+    <!-- Carrusel de imágenes -->
+    <div class="row justify-content-center carousel-container" style="margin-top: 0;">
+        <div class="col-md-12"> <!-- Cambiado de col-md-8 a col-md-12 para ocupar todo el ancho -->
+            <div class="owl-carousel owl-theme">
+                <div class="item"><img src="../../imagenes/Brahama1.jpeg" alt="Descripción de la imagen 1" title="Brahama 1"></div>
+                <div class="item"><img src="../../imagenes/Brahama2.jpeg" alt="Descripción de la imagen 2" title="Brahama 2"></div>
+                <div class="item"><img src="../../imagenes/Brahama3.jpeg" alt="Descripción de la imagen 3" title="Brahama 3"></div>
+            </div>
+        </div>
     </div>
-</body>   
+
+    <div class="imagenes-adicionales">
+        <div class="imagen-cuadro"><canvas id="canvas0" width="500" height="500"></canvas></div>
+        <div class="imagen-cuadro"><canvas id="canvas1" width="500" height="500"></canvas></div>
+        <div class="imagen-cuadro"><canvas id="canvas2" width="500" height="500"></canvas></div>
+    </div>
+
+    <!-- Scripts necesarios -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+</body>
 </html>
