@@ -120,38 +120,6 @@ comment-input {
   background-color: rgb(118, 69, 225);
 }
 
-.carousel-container {
-  width: 101.2%;
-  height: auto;
-  background-image: url("imagenes/Back.jpeg");
-  /* Espacio entre el carrusel y la barra de navegación */
-  margin-bottom: 30px;
-  /* Espacio entre el carrusel y la parte inferior de la página */
-  border: 2px solid #ccc;
-  /* Añadir un contorno alrededor del carrusel */
-  border-radius: 5px;
-  /* Añadir bordes redondeados */
-  padding: 5px;
-  /* Añadir espacio interno alrededor del carrusel */
-  box-shadow: 0px 15px 10px rgba(46, 175, 210, 1.5);
-}
-
-owl-carousel .owl-item img {
-  border-radius: 10px;
-  /* Bordes redondeados */
-  border: 2px rgb(92, 248, 240) !important;
-  max-width: 100%;
-  /* Ajuste del ancho máximo de las imágenes */
-  max-height: auto;
-  /* Ajuste de la altura máxima de las imágenes */
-  width: auto;
-  /* Ajuste del ancho automático */
-  height: auto;
-  /* Ajuste de la altura automática */
-  object-fit: cover;
-  /* Para que la imagen se ajuste dentro del contenedor sin perder su relación de aspecto */
-}
-
 .container_hed {
   display: flex;
   align-items: center;
@@ -248,10 +216,34 @@ owl-carousel .owl-item img {
   color: #2f83c9;
 }
 
+.carousel-container {
+  width: 101.2%;
+  height: auto;
+  background-image: url("imagenes/Back.jpeg");
+  margin-bottom: 30px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 0px 15px 10px rgba(46, 175, 210, 1.5);
+}
+
+.owl-carousel .owl-item {
+  margin: 0 10px; /* Espacio entre los elementos del carrusel */
+}
+
+.owl-carousel .item img {
+  height: 300px; /* Altura fija para todas las imágenes */
+  width: auto; /* Ancho automático */
+  display: block;
+  margin: 0 auto; /* Centrar las imágenes horizontalmente */
+  border-radius: 10px; /* Bordes redondeados */
+  border: 2px solid rgb(92, 248, 240); /* Borde de las imágenes */
+  object-fit: cover; /* Para que la imagen se ajuste dentro del contenedor sin perder su relación de aspecto */
+}
+
 /* Estilos para el carrusel */
 .owl-carousel {
   width: 100%;
-  background-image: "/imagenes/Back.jpeg" !important;
   margin-top: 10px;
 }
 
