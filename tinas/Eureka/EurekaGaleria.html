@@ -24,10 +24,12 @@
                 e.preventDefault();
             });
             const images = [
-                '../../imagenes/Eureka1.jpeg',
-                '../../imagenes/Eureka2.jpeg',
-                '../../imagenes/Eureka3.jpeg',
-                '../../imagenes/Eureka4.jpeg'
+                '../../imagenes/Logo.png',
+                '../../imagenes/Logo.png',
+                '../../imagenes/Logo.png',
+                '../../imagenes/Logo.png',
+                '../../imagenes/Logo.png',
+                '../../imagenes/Logo.png'
             ];
             images.forEach((src, index) => {
                 const canvas = document.getElementById('canvas' + index);
@@ -137,6 +139,38 @@
                     showSlide(itemIndex);
                 });
             });
+
+            // Función para mostrar la imagen en pantalla completa
+            function showFullScreen(src) {
+                const overlay = document.createElement('div');
+                overlay.className = 'fullscreen-overlay';
+                overlay.innerHTML = `
+                    <div class="fullscreen-content">
+                        <img src="${src}" alt="Imagen en pantalla completa">
+                        <button class="close-button">&times;</button>
+                    </div>
+                `;
+                document.body.appendChild(overlay);
+
+                const closeButton = overlay.querySelector('.close-button');
+                closeButton.addEventListener('click', () => {
+                    document.body.removeChild(overlay);
+                });
+
+                overlay.addEventListener('click', (event) => {
+                    if (event.target === overlay) {
+                        document.body.removeChild(overlay);
+                    }
+                });
+            }
+
+            // Agregar evento de clic a las imágenes del carrusel
+            slides.forEach((slide) => {
+                const img = slide.querySelector('img');
+                img.addEventListener('click', () => {
+                    showFullScreen(img.src);
+                });
+            });
         });
     </script>
     <style>
@@ -157,7 +191,7 @@
 
         .carousel {
             position: relative;
-            width: 90%;
+            width: 100%;
             margin: 0 auto;
             overflow: hidden;
         }
@@ -174,7 +208,7 @@
         }
 
         .carousel-slide img {
-            height: 700px; /* Ajusta la altura automáticamente */
+            height: 500px; /* Ajusta la altura automáticamente */
             width: 100%; /* Ajusta el ancho para que abarque todo el contenedor */
             object-fit: cover; /* Ajusta la imagen para cubrir el área */
             user-drag: none; /* Previene arrastrar en WebKit */
@@ -238,49 +272,56 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
             display: flex;
-            justify-content: center;
             align-items: center;
-            font-size: 24px;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            font-size: 20px;
+            text-align: center;
             opacity: 0;
-            pointer-events: none;
+            transition: opacity 0.3s;
+            pointer-events: none; /* Previene arrastrar en otros navegadores */
         }
 
         .imagen-cuadro:hover .overlay {
             opacity: 1;
         }
 
-        @media (max-width: 768px) {
-            .tarjeta-detalle {
-                flex-direction: column;
-            }
-
-            .tarjeta-detalle img {
-                width: 100%;
-            }
-
-            .contenido {
-                width: 100%;
-                text-align: center;
-            }
+        .fullscreen-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
         }
 
-        /* Prevenir la selección en dispositivos móviles */
-        body {
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
+        .fullscreen-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
         }
 
-        img {
-            -webkit-user-drag: none;
-            -khtml-user-drag: none;
-            -moz-user-drag: none;
-            -o-user-drag: none;
-            user-drag: none;
+        .fullscreen-content img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -293,7 +334,7 @@
     </div>
 
     <div class="contenido">
-        <h2>EUREKA IMÁGENES</h2>
+        <h2>DHARMA IMÁGENES</h2>
     </div>
 
     <!-- Carrusel de imágenes -->
@@ -308,22 +349,13 @@
         <button class="carousel-button next">❯</button>
     </div>
 
-        <!-- Agrega el video -->
-    <div class="row mt-4">
-      <div class="col text-center">
-        <video controls width="90%" height="auto">
-          <source src="../../imagenes/HydrolifePromo.mp4" type="video/mp4">
-          Tu navegador no soporta la reproducción de videos.
-        </video>
-      </div>
-    </div>
-  </div>
-
     <div class="imagenes-adicionales">
         <div class="imagen-cuadro"><canvas id="canvas0" width="500" height="500"></canvas></div>
         <div class="imagen-cuadro"><canvas id="canvas1" width="500" height="500"></canvas></div>
         <div class="imagen-cuadro"><canvas id="canvas2" width="500" height="500"></canvas></div>
         <div class="imagen-cuadro"><canvas id="canvas3" width="500" height="500"></canvas></div>
+        <div class="imagen-cuadro"><canvas id="canvas4" width="500" height="500"></canvas></div>
+        <div class="imagen-cuadro"><canvas id="canvas5" width="500" height="500"></canvas></div>
     </div>
 
     <!-- Scripts necesarios -->
