@@ -1,42 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="Princi.css">
     <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-        }
-        .container {
-            width: 100%;
-            height: 80px;
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
-            opacity: 1;
-            position: relative;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
-        .img {
-            width: 249px;
-            height: 158px;
-            background: url("../Hydrolife/imagenes/v54811_207.png");
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
-            opacity: 1;
-            position: absolute;
-            top: 6px;
-            left: 0px;
-            overflow: hidden;
-        }
         .link-list {
             list-style: none;
             padding: 0;
@@ -63,14 +29,16 @@
     <title>Galería y Directorio</title>
 </head>
 <body>
-    <div class="container">
-        <a href="Princi.html">
-            <div class="img"></div>
+    <div class="container_hed">
+        <a class="navbar-brand" href="javascript:void(0);" onclick="history.back();">
+          <img src="./imagenes/Logo.png" alt="Mi Logo" title="MiLog">
         </a>
     </div>
+
     <ul class="link-list">
-        <li><a href="Princi.html">Página Principal</a></li>
-        <!-- Aquí puedes añadir más enlaces según sea necesario -->
+        <li><a href="../Hydrolife/tinas/Adara/AdaraGaleria.html">Galería Adara</a></li>
+        <li><a href="../Hydrolife/tinas/Ajna/AjnaGaleria.html">Galería Ajna</a></li>
+        <li><a href="../Hydrolife/tinas/Anubis/AnubisGaleria.html">Galería Anubis</a></li>
     </ul>
 </body>
 </html>
