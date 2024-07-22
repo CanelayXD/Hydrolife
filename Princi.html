@@ -20,9 +20,56 @@
 </script>
 
 <style>
-    body {
-      background-color: #c4fbff;
-    }
+        body {
+            background-color: #c4fbff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        footer {
+            background-color: rgba(137, 232, 39, 1);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        footer h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .footer-sections {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        .footer-section {
+            text-align: left;
+        }
+
+        .footer-section h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            text-decoration: underline;
+        }
 </style>
 </head>
 
@@ -84,17 +131,6 @@
       <!-- Las tarjetas de productos se renderizarán aquí -->
     </div>
 
-    <!-- Agrega el video debajo de todos los productos 
-    <div class="row mt-4">
-      <div class="col text-center">
-        <video controls width="640" height="360">
-          <source src="./imagenes/HydrolifePromo.mp4" type="video/mp4">
-          Tu navegador no soporta la reproducción de videos.
-        </video>
-      </div>
-    </div>
-  </div> -->
-
   <!-- Accessories Section -->
   <h2 id="accesorios" class="Subtitle">ACCESORIOS</h2>
   <div class="container">
@@ -116,21 +152,19 @@
     </div>  
   </div>
 
- <!-- Footer -->
-<footer id="Foot" class="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3">
-        <center>
-          <h4>Hydrolife</h4>
-          <p>Recomendaciones<br>
-          </p>
-        </center>
-      </div>
+  <footer>
+    <h2>HYDROLIFE</h2>
+    <div class="footer-sections">
+        <div class="footer-section">
+            <h3>Galería</h3>
+            <a href="DirectoryGallery">Directorio</a>
+        </div>
+        <div class="footer-section">
+            <h3>Planos</h3>
+            <a href="DirectoryPlans">Directorio</a>
+        </div>
     </div>
-  </div>
 </footer>
-
 
   <!-- JavaScript and jQuery -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
