@@ -3,6 +3,16 @@
 <head>
     <link rel="stylesheet" href="Princi.css">
     <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
         .link-list {
             list-style: none;
             padding: 0;
@@ -29,16 +39,19 @@
     <title>Galería y Directorio</title>
 </head>
 <body>
-    <div class="container_hed">
-        <a class="navbar-brand" href="javascript:void(0);" onclick="history.back();">
-          <img src="./imagenes/Logo.png" alt="Mi Logo" title="MiLog">
-        </a>
+    <!-- Navbar -->
+    <div class="container_hed d-flex align-items-center justify-content-end">
+        <div class="container mt-3 d-flex flex-column align-items-center">
+            <a class="navbar-brand" href="javascript:void(0);" onclick="history.back();">
+                <img src="./imagenes/Logo.png" alt="Mi Logo" title="MiLog">
+            </a>
+        </div>
     </div>
 
+    </div>
     <ul class="link-list">
-        <li><a href="../Hydrolife/tinas/Adara/AdaraGaleria.html">Galería Adara</a></li>
-        <li><a href="../Hydrolife/tinas/Ajna/AjnaGaleria.html">Galería Ajna</a></li>
-        <li><a href="../Hydrolife/tinas/Anubis/AnubisGaleria.html">Galería Anubis</a></li>
+        <li><a href="Princi.html">Página Principal</a></li>
+        <!-- Aquí puedes añadir más enlaces según sea necesario -->
     </ul>
 </body>
 </html>
