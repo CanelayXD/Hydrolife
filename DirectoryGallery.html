@@ -4,14 +4,25 @@
     <link rel="stylesheet" href="Princi.css">
     <style>
         body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+        }
+        .navbar {
+            width: 100%;
+            height: 60px;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .navbar img {
+            height: 50px; /* Ajusta la altura del logo según sea necesario */
+        }
+        .navbar a {
+            text-decoration: none;
+            color: #000;
         }
         .link-list {
             list-style: none;
@@ -36,15 +47,16 @@
             border-color: #007BFF;
         }
     </style>
-    <title>Galería y Directorio</title>
+    <title>Galería</title>
 </head>
 <body>
     <!-- Navbar -->
-        <div class="container_hed d-flex align-items-center justify-content-end">
-            <a class="navbar-brand" href="Princi.html"><img src="../Hydrolife/imagenes/v54811_207.png" alt="Mi Logo" title="MiLog"></a>
-        </div>
-
+    <div class="navbar">
+        <a href="Princi.html">
+            <img src="../Hydrolife/imagenes/v54811_207.png" alt="Logo">
+        </a>
     </div>
+    
     <ul class="link-list">
         <li><a href="../Hydrolife/tinas/Adara/AdaraGaleria.html">Galería Adara</a></li>
         <li><a href="../Hydrolife/tinas/Ajna/AjnaGaleria.html">Galería Ajna</a></li>
