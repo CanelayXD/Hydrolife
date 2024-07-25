@@ -24,7 +24,7 @@
       "id": 4,
       "nombre": "Nair",
       "imagen": "imagenes/Nair.png",
-      "capacidad": 2,
+      "capacidad": 1,
       "url": "tinas/Nair/Nair.html"
     },
     {
@@ -45,7 +45,7 @@
       "id": 7,
       "nombre": "Sirius",
       "imagen": "imagenes/Sirius.png",
-      "capacidad": 2,
+      "capacidad": 3,
       "url": "tinas/Sirius/Sirius.html"
     },
     {
@@ -129,7 +129,7 @@
       "id": 19,
       "nombre": "Adara",
       "imagen": "imagenes/Adara.png",
-      "capacidad": 4,
+      "capacidad": 5,
       "url": "tinas/Adara/Adara.html"
     },
     {
