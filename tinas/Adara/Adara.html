@@ -214,9 +214,10 @@
         • Ancho: 1.8 mts<br>
         • Alto: 63 cm
       </p>
+      <span onclick="openNav()">&#9776; Premium</span>
       <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <a href="Adara.html">Adara</a>
+        <a href="../../Princi.html">Adara</a>
       </div>
     </div>
   </div>
@@ -224,6 +225,24 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+    }
+    document.addEventListener('contextmenu', function (event) {
+      event.preventDefault();
+    });
+
+    document.addEventListener('dragstart', function (event) {
+      if (event.target.nodeName === 'IMG') {
+        event.preventDefault();
+      }
+    });
+  </script>
 </body>
 
 </html>
