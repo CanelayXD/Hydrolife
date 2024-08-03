@@ -77,15 +77,16 @@
     }
 
     .openbtn {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
       font-size: 20px;
       padding: 10px;
       cursor: pointer;
       background-color: #5ba2ff;
       color: white;
       border: none;
-      width: 100%;
-      text-align: center;
-      margin-top: 20px;
     }
 
     table {
@@ -261,22 +262,18 @@
           <tr>
             <td>1 cromoterapia</td>
             <td>Juego de llenado:<br>
-            Cascada, manerales y/o monomando</td>
+              Cascada, manerales y/o monomando</td>
             <td>2 escalones</td>
             <td>Estructura metálica y forro de madera</td>
-          </tr>
-          <tr>
-            
           </tr>
         </table>
       </div>
     </div>
   </div>
 
-  <!-- Scripts JS -->
   <script>
     function openNav() {
-      document.getElementById("mySidebar").style.height = "45%";
+      document.getElementById("mySidebar").style.height = "100%";
     }
 
     function closeNav() {
@@ -284,12 +281,11 @@
     }
   </script>
 
-  <!-- Scripts para Bootstrap y Carrusel -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Scripts necesarios -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <script src="../../Princi.js"></script>
 </body>
 
 </html>
