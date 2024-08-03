@@ -41,19 +41,17 @@
       /* Centra la imagen */
       background-repeat: no-repeat;
       /* Evita que la imagen se repita */
-
     }
 
     .sidebar {
-      height: 100%;
-      width: 0;
+      height: 0;
+      width: 100%;
       position: fixed;
       z-index: 1;
-      top: 0;
-      right: 0;
-      /* Cambiado a la derecha */
+      bottom: 0;
+      left: 0;
       background-color: #ffffff;
-      overflow-x: hidden;
+      overflow-y: hidden;
       transition: 0.5s;
       padding-top: 60px;
     }
@@ -74,9 +72,35 @@
     .sidebar .closebtn {
       position: absolute;
       top: 0;
-      left: 25px;
-      /* Cambiado a la derecha, si se quiere cambiar a la izquierda se debe poner riht: 25px*/
+      right: 25px;
       font-size: 36px;
+    }
+
+    .openbtn {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      font-size: 20px;
+      padding: 10px;
+      cursor: pointer;
+      background-color: #1f74e4;
+      color: white;
+      border: none;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table, th, td {
+      border: 0.5px solid black;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
     }
 
     /* Estilos para la tarjeta de detalle */
@@ -214,52 +238,42 @@
         • Ancho: 1.8 mts<br>
         • Alto: 63 cm
       </p>
-      <span onclick="openNav()">Premium</span>
+      <button class="openbtn" onclick="openNav()">Premium</button>
       <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <p>
-          7 jets dirigibles<br>
-          2 botones de encendido y apagado automático<br>
-          1 control de aire<br>
-          2 tomas de succión<br>
-          1 bomba de 1.5 HP y 1 de 2 HP<br>
-          1 almohadilla (asiento)<br>
-          1 aromaterapia<br>
-          24 minijets<br>
-          "1 filtro de zeolia<br>
-          6 minis<br>
-          1 calentador 220 vts<br>
-          1 cromoterapia<br>
-          Juego de llenado:<br>
-          • Cascada, manerales y/o monomando<br>
-          2 escalones<br>
-          Estructura metálica y forro de madera
-        </p>
+        <table>
+          <tr>
+            <td>7 jets dirigibles</td>
+            <td>Desinfección: U.V</td>
+            <td>Control de temperatura: 20° - 40°C</td>
+          </tr>
+          <tr>
+            <td>Generador de ozono</td>
+            <td>Desagüe y succión</td>
+            <td>Luz subacuática</td>
+          </tr>
+        </table>
       </div>
     </div>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Scripts JS -->
   <script>
     function openNav() {
-      document.getElementById("mySidebar").style.width = "250px";
+      document.getElementById("mySidebar").style.height = "30%";
     }
 
     function closeNav() {
-      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("mySidebar").style.height = "0";
     }
-    document.addEventListener('contextmenu', function (event) {
-      event.preventDefault();
-    });
-
-    document.addEventListener('dragstart', function (event) {
-      if (event.target.nodeName === 'IMG') {
-        event.preventDefault();
-      }
-    });
   </script>
+
+  <!-- Scripts para Bootstrap y Carrusel -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="../../Princi.js"></script>
 </body>
 
 </html>
