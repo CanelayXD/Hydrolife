@@ -158,52 +158,57 @@
   <script>
     // Función para cargar y renderizar un modelo 3D
     function loadModel(containerId, objPath, mtlPath) {
-      const container = document.getElementById(containerId);
-      const width = container.clientWidth;
-      const height = container.clientHeight;
+    const container = document.getElementById(containerId);
+    const width = container.clientWidth;
+    const height = container.clientHeight;
 
-      const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-      const renderer = new THREE.WebGLRenderer({ antialias: true });
-      renderer.setSize(width, height);
-      renderer.setClearColor(0x808080); // Fondo gris
-      container.appendChild(renderer.domElement);
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(width, height);
+    renderer.setClearColor(0x808080); // Fondo gris
+    container.appendChild(renderer.domElement);
 
-      const ambientLight = new THREE.AmbientLight(0x404040); // soft white light
-      scene.add(ambientLight);
+    const ambientLight = new THREE.AmbientLight(0x404040); // soft white light
+    scene.add(ambientLight);
 
-      const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-      directionalLight.position.set(1, 1, 1).normalize();
-      scene.add(directionalLight);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+    directionalLight.position.set(1, 1, 1).normalize();
+    scene.add(directionalLight);
 
-      const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
 
-      const loader = new THREE.MTLLoader();
-      loader.load(mtlPath, function (materials) {
-        materials.preload();
-        const objLoader = new THREE.OBJLoader();
-        objLoader.setMaterials(materials);
-        objLoader.load(objPath, function (object) {
-          scene.add(object);
-          object.position.y = -50;
-          object.traverse(function (child) {
-            if (child instanceof THREE.Mesh) {
-              child.material.side = THREE.DoubleSide; // Evita caras transparentes
-            }
-          });
+    const loader = new THREE.MTLLoader();
+    loader.load(mtlPath, function (materials) {
+      materials.preload();
+      const objLoader = new THREE.OBJLoader();
+      objLoader.setMaterials(materials);
+      objLoader.load(objPath, function (object) {
+        // Centrar el objeto
+        const box = new THREE.Box3().setFromObject(object);
+        const center = box.getCenter(new THREE.Vector3());
+        object.position.sub(center); // Resta el centro para centrarlo
+
+        scene.add(object);
+        object.position.y = -50;
+        object.traverse(function (child) {
+          if (child instanceof THREE.Mesh) {
+            child.material.side = THREE.DoubleSide; // Evita caras transparentes
+          }
         });
       });
+    });
 
-      camera.position.z = 200;
+    camera.position.z = 200;
 
-      const animate = function () {
-        requestAnimationFrame(animate);
-        controls.update();
-        renderer.render(scene, camera);
-      };
+    const animate = function () {
+      requestAnimationFrame(animate);
+      controls.update();
+      renderer.render(scene, camera);
+    };
 
-      animate();
-    }
+    animate();
+  }
 
     // Cargar los modelos 3D
     loadModel('model1', '../../objects/LASERTA_BLANCA.obj', '../../objects/LASERTA_BLANCA.mtl');
